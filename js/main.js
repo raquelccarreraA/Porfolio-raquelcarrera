@@ -101,7 +101,7 @@
             <p class="project__kind">${esc(t(p.kind))}</p>
             <h3>${esc(p.name)}</h3>
             ${list(p.points)}
-            ${p.press && p.press.length ? `<p class="project__press">${esc(ui().press)}: ${p.press.map((n) => `<a href="${n.url}" target="_blank" rel="noopener">${esc(n.label)}</a>`).join(" · ")}</p>` : ""}
+            ${p.press && p.press.length ? `<p class="project__press">${esc(ui().press)}: ${p.press.map((n) => `<a href="${n.url}" target="_blank" rel="noopener">${esc(t(n.label))}</a>`).join(" · ")}</p>` : ""}
             <div class="project__footer">
               ${chips(p.tags)}
               ${actions ? `<div class="project__actions">${actions}</div>` : ""}
