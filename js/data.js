@@ -67,21 +67,21 @@ const CV = {
       points: {
         gl: [
           "Analiza noticias con IA e devolve un índice de credibilidade propio baseado en métricas de contido e fonte. Tamén analiza imaxes que conteñen texto.",
-          "Fine-tuning de Qwen 2.5 7B cos resultados acumulados das APIs de IA na nube para crear a versión 1 dun modelo propio que funciona en local.",
-          "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n e rotación entre 5 provedores de IA na nube."
+          "Modelo propio en local (VeriAI): analiza en paralelo coas APIs na nube e, cada 6.000 análises, faise fine-tuning co dataset xerado. Vai pola versión 2 (Qwen 2.5 7B) e adestra en paralelo unha variante sobre Qwen 3.5 7B.",
+          "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n e rotación con failover entre 5 provedores de IA na nube (Cerebras, SambaNova, Gemini, Mistral e Cloudflare)."
         ],
         es: [
           "Analiza noticias con IA y devuelve un índice de credibilidad propio basado en métricas de contenido y fuente. También analiza imágenes que contienen texto.",
-          "Fine-tuning de Qwen 2.5 7B con los resultados acumulados de las APIs de IA en la nube para crear la versión 1 de un modelo propio que funciona en local.",
-          "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n y rotación entre 5 proveedores de IA en la nube."
+          "Modelo propio en local (VeriAI): analiza en paralelo con las APIs en la nube y, cada 6.000 análisis, se hace fine-tuning con el dataset generado. Va por la versión 2 (Qwen 2.5 7B) y entrena en paralelo una variante sobre Qwen 3.5 7B.",
+          "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n y rotación con failover entre 5 proveedores de IA en la nube (Cerebras, SambaNova, Gemini, Mistral y Cloudflare)."
         ],
         en: [
           "Analyzes news with AI and returns its own credibility score based on content and source metrics. It also analyzes images that contain text.",
-          "Fine-tuned Qwen 2.5 7B on the accumulated results from cloud AI APIs to build version 1 of its own model that runs locally.",
-          "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n and rotation across 5 cloud AI providers."
+          "Its own local model (VeriAI) runs alongside the cloud APIs, and every 6,000 analyses it is fine-tuned on the resulting dataset. Now on version 2 (Qwen 2.5 7B), with a Qwen 3.5 7B variant training in parallel.",
+          "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n and failover rotation across 5 cloud AI providers (Cerebras, SambaNova, Gemini, Mistral and Cloudflare)."
         ]
       },
-      tags: ["React", "Spring Boot", "Groq API", "Fine-tuning", "JWT"]
+      tags: ["React", "Spring Boot", "Fine-tuning", "Ollama", "JWT"]
     },
     {
       name: "ArgaQuest",
@@ -202,7 +202,7 @@ const CV = {
     { group: "Frontend", items: ["React", "Angular", "SCSS", "Vite"] },
     {
       group: { gl: "Intelixencia Artificial", es: "Inteligencia Artificial", en: "Artificial Intelligence" },
-      items: [{ gl: "Fine-tuning de LLMs", es: "Fine-tuning de LLMs", en: "LLM fine-tuning" }, "Qwen 2.5", "Ollama", "Groq API"]
+      items: [{ gl: "Fine-tuning de LLMs", es: "Fine-tuning de LLMs", en: "LLM fine-tuning" }, "Qwen 2.5", "Qwen 3.5", "Ollama", "Cerebras", "SambaNova", "Gemini", "Mistral", "Cloudflare AI", "Groq"]
     },
     { group: { gl: "Ferramentas", es: "Herramientas", en: "Tools" }, items: ["Git", "GitHub", "Docker", "JUnit", "Postman"] },
     {
