@@ -7,7 +7,6 @@ const CV = {
 
   links: {
     email: "raquel.ccarrera@gmail.com",
-    phone: "671 14 07 53",
     linkedin: "https://www.linkedin.com/in/raquel-comesa%C3%B1a-carrera-1646ba195",
     github: "https://github.com/raquelccarreraA"
   },
