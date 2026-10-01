@@ -34,14 +34,16 @@
       <a href="#inicio" class="nav__logo">RCC</a>
       <button class="nav__menu" id="nav-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
       <nav class="nav__links" id="nav-links">
-        <a href="#presentacion">Presentación</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#formacion">Formación</a>
-        <a href="#skills">Skills</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#trayectoria">Trayectoria</a>
+        <a href="#habilidades">Habilidades</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">◐</button>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a tema oscuro">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
     </div>
   </header>
 
@@ -52,7 +54,7 @@
       <div class="hero__text">
         <p class="eyebrow" id="hero-location">A Coruña, Galicia</p>
         <h1 id="hero-name">Raquel Comesaña Carrera</h1>
-        <p class="hero__role" id="hero-role">Full Stack Developer · Java · Spring Boot · React · AI y Big Data</p>
+        <p class="hero__role" id="hero-role">Full Stack Developer · Java · Spring Boot · React · IA y Big Data</p>
         <p class="hero__summary" id="hero-summary">Modernizo sistemas legacy y construyo aplicaciones web completas, del backend a la interfaz. Creadora de toVeriAI, una aplicación en producción.</p>
         <div class="hero__actions" id="hero-actions"></div>
       </div>
@@ -63,32 +65,36 @@
       </figure>
     </section>
 
-    <!-- CARTA DE PRESENTACIÓN -->
-    <section id="presentacion" class="section container">
-      <h2 class="section__title">Carta de presentación</h2>
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section section--band">
+      <div class="container">
+        <h2 class="section__title">Proyectos</h2>
+        <div class="projects" id="projects"></div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="section container">
+      <h2 class="section__title">Sobre mí</h2>
       <article class="letter reveal" id="letter"></article>
     </section>
 
-    <!-- PROYECTOS -->
-    <section id="proyectos" class="section container">
-      <h2 class="section__title">Proyectos</h2>
-      <div class="projects" id="projects"></div>
+    <!-- TRAYECTORIA: experiencia y formación -->
+    <section id="trayectoria" class="section container">
+      <div class="columns">
+        <div>
+          <h2 class="section__title">Experiencia</h2>
+          <div class="timeline" id="experience"></div>
+        </div>
+        <div>
+          <h2 class="section__title">Formación</h2>
+          <div class="timeline" id="education"></div>
+        </div>
+      </div>
     </section>
 
-    <!-- EXPERIENCIA -->
-    <section id="experiencia" class="section container">
-      <h2 class="section__title">Experiencia</h2>
-      <div class="timeline" id="experience"></div>
-    </section>
-
-    <!-- FORMACIÓN -->
-    <section id="formacion" class="section container">
-      <h2 class="section__title">Formación</h2>
-      <div class="timeline" id="education"></div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section container">
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="section container">
       <h2 class="section__title">Habilidades</h2>
       <div class="skills" id="skills-grid"></div>
     </section>
@@ -96,7 +102,7 @@
     <!-- CONTACTO -->
     <section id="contacto" class="section container contact">
       <h2 class="section__title">¿Hablamos?</h2>
-      <p class="contact__text">Disponibilidad inmediata. Escríbeme y te respondo pronto.</p>
+      <p class="contact__text" id="contact-text">Disponibilidad inmediata. Escríbeme y te respondo pronto.</p>
       <div class="hero__actions" id="contact-actions"></div>
     </section>
   </main>

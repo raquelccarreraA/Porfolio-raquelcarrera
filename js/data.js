@@ -1,18 +1,23 @@
 // Todo el contenido del CV vive aquí. Edita este archivo y la web se actualiza sola.
 const CV = {
   name: "Raquel Comesaña Carrera",
-  role: "Full Stack Developer · Java · Spring Boot · React · AI y Big Data",
+  role: "Full Stack Developer · Java · Spring Boot · React · IA y Big Data",
   location: "A Coruña, Galicia",
   summary: "Modernizo sistemas legacy y construyo aplicaciones web completas, del backend a la interfaz. Creadora de toVeriAI, una aplicación en producción.",
 
   links: {
     email: "raquel.ccarrera@gmail.com",
     linkedin: "https://www.linkedin.com/in/raquel-comesa%C3%B1a-carrera-1646ba195",
-    github: "https://github.com/raquelccarreraA"
+    github: "https://github.com/raquelccarreraA",
+    cv: ""                                  // ruta al PDF, p. ej. "assets/CV-Raquel-Comesana.pdf"; vacío = sin botón
+  },
+
+  contact: {
+    text: "Disponibilidad inmediata. Escríbeme y te respondo pronto."
   },
 
   letter: {
-    lead: "Desarrolladora Web Full Stack con experiencia real en modernización de aplicaciones en Seidor y sólida formación en DAW. Actualmente ampliando conocimientos con una especialización en Inteligencia Artificial y Big Data.",
+    lead: "Desarrolladora Web Full Stack con experiencia real en modernización de aplicaciones en Seidor y sólida formación en Desarrollo de Aplicaciones Web (DAW). Actualmente ampliando conocimientos con una especialización en Inteligencia Artificial y Big Data.",
     intro: "Mi trayectoria destaca por combinar el desarrollo moderno con la comprensión de arquitecturas complejas:",
     points: [
       { title: "Backend y modernización", text: "Java, Spring Boot, APIs REST, JUnit/Mockito, más mantenimiento y migración sobre entornos IBM i (AS/400) y RPG FREE." },
@@ -25,10 +30,11 @@ const CV = {
   projects: [
     {
       name: "toVeriAI",
-      kind: "TFC y proyecto personal",
+      kind: "Trabajo de Fin de Ciclo y proyecto personal",
       image: "assets/toveriai.png",          // opcional: captura del proyecto
       colors: ["#1f3a66", "#5b7fb8"],
       url: "https://www.toveriai.com",
+      repo: "",                              // enlace al código en GitHub; vacío = sin botón
       points: [
         "Analiza noticias con IA y devuelve un índice de credibilidad propio basado en métricas de contenido y fuente.",
         "React 19 + Vite, Vercel CDN, Spring Boot, Spring Security + JWT, i18n y Render.",
@@ -42,6 +48,7 @@ const CV = {
       image: "assets/argaquest.png",         // opcional
       colors: ["#3b2f4a", "#8a6bb0"],
       url: "https://argaquest.fernandowirtz.com/",
+      repo: "",
       points: [
         "Juego educativo en gallego que combina aprendizaje de vocabulario y dinámicas de juego.",
         "React, SCSS, Java/Spring Boot (REST, WebSockets, JPA).",
@@ -66,7 +73,7 @@ const CV = {
   ],
 
   education: [
-    { date: "2026 – 2027", title: "Especialización Dual en AI y Big Data", org: "IES Fernando Wirtz Suárez" },
+    { date: "2026 – 2027", title: "Especialización Dual en IA y Big Data", org: "IES Fernando Wirtz Suárez" },
     { date: "2024 – 2026", title: "FP Dual Desarrollo de Aplicaciones Web", org: "IES Fernando Wirtz Suárez" },
     { date: "2023 – 2025", title: "Máster en Programación Full Stack: aplicaciones web", org: "Tokio.School" }
   ],
