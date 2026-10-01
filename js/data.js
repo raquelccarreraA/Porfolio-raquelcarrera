@@ -42,7 +42,7 @@ const CV = {
       kind: "Plan Proxecta · Proyecto ganador",
       image: "assets/argaquest.png",         // opcional
       colors: ["#3b2f4a", "#8a6bb0"],
-      url: "https://argaquest.fernandowirtz.com/",                                // pon aquí el enlace cuando lo tengas
+      url: "https://argaquest.fernandowirtz.com/",
       points: [
         "Juego educativo en gallego que combina aprendizaje de vocabulario y dinámicas de juego.",
         "React, SCSS, Java/Spring Boot (REST, WebSockets, JPA).",

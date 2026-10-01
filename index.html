@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Raquel Comesaña Carrera · Full Stack Developer</title>
   <meta name="description" content="Desarrolladora Full Stack: Java, Spring Boot, React. Creadora de toVeriAI.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Raquel Comesaña Carrera · Full Stack Developer">
+  <meta property="og:description" content="Desarrolladora Full Stack: Java, Spring Boot, React. Creadora de toVeriAI.">
+  <meta property="og:url" content="https://raquelccarreraa.github.io/Portfolio-Raquel-Comesa-a/">
+  <meta property="og:image" content="https://raquelccarreraa.github.io/Portfolio-Raquel-Comesa-a/assets/RCC.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232c4a78'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='600' fill='%23fff' text-anchor='middle'%3ERC%3C/text%3E%3C/svg%3E">
+  <script>
+    // Aplica el tema antes de pintar la página para evitar el parpadeo claro/oscuro.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (!t && matchMedia("(prefers-color-scheme: dark)").matches) t = "dark";
+      if (t) document.documentElement.dataset.theme = t;
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,6 +32,7 @@
   <header class="nav">
     <div class="container nav__inner">
       <a href="#inicio" class="nav__logo">RCC</a>
+      <button class="nav__menu" id="nav-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
       <nav class="nav__links" id="nav-links">
         <a href="#presentacion">Presentación</a>
         <a href="#proyectos">Proyectos</a>
@@ -28,17 +46,18 @@
   </header>
 
   <main>
+    <noscript><p class="container noscript">Activa JavaScript para ver el portfolio completo.</p></noscript>
     <!-- HERO -->
     <section id="inicio" class="hero container">
       <div class="hero__text">
-        <p class="eyebrow" id="hero-location"></p>
-        <h1 id="hero-name"></h1>
-        <p class="hero__role" id="hero-role"></p>
-        <p class="hero__summary" id="hero-summary"></p>
+        <p class="eyebrow" id="hero-location">A Coruña, Galicia</p>
+        <h1 id="hero-name">Raquel Comesaña Carrera</h1>
+        <p class="hero__role" id="hero-role">Full Stack Developer · Java · Spring Boot · React · AI y Big Data</p>
+        <p class="hero__summary" id="hero-summary">Modernizo sistemas legacy y construyo aplicaciones web completas, del backend a la interfaz. Creadora de toVeriAI, una aplicación en producción.</p>
         <div class="hero__actions" id="hero-actions"></div>
       </div>
       <figure class="hero__photo">
-        <!-- Pon tu foto en assets/foto.jpg -->
+        <!-- Foto: assets/RCC.jpg -->
         <img src="assets/RCC.jpg" alt="Raquel Comesaña Carrera" onerror="this.remove()">
         <span class="hero__initials">RC</span>
       </figure>

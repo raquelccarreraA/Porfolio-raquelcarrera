@@ -3,8 +3,10 @@
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const list = (items) => `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
-  const button = (href, label, primary) =>
-    `<a class="btn${primary ? " btn--primary" : ""}" href="${href}" target="_blank" rel="noopener">${label}</a>`;
+  const button = (href, label, primary) => {
+    const external = /^https?:/.test(href) ? ' target="_blank" rel="noopener"' : "";
+    return `<a class="btn${primary ? " btn--primary" : ""}" href="${href}"${external}>${label}</a>`;
+  };
 
   function renderHero() {
     $("hero-location").textContent = CV.location;
@@ -36,7 +38,7 @@
       return `
         <${tag} class="project reveal"${attrs}>
           <div class="project__media" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">
-            ${esc(p.name)}<img src="${p.image}" alt="${esc(p.name)}" onerror="this.remove()">
+            ${esc(p.name)}<img src="${p.image}" alt="${esc(p.name)}" loading="lazy" onerror="this.remove()">
           </div>
           <div class="project__body">
             <p class="project__kind">${esc(p.kind)}</p>
@@ -67,17 +69,28 @@
       </div>`).join("");
   }
 
+  // El tema inicial se aplica en un script del <head> de index.html.
   function setupTheme() {
     const root = document.documentElement;
-    let saved = null;
-    try { saved = localStorage.getItem("theme"); } catch (e) {}
-    if (saved) root.dataset.theme = saved;
-    else if (matchMedia("(prefers-color-scheme: dark)").matches) root.dataset.theme = "dark";
     $("theme-toggle").addEventListener("click", () => {
       const next = root.dataset.theme === "dark" ? "light" : "dark";
       root.dataset.theme = next;
       try { localStorage.setItem("theme", next); } catch (e) {}
     });
+  }
+
+  function setupMenu() {
+    const menu = $("nav-menu");
+    const nav = $("nav-links");
+    const setOpen = (open) => {
+      nav.classList.toggle("open", open);
+      menu.setAttribute("aria-expanded", open);
+      menu.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+      menu.textContent = open ? "✕" : "☰";
+    };
+    menu.addEventListener("click", () => setOpen(!nav.classList.contains("open")));
+    nav.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
   }
 
   function setupScroll() {
@@ -101,5 +114,6 @@
   renderSkills();
   $("year").textContent = new Date().getFullYear();
   setupTheme();
+  setupMenu();
   setupScroll();
 })();
