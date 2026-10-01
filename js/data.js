@@ -67,17 +67,17 @@ const CV = {
       points: {
         gl: [
           "Analiza noticias con IA e devolve un índice de credibilidade propio baseado en métricas de contido e fonte. Tamén analiza imaxes que conteñen texto.",
-          "Modelo propio en local (VeriAI): analiza en paralelo coas APIs na nube e, cada 6.000 análises, faise fine-tuning co dataset xerado. Vai pola versión 2 (Qwen 2.5 7B) e adestra en paralelo unha variante sobre Qwen 3.5 7B.",
+          "Modelo propio (VeriAI): os análises das APIs na nube forman un dataset que exporto e adestro en local. Cada 6.000 análises sae unha versión nova: vai pola 2 (Qwen 2.5 7B), cunha variante sobre Qwen 3.5 7B en paralelo. Pasará a produción cando iguale ou supere as APIs.",
           "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n e rotación con failover entre 5 provedores de IA na nube (Cerebras, SambaNova, Gemini, Mistral e Cloudflare)."
         ],
         es: [
           "Analiza noticias con IA y devuelve un índice de credibilidad propio basado en métricas de contenido y fuente. También analiza imágenes que contienen texto.",
-          "Modelo propio en local (VeriAI): analiza en paralelo con las APIs en la nube y, cada 6.000 análisis, se hace fine-tuning con el dataset generado. Va por la versión 2 (Qwen 2.5 7B) y entrena en paralelo una variante sobre Qwen 3.5 7B.",
+          "Modelo propio (VeriAI): los análisis de las APIs en la nube forman un dataset que exporto y entreno en local. Cada 6.000 análisis sale una versión nueva: va por la 2 (Qwen 2.5 7B), con una variante sobre Qwen 3.5 7B en paralelo. Pasará a producción cuando iguale o supere a las APIs.",
           "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n y rotación con failover entre 5 proveedores de IA en la nube (Cerebras, SambaNova, Gemini, Mistral y Cloudflare)."
         ],
         en: [
           "Analyzes news with AI and returns its own credibility score based on content and source metrics. It also analyzes images that contain text.",
-          "Its own local model (VeriAI) runs alongside the cloud APIs, and every 6,000 analyses it is fine-tuned on the resulting dataset. Now on version 2 (Qwen 2.5 7B), with a Qwen 3.5 7B variant training in parallel.",
+          "Its own model (VeriAI): the cloud API analyses build a dataset that I export and train on locally. Every 6,000 analyses a new version comes out: now on version 2 (Qwen 2.5 7B), with a Qwen 3.5 7B variant in parallel. It will go into production once it matches or beats the APIs.",
           "React 19 + Vite, Spring Boot, Spring Security + JWT, MySQL, i18n and failover rotation across 5 cloud AI providers (Cerebras, SambaNova, Gemini, Mistral and Cloudflare)."
         ]
       },
