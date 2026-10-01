@@ -10,6 +10,7 @@ css/styles.css   Estilos (tema claro y oscuro, diseño responsive)
 js/data.js       Todo el contenido del CV
 js/main.js       Genera las secciones a partir de data.js
 assets/          Foto y capturas de los proyectos
+assets/fonts/    Fuentes Fraunces, Inter y JetBrains Mono (licencia OFL)
 ```
 
 ## Editar el contenido

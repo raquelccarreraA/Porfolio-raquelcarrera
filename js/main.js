@@ -89,7 +89,8 @@
 
   function renderProjects() {
     $("projects").innerHTML = CV.projects.map((p) => {
-      const media = `${esc(p.name)}<img src="${p.image}" alt="${esc(ui().screenshot)} ${esc(p.name)}" loading="lazy" onerror="this.remove()">`;
+      const badge = p.badge ? `<span class="project__badge">${esc(t(p.badge))}</span>` : "";
+      const media = `${badge}${esc(p.name)}<img src="${p.image}" alt="${esc(ui().screenshot)} ${esc(p.name)}" loading="lazy" onerror="this.remove()">`;
       const style = `--c1:${p.colors[0]};--c2:${p.colors[1]}`;
       const actions = (p.url ? button(p.url, ui().viewProject, true) : "") + (p.repo ? button(p.repo, ui().code) : "");
       return `
@@ -114,7 +115,7 @@
   function renderTimeline(target, items) {
     $(target).innerHTML = items.map((i) => `
       <div class="tl-item reveal">
-        <p class="tl-item__date">${esc(t(i.date))}</p>
+        <p class="tl-item__date">${t(i.date).split(" · ").map((d) => `<span>${esc(d)}</span>`).join("")}</p>
         <h3>${esc(t(i.title))}</h3>
         <p class="tl-item__org">${esc(t(i.org))}</p>
         ${i.points ? list(i.points) : ""}

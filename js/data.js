@@ -59,6 +59,7 @@ const CV = {
         es: "Trabajo de Fin de Ciclo y proyecto personal",
         en: "Final degree project & personal project"
       },
+      badge: { gl: "● En produción", es: "● En producción", en: "● Live" },
       image: "assets/toveriai.png",
       colors: ["#1f3a66", "#5b7fb8"],
       url: "https://www.toveriai.com",
@@ -85,10 +86,11 @@ const CV = {
     {
       name: "ArgaQuest",
       kind: {
-        gl: "Plan Proxecta · Primeiro premio",
-        es: "Plan Proxecta · Primer premio",
-        en: "Plan Proxecta · First prize"
+        gl: "Plan Proxecta · Xogo educativo",
+        es: "Plan Proxecta · Juego educativo",
+        en: "Plan Proxecta · Educational game"
       },
+      badge: { gl: "🏆 Primeiro premio · Xunta de Galicia", es: "🏆 Primer premio · Xunta de Galicia", en: "🏆 First prize · Xunta de Galicia" },
       image: "assets/argaquest.png",
       colors: ["#3b2f4a", "#8a6bb0"],
       url: "https://argaquest.fernandowirtz.com/",
