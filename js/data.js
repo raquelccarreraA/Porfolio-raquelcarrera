@@ -123,9 +123,9 @@ const CV = {
   experience: [
     {
       date: {
-        gl: "Abril – Xullo 2025 · Marzo – Xullo 2026",
-        es: "Abril – Julio 2025 · Marzo – Julio 2026",
-        en: "Apr – Jul 2025 · Mar – Jul 2026"
+        gl: "Abril – Xullo 2025 (4 meses) · Marzo – Xullo 2026 (5 meses)",
+        es: "Abril – Julio 2025 (4 meses) · Marzo – Julio 2026 (5 meses)",
+        en: "Apr – Jul 2025 (4 months) · Mar – Jul 2026 (5 months)"
       },
       title: {
         gl: "Desenvolvedora en prácticas (FP Dual)",
