@@ -19,7 +19,7 @@
       button(`mailto:${CV.links.email}`, "Email");
     $("contact-actions").innerHTML =
       button(`mailto:${CV.links.email}`, CV.links.email, true) +
-      button(`tel:${CV.links.phone.replace(/\s/g, "")}`, CV.links.phone);
+      button(CV.links.linkedin, "LinkedIn");
   }
 
   function renderLetter() {
