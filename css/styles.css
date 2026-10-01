@@ -94,6 +94,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
 .project__kind { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0; }
 .project h3 { font-size: 22px; }
 .project ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+.project__press { margin: 0; font-size: 14px; color: var(--muted); }
+.project__press a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .project__footer { margin-top: auto; padding-top: 8px; display: flex; flex-direction: column; gap: 16px; }
 .project__actions { display: flex; flex-wrap: wrap; gap: 10px; }
 

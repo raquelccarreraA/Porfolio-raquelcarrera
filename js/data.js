@@ -110,7 +110,12 @@ const CV = {
           "React, SCSS, Java/Spring Boot (REST, WebSockets, JPA), Docker, JUnit, Git and Scrum."
         ]
       },
-      tags: ["React", "Spring Boot", "WebSockets", "Docker"]
+      tags: ["React", "Spring Boot", "WebSockets", "Docker"],
+      press: [                               // noticias sobre el proyecto
+        { label: "El Ideal Gallego", url: "https://www.elidealgallego.com/a-coruna/2026-05-27/o-ies-fernando-wirtz-da-coruna-recibe-2-000-euros-grazas-a-un-videoxogo-que-impulsa-a-lingua-galega-858142.html" },
+        { label: "Neofalantes", url: "https://neofalantes.gal/un-oso-letras-e-moito-vocabulario-asi-e-argaquest-o-videoxogo-galego-creado-nun-instituto-da-coruna/" },
+        { label: "CSIF", url: "https://www.csif.es/es/articulo/galicia/educacion/91509" }
+      ]
     }
   ],
 

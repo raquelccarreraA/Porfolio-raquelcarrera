@@ -8,21 +8,21 @@
       title: "Raquel Comesaña Carrera · Desenvolvedora Full Stack",
       nav: { proyectos: "Proxectos", "sobre-mi": "Sobre min", trayectoria: "Traxectoria", habilidades: "Habilidades", contacto: "Contacto" },
       projects: "Proxectos", about: "Sobre min", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Falamos?",
-      seeProjects: "Ver proxectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proxecto ↗", code: "Código", screenshot: "Captura de",
+      press: "Na prensa", seeProjects: "Ver proxectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proxecto ↗", code: "Código", screenshot: "Captura de",
       openMenu: "Abrir menú", closeMenu: "Pechar menú", toDark: "Cambiar a tema escuro", toLight: "Cambiar a tema claro", language: "Idioma"
     },
     es: {
       title: "Raquel Comesaña Carrera · Desarrolladora Full Stack",
       nav: { proyectos: "Proyectos", "sobre-mi": "Sobre mí", trayectoria: "Trayectoria", habilidades: "Habilidades", contacto: "Contacto" },
       projects: "Proyectos", about: "Sobre mí", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "¿Hablamos?",
-      seeProjects: "Ver proyectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proyecto ↗", code: "Código", screenshot: "Captura de",
+      press: "En prensa", seeProjects: "Ver proyectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proyecto ↗", code: "Código", screenshot: "Captura de",
       openMenu: "Abrir menú", closeMenu: "Cerrar menú", toDark: "Cambiar a tema oscuro", toLight: "Cambiar a tema claro", language: "Idioma"
     },
     en: {
       title: "Raquel Comesaña Carrera · Full Stack Developer",
       nav: { proyectos: "Projects", "sobre-mi": "About", trayectoria: "Background", habilidades: "Skills", contacto: "Contact" },
       projects: "Projects", about: "About me", experience: "Experience", education: "Education", skills: "Skills", contact: "Let's talk",
-      seeProjects: "See projects", downloadCv: "Download CV (PDF)", viewProject: "View project ↗", code: "Code", screenshot: "Screenshot of",
+      press: "In the press", seeProjects: "See projects", downloadCv: "Download CV (PDF)", viewProject: "View project ↗", code: "Code", screenshot: "Screenshot of",
       openMenu: "Open menu", closeMenu: "Close menu", toDark: "Switch to dark theme", toLight: "Switch to light theme", language: "Language"
     }
   };
@@ -101,6 +101,7 @@
             <p class="project__kind">${esc(t(p.kind))}</p>
             <h3>${esc(p.name)}</h3>
             ${list(p.points)}
+            ${p.press && p.press.length ? `<p class="project__press">${esc(ui().press)}: ${p.press.map((n) => `<a href="${n.url}" target="_blank" rel="noopener">${esc(n.label)}</a>`).join(" · ")}</p>` : ""}
             <div class="project__footer">
               ${chips(p.tags)}
               ${actions ? `<div class="project__actions">${actions}</div>` : ""}
