@@ -95,17 +95,17 @@ const CV = {
       repo: "",
       points: {
         gl: [
-          "Primeiro premio de Innovación Educativa en Dinamización Lingüística, concedido pola Xunta de Galicia.",
+          "Recoñecido como proxecto excelente e premiado pola Xunta de Galicia co Primeiro premio de Innovación Educativa en Dinamización Lingüística (curso 2025-26).",
           "Xogo educativo en galego que combina a aprendizaxe de vocabulario con dinámicas de xogo.",
           "React, SCSS, Java/Spring Boot (REST, WebSockets, JPA), Docker, JUnit, Git e Scrum."
         ],
         es: [
-          "Primer premio de Innovación Educativa en Dinamización Lingüística, concedido por la Xunta de Galicia.",
+          "Reconocido como proyecto excelente y premiado por la Xunta de Galicia con el Primer premio de Innovación Educativa en Dinamización Lingüística (curso 2025-26).",
           "Juego educativo en gallego que combina el aprendizaje de vocabulario con dinámicas de juego.",
           "React, SCSS, Java/Spring Boot (REST, WebSockets, JPA), Docker, JUnit, Git y Scrum."
         ],
         en: [
-          "First prize for Educational Innovation in Language Promotion, awarded by the Xunta de Galicia (Galician regional government).",
+          "Recognized as an outstanding project and awarded the First Prize for Educational Innovation in Language Promotion by the Xunta de Galicia, the Galician regional government (2025-26 school year).",
           "Educational game in Galician that combines vocabulary learning with game mechanics.",
           "React, SCSS, Java/Spring Boot (REST, WebSockets, JPA), Docker, JUnit, Git and Scrum."
         ]
