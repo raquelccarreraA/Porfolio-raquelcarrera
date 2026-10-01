@@ -112,7 +112,8 @@ const CV = {
       },
       tags: ["React", "Spring Boot", "WebSockets", "Docker"],
       press: [                               // noticias sobre el proyecto
-        { label: "El Ideal Gallego", url: "https://www.elidealgallego.com/a-coruna/2026-05-27/o-ies-fernando-wirtz-da-coruna-recibe-2-000-euros-grazas-a-un-videoxogo-que-impulsa-a-lingua-galega-858142.html" },
+        { label: { gl: "El Ideal Gallego (o xogo)", es: "El Ideal Gallego (el juego)", en: "El Ideal Gallego (the game)" }, url: "https://www.elidealgallego.com/a-coruna/2026-05-07/el-ies-fernando-wirtz-crea-argaquest-un-videojuego-para-dinamizar-la-lengua-gallega-854108.html" },
+        { label: { gl: "El Ideal Gallego (o premio)", es: "El Ideal Gallego (el premio)", en: "El Ideal Gallego (the prize)" }, url: "https://www.elidealgallego.com/a-coruna/2026-05-27/o-ies-fernando-wirtz-da-coruna-recibe-2-000-euros-grazas-a-un-videoxogo-que-impulsa-a-lingua-galega-858142.html" },
         { label: "Neofalantes", url: "https://neofalantes.gal/un-oso-letras-e-moito-vocabulario-asi-e-argaquest-o-videoxogo-galego-creado-nun-instituto-da-coruna/" },
         { label: "CSIF", url: "https://www.csif.es/es/articulo/galicia/educacion/91509" }
       ]
