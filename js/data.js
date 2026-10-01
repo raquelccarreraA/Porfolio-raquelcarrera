@@ -202,7 +202,7 @@ const CV = {
     { group: "Frontend", items: ["React", "Angular", "SCSS", "Vite"] },
     {
       group: { gl: "Intelixencia Artificial", es: "Inteligencia Artificial", en: "Artificial Intelligence" },
-      items: [{ gl: "Fine-tuning de LLMs", es: "Fine-tuning de LLMs", en: "LLM fine-tuning" }, "Qwen 2.5", "Qwen 3.5", "Ollama", "Cerebras", "SambaNova", "Gemini", "Mistral", "Cloudflare AI", "Groq"]
+      items: [{ gl: "Fine-tuning de LLMs", es: "Fine-tuning de LLMs", en: "LLM fine-tuning" }, "Qwen 2.5", "Qwen 3.5", "Llama 3.2", "Ollama", "Cerebras", "SambaNova", "Gemini", "Mistral", "Cloudflare AI", "Groq"]
     },
     { group: { gl: "Ferramentas", es: "Herramientas", en: "Tools" }, items: ["Git", "GitHub", "Docker", "JUnit", "Postman"] },
     {
