@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Raquel Comesaña Carrera · Full Stack Developer</title>
+  <meta name="description" content="Desarrolladora Full Stack: Java, Spring Boot, React. Creadora de toVeriAI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#inicio" class="nav__logo">RCC</a>
+      <nav class="nav__links" id="nav-links">
+        <a href="#presentacion">Presentación</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#formacion">Formación</a>
+        <a href="#skills">Skills</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">◐</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="inicio" class="hero container">
+      <div class="hero__text">
+        <p class="eyebrow" id="hero-location"></p>
+        <h1 id="hero-name"></h1>
+        <p class="hero__role" id="hero-role"></p>
+        <p class="hero__summary" id="hero-summary"></p>
+        <div class="hero__actions" id="hero-actions"></div>
+      </div>
+      <figure class="hero__photo">
+        <!-- Pon tu foto en assets/foto.jpg -->
+        <img src="assets/RCC.jpg" alt="Raquel Comesaña Carrera" onerror="this.remove()">
+        <span class="hero__initials">RC</span>
+      </figure>
+    </section>
+
+    <!-- CARTA DE PRESENTACIÓN -->
+    <section id="presentacion" class="section container">
+      <h2 class="section__title">Carta de presentación</h2>
+      <article class="letter reveal" id="letter"></article>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section container">
+      <h2 class="section__title">Proyectos</h2>
+      <div class="projects" id="projects"></div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="section container">
+      <h2 class="section__title">Experiencia</h2>
+      <div class="timeline" id="experience"></div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section id="formacion" class="section container">
+      <h2 class="section__title">Formación</h2>
+      <div class="timeline" id="education"></div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container">
+      <h2 class="section__title">Habilidades</h2>
+      <div class="skills" id="skills-grid"></div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section container contact">
+      <h2 class="section__title">¿Hablamos?</h2>
+      <p class="contact__text">Disponibilidad inmediata. Escríbeme y te respondo pronto.</p>
+      <div class="hero__actions" id="contact-actions"></div>
+    </section>
+  </main>
+
+  <footer class="footer container">© <span id="year"></span> Raquel Comesaña Carrera</footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
