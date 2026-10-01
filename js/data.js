@@ -210,7 +210,7 @@ const CV = {
       items: [
         "Scrum",
         { gl: "Castelán (nativo)", es: "Español (nativo)", en: "Spanish (native)" },
-        { gl: "Inglés (B1)", es: "Inglés (B1)", en: "English (B1)" }
+        { gl: "Inglés (B1/B2)", es: "Inglés (B1/B2)", en: "English (B1/B2)" }
       ]
     }
   ]
