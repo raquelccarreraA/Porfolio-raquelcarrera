@@ -3,10 +3,11 @@
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const list = (items) => `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
-  const button = (href, label, primary) => {
+  const button = (href, label, primary, extra = "") => {
     const external = /^https?:/.test(href) ? ' target="_blank" rel="noopener"' : "";
-    return `<a class="btn${primary ? " btn--primary" : ""}" href="${href}"${external}>${label}</a>`;
+    return `<a class="btn${primary ? " btn--primary" : ""}" href="${href}"${external}${extra}>${esc(label)}</a>`;
   };
+  const cvButton = () => (CV.links.cv ? button(CV.links.cv, "Descargar CV (PDF)", false, " download") : "");
 
   function renderHero() {
     $("hero-location").textContent = CV.location;
@@ -14,11 +15,14 @@
     $("hero-role").textContent = CV.role;
     $("hero-summary").textContent = CV.summary;
     $("hero-actions").innerHTML =
-      button(CV.links.linkedin, "LinkedIn", true) +
-      button(CV.links.github, "GitHub") +
-      button(`mailto:${CV.links.email}`, "Email");
+      button("#proyectos", "Ver proyectos", true) +
+      cvButton() +
+      button(CV.links.linkedin, "LinkedIn") +
+      button(CV.links.github, "GitHub");
+    if (CV.contact && CV.contact.text) $("contact-text").textContent = CV.contact.text;
     $("contact-actions").innerHTML =
       button(`mailto:${CV.links.email}`, CV.links.email, true) +
+      cvButton() +
       button(CV.links.linkedin, "LinkedIn");
   }
 
@@ -33,21 +37,23 @@
 
   function renderProjects() {
     $("projects").innerHTML = CV.projects.map((p) => {
-      const tag = p.url ? "a" : "div";
-      const attrs = p.url ? ` href="${p.url}" target="_blank" rel="noopener"` : "";
+      const media = `${esc(p.name)}<img src="${p.image}" alt="Captura de ${esc(p.name)}" loading="lazy" onerror="this.remove()">`;
+      const actions = (p.url ? button(p.url, "Ver proyecto ↗", true) : "") + (p.repo ? button(p.repo, "Código") : "");
       return `
-        <${tag} class="project reveal"${attrs}>
-          <div class="project__media" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">
-            ${esc(p.name)}<img src="${p.image}" alt="${esc(p.name)}" loading="lazy" onerror="this.remove()">
-          </div>
+        <article class="project reveal">
+          ${p.url
+            ? `<a class="project__media" href="${p.url}" target="_blank" rel="noopener" tabindex="-1" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">${media}</a>`
+            : `<div class="project__media" style="--c1:${p.colors[0]};--c2:${p.colors[1]}">${media}</div>`}
           <div class="project__body">
             <p class="project__kind">${esc(p.kind)}</p>
             <h3>${esc(p.name)}</h3>
             ${list(p.points)}
-            <div class="chips">${p.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join("")}</div>
-            ${p.url ? `<span class="project__link">Visitar proyecto →</span>` : ""}
+            <div class="project__footer">
+              <div class="chips">${p.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join("")}</div>
+              ${actions ? `<div class="project__actions">${actions}</div>` : ""}
+            </div>
           </div>
-        </${tag}>`;
+        </article>`;
     }).join("");
   }
 
@@ -72,9 +78,13 @@
   // El tema inicial se aplica en un script del <head> de index.html.
   function setupTheme() {
     const root = document.documentElement;
-    $("theme-toggle").addEventListener("click", () => {
+    const toggle = $("theme-toggle");
+    const label = () => toggle.setAttribute("aria-label", root.dataset.theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro");
+    label();
+    toggle.addEventListener("click", () => {
       const next = root.dataset.theme === "dark" ? "light" : "dark";
       root.dataset.theme = next;
+      label();
       try { localStorage.setItem("theme", next); } catch (e) {}
     });
   }
