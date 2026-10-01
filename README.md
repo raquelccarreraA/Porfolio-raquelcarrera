@@ -15,7 +15,20 @@ assets/          Foto y capturas de los proyectos
 ## Editar el contenido
 
 Todo el texto está en `js/data.js`. Cambia ese archivo y la web se actualiza sola; no hace falta tocar el HTML.
-El nombre, el rol y el resumen también aparecen en `index.html` (para buscadores y vistas previas al compartir el enlace), así que si los cambias, cámbialos en los dos sitios.
+El nombre, el rol y el resumen también aparecen en castellano en `index.html` (para buscadores y vistas previas al compartir el enlace), así que si los cambias, cámbialos en los dos sitios.
+
+## Idiomas
+
+La web está en gallego, castellano e inglés. En `js/data.js` cada texto traducible lleva sus tres versiones:
+
+```js
+role: { gl: "Desenvolvedora Full Stack", es: "Desarrolladora Full Stack", en: "Full Stack Developer" }
+```
+
+Los textos de la interfaz (menú, títulos, botones) están en `UI`, al principio de `js/main.js`.
+
+El idioma se elige así: `?lang=gl|es|en` en la URL, después el último elegido con el selector y después el del navegador. Si el navegador está en otro idioma, se muestra en inglés.
+Para mandar la web en un idioma concreto, comparte el enlace con `?lang=`, por ejemplo `…/Portfolio-Raquel-Comesa-a/?lang=en`.
 
 ## Ver en local
 
