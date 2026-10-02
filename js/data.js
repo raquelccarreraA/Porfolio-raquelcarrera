@@ -178,6 +178,15 @@ const CV = {
       org: "IES Fernando Wirtz Suárez"
     },
     {
+      date: "2026",
+      title: {
+        gl: "Curso de Project Management (220 h)",
+        es: "Curso de Project Management (220 h)",
+        en: "Project Management course (220 h)"
+      },
+      org: "Xunta de Galicia · Consultora Monte Alto"
+    },
+    {
       date: "2023 – 2025",
       title: {
         gl: "Máster en Programación Full Stack: aplicacións web",
@@ -209,6 +218,7 @@ const CV = {
       group: { gl: "Metodoloxía e idiomas", es: "Metodología e idiomas", en: "Methodology & languages" },
       items: [
         "Scrum",
+        { gl: "Xestión de proxectos", es: "Gestión de proyectos", en: "Project management" },
         { gl: "Castelán (nativo)", es: "Español (nativo)", en: "Spanish (native)" },
         { gl: "Inglés (B1/B2)", es: "Inglés (B1/B2)", en: "English (B1/B2)" }
       ]
