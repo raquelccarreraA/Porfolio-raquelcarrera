@@ -26,18 +26,18 @@
   <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body data-page="home">
 
   <header class="nav">
     <div class="container nav__inner">
       <a href="#inicio" class="nav__logo" aria-label="Raquel Comesaña Carrera"><span class="nav__mark" aria-hidden="true">RC</span><span class="nav__name">Raquel Comesaña</span></a>
       <button class="nav__menu" id="nav-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
       <nav class="nav__links" id="nav-links">
-        <a href="#proyectos">Proyectos</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#trayectoria">Trayectoria</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#proyectos" data-nav="proyectos">Proyectos</a>
+        <a href="#sobre-mi" data-nav="sobre-mi">Sobre mí</a>
+        <a href="#trayectoria" data-nav="trayectoria">Trayectoria</a>
+        <a href="#habilidades" data-nav="habilidades">Habilidades</a>
+        <a href="#contacto" data-nav="contacto">Contacto</a>
       </nav>
       <div class="lang-switch" id="lang-switch" role="group" aria-label="Idioma">
         <button type="button" data-lang="gl" lang="gl" title="Galego">GL</button>
@@ -54,25 +54,35 @@
   <main>
     <noscript><p class="container noscript">Activa JavaScript para ver el portfolio completo · Enable JavaScript to see the full portfolio.</p></noscript>
     <!-- HERO -->
-    <section id="inicio" class="hero container">
-      <div class="hero__text">
-        <p class="eyebrow" id="hero-location">A Coruña, Galicia</p>
-        <h1 id="hero-name">Raquel Comesaña Carrera</h1>
-        <p class="hero__role" id="hero-role">Desarrolladora Full Stack · Java y React</p>
-        <p class="hero__summary" id="hero-summary">Modernizo sistemas legacy y construyo aplicaciones web completas, del backend a la interfaz. Creadora de toVeriAI, una aplicación en producción. Ahora me especializo en IA y Big Data.</p>
-        <div class="hero__actions" id="hero-actions"></div>
+    <section id="inicio" class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow" id="hero-location">A Coruña, Galicia</p>
+          <h1 id="hero-name">Raquel <span class="hl">Comesaña Carrera</span></h1>
+          <p class="hero__role" id="hero-role">Desarrolladora Full Stack · Java y React</p>
+          <p class="hero__summary" id="hero-summary">Modernizo sistemas legacy y construyo aplicaciones web completas, del backend a la interfaz. Creadora de toVeriAI, una aplicación en producción. Ahora me especializo en IA y Big Data.</p>
+          <div class="hero__actions" id="hero-actions"></div>
+          <dl class="hero__stats" id="hero-stats"></dl>
+        </div>
+        <div class="hero__visual">
+          <figure class="hero__photo">
+            <!-- Foto: assets/RCC.jpg -->
+            <img src="assets/RCC.jpg" alt="Raquel Comesaña Carrera" onerror="this.remove()">
+            <span class="hero__initials">RC</span>
+          </figure>
+          <div class="collage" id="hero-collage"></div>
+        </div>
       </div>
-      <figure class="hero__photo">
-        <!-- Foto: assets/RCC.jpg -->
-        <img src="assets/RCC.jpg" alt="Raquel Comesaña Carrera" onerror="this.remove()">
-        <span class="hero__initials">RC</span>
-      </figure>
     </section>
 
     <!-- PROYECTOS -->
     <section id="proyectos" class="section section--band">
       <div class="container">
-        <h2 class="section__title" data-i18n="projects">Proyectos</h2>
+        <header class="section__head">
+          <h2 class="section__title" data-i18n="projects">Proyectos</h2>
+          <p class="section__intro" id="projects-intro"></p>
+        </header>
         <div class="projects" id="projects"></div>
       </div>
     </section>
