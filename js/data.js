@@ -31,6 +31,92 @@ const CV = {
     es: "Busco oportunidades para trabajar como programadora. Disponibilidad inmediata: escríbeme y te respondo pronto.",
     en: "I'm looking for opportunities to work as a developer. Available immediately: write to me and I'll get back to you soon."
   },
+  // Contacto: lo que busco (lo marcado draft solo se ve con ?borrador=1) y las vías de contacto.
+  lookingFor: [
+    {
+      text: {
+        gl: "Un posto de desenvolvedora full stack con Java, Spring Boot e React.",
+        es: "Un puesto de desarrolladora full stack con Java, Spring Boot y React.",
+        en: "A full stack developer role with Java, Spring Boot and React."
+      }
+    },
+    {
+      text: {
+        gl: "Proxectos nos que poida aplicar o que aprendo de IA e datos.",
+        es: "Proyectos en los que pueda aplicar lo que aprendo de IA y datos.",
+        en: "Projects where I can apply what I'm learning about AI and data."
+      }
+    },
+    {
+      text: {
+        gl: "Incorporación inmediata.",
+        es: "Incorporación inmediata.",
+        en: "Available to start immediately."
+      }
+    },
+    {
+      draft: true,
+      ask: {
+        gl: "Modalidade e localización: presencial na Coruña, híbrido, remoto?",
+        es: "Modalidad y ubicación: ¿presencial en A Coruña, híbrido, remoto?",
+        en: "Work mode and location: on-site in A Coruña, hybrid, remote?"
+      }
+    },
+    {
+      draft: true,
+      ask: {
+        gl: "Xornada: completa, parcial? Compatible coa especialización?",
+        es: "Jornada: ¿completa, parcial? ¿Compatible con la especialización?",
+        en: "Hours: full-time, part-time? Compatible with the specialization?"
+      }
+    }
+  ],
+
+  contactWays: [
+    {
+      type: "oferta",
+      icon: "briefcase",
+      title: {
+        gl: "Teño unha oferta para ti",
+        es: "Tengo una oferta para ti",
+        en: "I have a job for you"
+      },
+      text: {
+        gl: "Cóntame o posto e o equipo e respóndoche canto antes.",
+        es: "Cuéntame el puesto y el equipo y te respondo lo antes posible.",
+        en: "Tell me about the role and the team and I'll get back to you as soon as possible."
+      }
+    },
+    {
+      type: "colaborar",
+      icon: "users",
+      title: {
+        gl: "Colaborar nun proxecto",
+        es: "Colaborar en un proyecto",
+        en: "Collaborate on a project"
+      },
+      text: {
+        gl: "Un proxecto no que encaixaría? Falemos do que precisas.",
+        es: "¿Un proyecto en el que encajaría? Hablemos de qué necesitas.",
+        en: "A project I'd fit into? Let's talk about what you need."
+      }
+    },
+    {
+      type: "hablar",
+      icon: "message",
+      title: {
+        gl: "Só quero falar",
+        es: "Solo quiero hablar",
+        en: "I just want to talk"
+      },
+      text: {
+        gl: "Unha dúbida sobre os meus proxectos, un consello ou simplemente saudar.",
+        es: "Una duda sobre mis proyectos, un consejo o simplemente saludar.",
+        en: "A question about my projects, some advice or just saying hello."
+      }
+    }
+  ],
+
 
   // Sobre mí: el primer párrafo se muestra destacado.
   about: {
@@ -901,6 +987,33 @@ const CV = {
           ]
         },
         {
+          id: "role",
+          draft: true,
+          ask: {
+            gl: "Que fixeches ti en ArgaQuest? E nun equipo de cantas persoas?",
+            es: "¿Qué hiciste tú en ArgaQuest? (frontend, backend, WebSockets, diseño, coordinación…) y en un equipo de cuántas personas.",
+            en: "What did you do in ArgaQuest, and how big was the team?"
+          }
+        },
+        {
+          id: "steps",
+          draft: true,
+          ask: {
+            gl: "Como se xoga? En 3 ou 4 pasos.",
+            es: "¿Cómo se juega? Explícalo en 3 o 4 pasos (crear partida, unirse, retos…).",
+            en: "How is it played? In 3 or 4 steps."
+          }
+        },
+        {
+          id: "decisions",
+          draft: true,
+          ask: {
+            gl: "Algunha decisión técnica que queiras contar?",
+            es: "¿Alguna decisión técnica que quieras contar? Por ejemplo, por qué WebSockets para las partidas en tiempo real.",
+            en: "Any technical decision you want to explain?"
+          }
+        },
+        {
           id: "stack",
           stack: [
             {
@@ -963,6 +1076,7 @@ const CV = {
         es: "Desarrolladora en prácticas (FP Dual)",
         en: "Developer intern (dual vocational training)"
       },
+      slug: "seidor",
       org: "Seidor",
       points: {
         gl: [
@@ -983,6 +1097,198 @@ const CV = {
           "Modernized green-screen interfaces into a graphical React front end.",
           "Git/GitHub for IBM i code and teamwork with Scrum."
         ]
+      },
+      detail: {
+        colors: [
+          "#2c4a78",
+          "#5b7fb8"
+        ],
+        name: "Seidor",
+        kind: {
+          gl: "Experiencia · Desenvolvedora en prácticas (FP Dual)",
+          es: "Experiencia · Desarrolladora en prácticas (FP Dual)",
+          en: "Experience · Developer intern (dual vocational training)"
+        },
+        tagline: {
+          gl: "Modernización de aplicacións IBM i: da pantalla verde a React.",
+          es: "Modernización de aplicaciones IBM i: de la pantalla verde a React.",
+          en: "Modernizing IBM i applications: from green screen to React."
+        },
+        figures: [
+          {
+            value: "9",
+            label: {
+              gl: "meses de prácticas",
+              es: "meses de prácticas",
+              en: "months of internship"
+            }
+          },
+          {
+            value: "2",
+            label: {
+              gl: "períodos: 2025 e 2026",
+              es: "periodos: 2025 y 2026",
+              en: "periods: 2025 and 2026"
+            }
+          },
+          {
+            value: "IBM i",
+            label: {
+              gl: "sistemas AS/400 modernizados a web",
+              es: "sistemas AS/400 modernizados a web",
+              en: "AS/400 systems modernized for the web"
+            }
+          }
+        ],
+        sections: [
+          {
+            id: "about",
+            paragraphs: [
+              {
+                gl: "Fixen as prácticas da FP Dual en Seidor en dous períodos: de abril a xullo de 2025 e de marzo a xullo de 2026.",
+                es: "Hice las prácticas de la FP Dual en Seidor en dos periodos: de abril a julio de 2025 y de marzo a julio de 2026.",
+                en: "I did my dual vocational training internship at Seidor in two periods: April to July 2025 and March to July 2026."
+              },
+              {
+                gl: "Traballei na modernización de aplicacións IBM i (AS/400): levar a lóxica de negocio escrita en RPG e SQL a servizos REST e substituír as pantallas green-screen por interfaces en React.",
+                es: "Trabajé en la modernización de aplicaciones IBM i (AS/400): llevar la lógica de negocio escrita en RPG y SQL a servicios REST y sustituir las pantallas green-screen por interfaces en React.",
+                en: "I worked on modernizing IBM i (AS/400) applications: moving business logic written in RPG and SQL into REST services and replacing green-screen terminals with React interfaces."
+              }
+            ]
+          },
+          {
+            id: "role",
+            title: {
+              gl: "Que fixen",
+              es: "Qué hice",
+              en: "What I did"
+            },
+            list: [
+              {
+                gl: "Desenvolvemento en IBM i (AS/400): RPG FREE, SQL embebido e servizos REST.",
+                es: "Desarrollo en IBM i (AS/400): RPG FREE, SQL embebido y servicios REST.",
+                en: "IBM i (AS/400) development: RPG FREE, embedded SQL and REST services."
+              },
+              {
+                gl: "Modelos e migración a SQL con formato JSON orientado a React.",
+                es: "Modelos y migración a SQL con formateo JSON orientado a React.",
+                en: "Data models and migration to SQL with JSON output for React."
+              },
+              {
+                gl: "Modernización de interfaces green-screen a unha contorna gráfica React.",
+                es: "Modernización de interfaces green-screen a un entorno gráfico React.",
+                en: "Modernized green-screen interfaces into a graphical React front end."
+              },
+              {
+                gl: "Git/GitHub para código IBM i e traballo en equipo con Scrum.",
+                es: "Git/GitHub para código IBM i y trabajo en equipo con Scrum.",
+                en: "Git/GitHub for IBM i code and teamwork with Scrum."
+              }
+            ]
+          },
+          {
+            id: "projects",
+            title: {
+              gl: "Proxectos nos que participei",
+              es: "Proyectos en los que participé",
+              en: "Projects I worked on"
+            },
+            draft: true,
+            ask: {
+              gl: "En que tipo de proxectos ou aplicacións traballaches? (sen nomes de clientes se son confidenciais)",
+              es: "¿En qué tipo de proyectos o aplicaciones trabajaste? (sin nombres de clientes si son confidenciales)",
+              en: "What kind of projects or applications did you work on?"
+            }
+          },
+          {
+            id: "achievement",
+            title: {
+              gl: "Un logro concreto",
+              es: "Un logro concreto",
+              en: "A concrete achievement"
+            },
+            draft: true,
+            ask: {
+              gl: "Algo concreto do que esteas orgullosa? Mellor cun dato.",
+              es: "¿Algo concreto de lo que estés orgullosa? Mejor con un dato: pantallas migradas, tiempo ahorrado, algo que se puso en producción…",
+              en: "Something concrete you are proud of, ideally with a number."
+            }
+          },
+          {
+            id: "team",
+            title: {
+              gl: "Equipo e forma de traballo",
+              es: "Equipo y forma de trabajo",
+              en: "Team and way of working"
+            },
+            draft: true,
+            ask: {
+              gl: "Con canta xente traballabas e como vos organizabades?",
+              es: "¿Con cuánta gente trabajabas y cómo os organizabais (Scrum, sprints, revisiones de código…)?",
+              en: "How big was the team and how did you work?"
+            }
+          },
+          {
+            id: "stack",
+            stack: [
+              {
+                layer: {
+                  gl: "IBM i",
+                  es: "IBM i",
+                  en: "IBM i"
+                },
+                items: [
+                  "AS/400",
+                  "RPG FREE",
+                  "SQL embebido"
+                ]
+              },
+              {
+                layer: {
+                  gl: "Servizos",
+                  es: "Servicios",
+                  en: "Services"
+                },
+                items: [
+                  "APIs REST",
+                  "JSON"
+                ]
+              },
+              {
+                layer: {
+                  gl: "Interface",
+                  es: "Interfaz",
+                  en: "Front end"
+                },
+                items: [
+                  "React"
+                ]
+              },
+              {
+                layer: {
+                  gl: "Equipo",
+                  es: "Equipo",
+                  en: "Teamwork"
+                },
+                items: [
+                  "Git",
+                  "GitHub",
+                  "Scrum"
+                ]
+              }
+            ]
+          },
+          {
+            id: "learnings",
+            title: null,
+            draft: true,
+            ask: {
+              gl: "Que aprendiches en Seidor?",
+              es: "¿Qué aprendiste en Seidor? Dos o tres frases.",
+              en: "What did you learn at Seidor?"
+            }
+          }
+        ]
       }
     }
   ],
@@ -995,7 +1301,94 @@ const CV = {
         es: "Especialización Dual en IA y Big Data",
         en: "Dual Specialization Course in AI and Big Data"
       },
-      org: "IES Fernando Wirtz Suárez"
+      slug: "ia-big-data",
+      org: "IES Fernando Wirtz Suárez",
+      detail: {
+        colors: [
+          "#1f3a66",
+          "#8a6bb0"
+        ],
+        badge: {
+          gl: "● En curso",
+          es: "● En curso",
+          en: "● In progress"
+        },
+        kind: {
+          gl: "Formación · IES Fernando Wirtz Suárez · 2026 – 2027",
+          es: "Formación · IES Fernando Wirtz Suárez · 2026 – 2027",
+          en: "Education · IES Fernando Wirtz Suárez · 2026 – 2027"
+        },
+        tagline: {
+          gl: "A especialización que estou cursando agora para profundar en intelixencia artificial e datos.",
+          es: "La especialización que estoy cursando ahora para profundizar en inteligencia artificial y datos.",
+          en: "The specialization I'm taking now to go deeper into artificial intelligence and data."
+        },
+        sections: [
+          {
+            id: "about",
+            paragraphs: [
+              {
+                gl: "Curso de especialización dual en Intelixencia Artificial e Big Data no IES Fernando Wirtz Suárez, que estou cursando en 2026-2027.",
+                es: "Curso de especialización dual en Inteligencia Artificial y Big Data en el IES Fernando Wirtz Suárez, que estoy cursando en 2026-2027.",
+                en: "Dual specialization course in Artificial Intelligence and Big Data at IES Fernando Wirtz Suárez, which I'm taking in 2026-2027."
+              },
+              {
+                gl: "Combínoo con VeriAI, o modelo propio de toVeriAI que adestro en local.",
+                es: "Lo combino con VeriAI, el modelo propio de toVeriAI que entreno en local.",
+                en: "I combine it with VeriAI, toVeriAI's own model, which I train locally."
+              }
+            ]
+          },
+          {
+            id: "related",
+            title: {
+              gl: "Onde o aplico",
+              es: "Dónde lo aplico",
+              en: "Where I apply it"
+            },
+            related: [
+              {
+                kind: "project",
+                slug: "toveriai",
+                name: "toVeriAI",
+                text: {
+                  gl: "VeriAI: fine-tuning dun modelo propio co dataset da plataforma.",
+                  es: "VeriAI: fine-tuning de un modelo propio con el dataset de la plataforma.",
+                  en: "VeriAI: fine-tuning an in-house model on the platform's dataset."
+                }
+              }
+            ]
+          },
+          {
+            id: "modules",
+            title: {
+              gl: "Módulos e ferramentas",
+              es: "Módulos y herramientas",
+              en: "Modules and tools"
+            },
+            draft: true,
+            ask: {
+              gl: "Que módulos e ferramentas estás vendo?",
+              es: "¿Qué módulos y herramientas estás viendo (Python, ML, Spark, cloud…)?",
+              en: "Which modules and tools are you studying?"
+            }
+          },
+          {
+            id: "company",
+            title: {
+              gl: "Formación en empresa",
+              es: "Formación en empresa",
+              en: "Company training"
+            },
+            draft: true,
+            ask: {
+              gl: "Ao ser dual, en que empresa farás a parte práctica?",
+              es: "Al ser dual, ¿en qué empresa harás la parte práctica y en qué trabajarás? (si ya lo sabes)",
+              en: "Being dual, which company will you train at?"
+            }
+          }
+        ]
+      }
     },
     {
       date: "2024 – 2026",
@@ -1004,7 +1397,131 @@ const CV = {
         es: "FP Dual Desarrollo de Aplicaciones Web",
         en: "Higher Vocational Degree in Web Application Development (dual)"
       },
-      org: "IES Fernando Wirtz Suárez"
+      slug: "fp-daw",
+      org: "IES Fernando Wirtz Suárez",
+      detail: {
+        colors: [
+          "#7a3d1f",
+          "#a4532a"
+        ],
+        kind: {
+          gl: "Formación · IES Fernando Wirtz Suárez · 2024 – 2026",
+          es: "Formación · IES Fernando Wirtz Suárez · 2024 – 2026",
+          en: "Education · IES Fernando Wirtz Suárez · 2024 – 2026"
+        },
+        tagline: {
+          gl: "Ciclo superior dual: formación no instituto e prácticas en empresa.",
+          es: "Ciclo superior dual: formación en el instituto y prácticas en empresa.",
+          en: "Dual higher vocational degree: classes at school and an internship at a company."
+        },
+        figures: [
+          {
+            value: "2",
+            label: {
+              gl: "anos de ciclo",
+              es: "años de ciclo",
+              en: "years"
+            }
+          },
+          {
+            value: "9",
+            label: {
+              gl: "meses en empresa (Seidor)",
+              es: "meses en empresa (Seidor)",
+              en: "months at a company (Seidor)"
+            }
+          },
+          {
+            value: "2",
+            label: {
+              gl: "proxectos destacados",
+              es: "proyectos destacados",
+              en: "standout projects"
+            }
+          }
+        ],
+        sections: [
+          {
+            id: "about",
+            paragraphs: [
+              {
+                gl: "Ciclo superior de Desenvolvemento de Aplicacións Web en modalidade dual no IES Fernando Wirtz Suárez (A Coruña), de 2024 a 2026.",
+                es: "Ciclo superior de Desarrollo de Aplicaciones Web en modalidad dual en el IES Fernando Wirtz Suárez (A Coruña), de 2024 a 2026.",
+                en: "Higher vocational degree in Web Application Development, dual mode, at IES Fernando Wirtz Suárez (A Coruña), 2024 to 2026."
+              },
+              {
+                gl: "A parte en empresa fíxena en Seidor, e do ciclo saíron os meus dous proxectos principais: toVeriAI, o meu Traballo de Fin de Ciclo, e ArgaQuest, premiado pola Xunta de Galicia.",
+                es: "La parte en empresa la hice en Seidor, y del ciclo salieron mis dos proyectos principales: toVeriAI, mi Trabajo de Fin de Ciclo, y ArgaQuest, premiado por la Xunta de Galicia.",
+                en: "I did the company part at Seidor, and my two main projects came out of the course: toVeriAI, my final project, and ArgaQuest, awarded by the Xunta de Galicia."
+              }
+            ]
+          },
+          {
+            id: "related",
+            title: {
+              gl: "Proxectos e prácticas do ciclo",
+              es: "Proyectos y prácticas del ciclo",
+              en: "Projects and internship"
+            },
+            related: [
+              {
+                kind: "project",
+                slug: "toveriai",
+                name: "toVeriAI",
+                text: {
+                  gl: "Traballo de Fin de Ciclo, hoxe en produción.",
+                  es: "Trabajo de Fin de Ciclo, hoy en producción.",
+                  en: "Final project, now live."
+                }
+              },
+              {
+                kind: "project",
+                slug: "argaquest",
+                name: "ArgaQuest",
+                text: {
+                  gl: "Plan Proxecta · Primeiro premio da Xunta de Galicia.",
+                  es: "Plan Proxecta · Primer premio de la Xunta de Galicia.",
+                  en: "Plan Proxecta · First prize from the Xunta de Galicia."
+                }
+              },
+              {
+                kind: "trail",
+                slug: "seidor",
+                name: "Seidor",
+                text: {
+                  gl: "Prácticas de FP Dual: IBM i e React.",
+                  es: "Prácticas de FP Dual: IBM i y React.",
+                  en: "Dual training internship: IBM i and React."
+                }
+              }
+            ]
+          },
+          {
+            id: "modules",
+            title: {
+              gl: "Módulos e tecnoloxías do ciclo",
+              es: "Módulos y tecnologías del ciclo",
+              en: "Course modules and technologies"
+            },
+            draft: true,
+            ask: {
+              gl: "Que módulos ou tecnoloxías do ciclo queres destacar?",
+              es: "¿Qué módulos o tecnologías del ciclo quieres destacar?",
+              en: "Which modules or technologies do you want to highlight?"
+            }
+          },
+          {
+            id: "learnings",
+            title: null,
+            draft: true,
+            ask: {
+              gl: "Que levas do ciclo?",
+              es: "¿Qué te llevas del ciclo? Dos o tres frases.",
+              en: "What did you take away from the course?"
+            }
+          }
+        ]
+      }
     },
     {
       date: "2026",
