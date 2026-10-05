@@ -10,7 +10,7 @@ Web personal con mi CV: presentación, proyectos, experiencia, formación y habi
 index.html       Portada: presentación, proyectos, trayectoria, habilidades y contacto
 proyecto.html    Página de cada proyecto (proyecto.html?p=toveriai, ?p=argaquest)
 trayectoria.html Página de detalle de experiencia y formación (trayectoria.html?id=seidor, fp-daw, ia-big-data)
-contacto.html    Formulario de contacto (contacto.html?tipo=oferta, colaborar, hablar)
+contacto.html    Formulario de contacto (contacto.html?tipo=oferta, colaborar)
 css/styles.css   Estilos (tema claro y oscuro, diseño responsive)
 js/data.js       Todo el contenido del CV y de los proyectos
 js/main.js       Genera las dos páginas a partir de data.js
@@ -31,7 +31,7 @@ El nombre, el rol y el resumen también aparecen en castellano en `index.html` (
 ## Trayectoria y contacto
 
 Las entradas de `CV.experience` y `CV.education` que llevan `slug` y `detail` tienen página propia y un enlace «Ver más» en la portada. `detail` usa el mismo formato que los proyectos.
-El contacto de la portada se genera con `CV.contactWays` (las tres vías, cada una con su formulario) y `CV.lookingFor` («Lo que busco»). El formulario no envía nada por sí mismo: prepara el correo y lo abre en la aplicación de correo de quien escribe, con un botón para copiarlo si no se abre.
+El contacto de la portada se genera con `CV.contactWays` (las vías de contacto, cada una con su formulario) y `CV.lookingFor` («Lo que busco»). El formulario no envía nada por sí mismo: prepara el correo y lo abre en la aplicación de correo de quien escribe, con un botón para copiarlo si no se abre.
 
 ## Modo borrador
 

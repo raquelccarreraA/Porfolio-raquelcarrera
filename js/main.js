@@ -61,7 +61,7 @@
         note: "Ao envialo abrirase a túa aplicación de correo coa mensaxe xa preparada para {email}. Só tes que revisala e envíala.",
         readyTitle: "Mensaxe preparada", readyText: "Se non se abriu o teu correo, copia a mensaxe e envíaa a {email}.",
         copy: "Copiar mensaxe", reopen: "Abrir de novo o correo",
-        subject: { oferta: "Oferta de traballo", colaborar: "Proposta de colaboración", hablar: "Contacto desde o teu portfolio" }
+        subject: { oferta: "Oferta de traballo", colaborar: "Proposta de colaboración" }
       }
     },
     es: {
@@ -76,7 +76,7 @@
         note: "Al enviarlo se abrirá tu aplicación de correo con el mensaje ya preparado para {email}. Solo tienes que revisarlo y enviarlo.",
         readyTitle: "Mensaje preparado", readyText: "Si no se ha abierto tu correo, copia el mensaje y envíalo a {email}.",
         copy: "Copiar mensaje", reopen: "Abrir de nuevo el correo",
-        subject: { oferta: "Oferta de trabajo", colaborar: "Propuesta de colaboración", hablar: "Contacto desde tu portfolio" }
+        subject: { oferta: "Oferta de trabajo", colaborar: "Propuesta de colaboración" }
       }
     },
     en: {
@@ -91,7 +91,7 @@
         note: "When you send it, your email app will open with the message ready for {email}. Just review it and send it.",
         readyTitle: "Message ready", readyText: "If your email app didn't open, copy the message and send it to {email}.",
         copy: "Copy message", reopen: "Open the email again",
-        subject: { oferta: "Job offer", colaborar: "Collaboration proposal", hablar: "Message from your portfolio" }
+        subject: { oferta: "Job offer", colaborar: "Collaboration proposal" }
       }
     }
   };
@@ -262,12 +262,11 @@
     } catch (e) {}
   }
 
-  // ===== Formulario de contacto (contacto.html?tipo=oferta|colaborar|hablar) =====
+  // ===== Formulario de contacto (contacto.html?tipo=oferta|colaborar) =====
   // La web es estática: el formulario prepara el correo y lo abre en la aplicación de quien escribe.
   const FORMS = {
     oferta: [["name", true], ["email", true, "email"], ["company", true], ["role", true], ["where", false], ["message", false, "textarea"]],
-    colaborar: [["name", true], ["email", true, "email"], ["project", true, "textarea"], ["message", false, "textarea"]],
-    hablar: [["name", true], ["email", true, "email"], ["message", true, "textarea"]]
+    colaborar: [["name", true], ["email", true, "email"], ["project", true, "textarea"], ["message", false, "textarea"]]
   };
 
   function renderContactPage() {
