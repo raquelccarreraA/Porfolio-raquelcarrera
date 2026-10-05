@@ -2,7 +2,7 @@
 
 Web personal con mi CV: presentación, proyectos, experiencia, formación y habilidades.
 
-**Ver la web:** <https://raquelccarreraa.github.io/Porfolio-raquelcarerra/>
+**Ver la web:** <https://raquelccarreraa.github.io/Porfolio-raquelcarrera/>
 
 ## Estructura
 
@@ -48,7 +48,7 @@ role: { gl: "Desenvolvedora Full Stack", es: "Desarrolladora Full Stack", en: "F
 Los textos de la interfaz (menú, títulos, botones) están en `UI`, al principio de `js/main.js`.
 
 El idioma se elige así: `?lang=gl|es|en` en la URL, después el último elegido con el selector y después el del navegador. Si el navegador está en otro idioma, se muestra en inglés.
-Para mandar la web en un idioma concreto, comparte el enlace con `?lang=`, por ejemplo `…/Porfolio-raquelcarerra/?lang=en`.
+Para mandar la web en un idioma concreto, comparte el enlace con `?lang=`, por ejemplo `…/Porfolio-raquelcarrera/?lang=en`.
 
 ## Caché del navegador
 
