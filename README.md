@@ -7,13 +7,19 @@ Web personal con mi CV: presentación, proyectos, experiencia, formación y habi
 ## Estructura
 
 ```
-index.html       Estructura de la página
+index.html       Portada: presentación, proyectos, trayectoria, habilidades y contacto
+proyecto.html    Página de cada proyecto (proyecto.html?p=toveriai, ?p=argaquest)
 css/styles.css   Estilos (tema claro y oscuro, diseño responsive)
-js/data.js       Todo el contenido del CV
-js/main.js       Genera las secciones a partir de data.js
+js/data.js       Todo el contenido del CV y de los proyectos
+js/main.js       Genera las dos páginas a partir de data.js
 assets/          Foto y capturas de los proyectos
 assets/fonts/    Fuentes Fraunces, Inter y JetBrains Mono (licencia OFL)
 ```
+
+## Proyectos
+
+Cada proyecto de `CV.projects` tiene una tarjeta en la portada (nombre, tipo, resumen, captura y tecnologías) y su propia página con cifras, capturas y secciones desplegables.
+Las secciones se definen en `sections`; según los datos que lleven se muestran como texto (`paragraphs`), lista (`list`), tarjetas con icono (`features`), pasos (`steps`), pesos (`items`), ficha técnica (`stack`), hitos (`milestones`) o prensa (`press`).
 
 ## Editar el contenido
 
