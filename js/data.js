@@ -100,20 +100,6 @@ const CV = {
         es: "¿Un proyecto en el que encajaría? Hablemos de qué necesitas.",
         en: "A project I'd fit into? Let's talk about what you need."
       }
-    },
-    {
-      type: "hablar",
-      icon: "message",
-      title: {
-        gl: "Só quero falar",
-        es: "Solo quiero hablar",
-        en: "I just want to talk"
-      },
-      text: {
-        gl: "Unha dúbida sobre os meus proxectos, un consello ou simplemente saudar.",
-        es: "Una duda sobre mis proyectos, un consejo o simplemente saludar.",
-        en: "A question about my projects, some advice or just saying hello."
-      }
     }
   ],
 
