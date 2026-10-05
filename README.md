@@ -2,7 +2,7 @@
 
 Web personal con mi CV: presentación, proyectos, experiencia, formación y habilidades.
 
-**Ver la web:** <https://raquelccarreraa.github.io/Portfolio-raquelcarerra/>
+**Ver la web:** <https://raquelccarreraa.github.io/Porfolio-raquelcarerra/>
 
 ## Estructura
 
