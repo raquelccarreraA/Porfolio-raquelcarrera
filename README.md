@@ -39,6 +39,10 @@ Los textos de la interfaz (menú, títulos, botones) están en `UI`, al principi
 El idioma se elige así: `?lang=gl|es|en` en la URL, después el último elegido con el selector y después el del navegador. Si el navegador está en otro idioma, se muestra en inglés.
 Para mandar la web en un idioma concreto, comparte el enlace con `?lang=`, por ejemplo `…/Portfolio-raquelcarerra/?lang=en`.
 
+## Caché del navegador
+
+`index.html` y `proyecto.html` cargan `styles.css`, `data.js` y `main.js` con `?v=…` al final. Si cambias alguno de esos archivos, cambia ese número en los dos HTML: así los navegadores descargan la versión nueva en vez de usar la que tienen guardada.
+
 ## Ver en local
 
 Abre `index.html` en el navegador. No necesita instalación ni dependencias.
