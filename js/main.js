@@ -46,6 +46,57 @@
     }
   };
 
+
+  // Textos de trayectoria, contacto y formulario.
+  const UI_MORE = {
+    gl: {
+      more: "Ver máis", summaryTitle: "En resumo", ctaTextTrail: "Teño dispoñibilidade inmediata. Escríbeme e falamos.", backTrail: "Volver á traxectoria", nextTrail: "Seguinte", writeMe: "Escríbeme",
+      draft: "Pendente", draftNote: "Modo borrador: as seccións con borde descontinuo só se ven aquí, ata que as completemos.",
+      lookingFor: "O que busco", nextSteps: "Como seguimos", goForm: "Ir ao formulario", orDirect: "Ou escríbeme directamente",
+      copyEmail: "Copiar email", copied: "Copiado",
+      steps: ["Escríbesme co formulario ou por email.", "Respóndoche canto antes.", "Falamos nunha chamada ou entrevista."],
+      form: {
+        back: "Volver a contacto", name: "Nome", email: "O teu correo", emailBody: "Correo", company: "Empresa", role: "Posto", where: "Localización e modalidade",
+        project: "O proxecto", message: "Mensaxe", optional: "opcional", submit: "Preparar o correo",
+        note: "Ao envialo abrirase a túa aplicación de correo coa mensaxe xa preparada para {email}. Só tes que revisala e envíala.",
+        readyTitle: "Mensaxe preparada", readyText: "Se non se abriu o teu correo, copia a mensaxe e envíaa a {email}.",
+        copy: "Copiar mensaxe", reopen: "Abrir de novo o correo",
+        subject: { oferta: "Oferta de traballo", colaborar: "Proposta de colaboración", hablar: "Contacto desde o teu portfolio" }
+      }
+    },
+    es: {
+      more: "Ver más", summaryTitle: "En resumen", ctaTextTrail: "Tengo disponibilidad inmediata. Escríbeme y hablamos.", backTrail: "Volver a trayectoria", nextTrail: "Siguiente", writeMe: "Escríbeme",
+      draft: "Pendiente", draftNote: "Modo borrador: las secciones con borde discontinuo solo se ven aquí, hasta que las completemos.",
+      lookingFor: "Lo que busco", nextSteps: "Cómo seguimos", goForm: "Ir al formulario", orDirect: "O escríbeme directamente",
+      copyEmail: "Copiar email", copied: "Copiado",
+      steps: ["Me escribes con el formulario o por email.", "Te respondo lo antes posible.", "Hablamos en una llamada o entrevista."],
+      form: {
+        back: "Volver a contacto", name: "Nombre", email: "Tu correo", emailBody: "Correo", company: "Empresa", role: "Puesto", where: "Ubicación y modalidad",
+        project: "El proyecto", message: "Mensaje", optional: "opcional", submit: "Preparar el correo",
+        note: "Al enviarlo se abrirá tu aplicación de correo con el mensaje ya preparado para {email}. Solo tienes que revisarlo y enviarlo.",
+        readyTitle: "Mensaje preparado", readyText: "Si no se ha abierto tu correo, copia el mensaje y envíalo a {email}.",
+        copy: "Copiar mensaje", reopen: "Abrir de nuevo el correo",
+        subject: { oferta: "Oferta de trabajo", colaborar: "Propuesta de colaboración", hablar: "Contacto desde tu portfolio" }
+      }
+    },
+    en: {
+      more: "Read more", summaryTitle: "In short", ctaTextTrail: "I'm available immediately. Write to me and let's talk.", backTrail: "Back to background", nextTrail: "Next", writeMe: "Write to me",
+      draft: "Pending", draftNote: "Draft mode: sections with a dashed border are only shown here until we fill them in.",
+      lookingFor: "What I'm looking for", nextSteps: "What happens next", goForm: "Go to the form", orDirect: "Or write to me directly",
+      copyEmail: "Copy email", copied: "Copied",
+      steps: ["You write to me via the form or by email.", "I reply as soon as possible.", "We talk on a call or in an interview."],
+      form: {
+        back: "Back to contact", name: "Name", email: "Your email", emailBody: "Email", company: "Company", role: "Role", where: "Location and work mode",
+        project: "The project", message: "Message", optional: "optional", submit: "Prepare the email",
+        note: "When you send it, your email app will open with the message ready for {email}. Just review it and send it.",
+        readyTitle: "Message ready", readyText: "If your email app didn't open, copy the message and send it to {email}.",
+        copy: "Copy message", reopen: "Open the email again",
+        subject: { oferta: "Job offer", colaborar: "Collaboration proposal", hablar: "Message from your portfolio" }
+      }
+    }
+  };
+  LANGS.forEach((l) => Object.assign(UI[l], UI_MORE[l]));
+
   // Iconos de trazo (Lucide, licencia ISC), usados en características y botones.
   const ICONS = {
     gauge: '<path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/>',
@@ -59,7 +110,13 @@
     progress: '<path d="M21 12a9 9 0 1 1-6.2-8.6"/>',
     todo: '<circle cx="12" cy="12" r="9" stroke-dasharray="3 3"/>',
     arrow: '<path d="M7 7h10v10"/><path d="M7 17 17 7"/>',
-    back: '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>'
+    back: '<path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>',
+    briefcase: '<rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+    users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/>',
+    message: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+    copy: '<rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+    mail: '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-9 5.7a2 2 0 0 1-2 0L2 7"/>',
+    send: '<path d="M14.5 21.7a.5.5 0 0 0 .9-.1l6.5-19a.5.5 0 0 0-.6-.6l-19 6.5a.5.5 0 0 0-.1.9l7.9 3.2a2 2 0 0 1 1.1 1.1z"/><path d="m21.9 2.1-10.9 10.9"/>'
   };
   const icon = (name) => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] || ICONS.lightbulb}</svg>`;
 
@@ -78,8 +135,13 @@
     return `<a class="btn${primary ? " btn--primary" : ""}" href="${href}"${external}${extra}>${esc(label)}</a>`;
   };
   const cvButton = () => (CV.links.cv ? button(CV.links.cv, ui().downloadCv, false, " download") : "");
-  const projectUrl = (slug) => `proyecto.html?p=${slug}&lang=${lang}`;
-  const homeUrl = (hash = "") => (page === "home" ? hash : `index.html?lang=${lang}${hash}`);
+  // ?borrador=1 muestra las secciones pendientes de completar (draft) y se mantiene al navegar.
+  const draftMode = new URLSearchParams(location.search).has("borrador");
+  const query = () => `lang=${lang}${draftMode ? "&borrador=1" : ""}`;
+  const projectUrl = (slug) => `proyecto.html?p=${slug}&${query()}`;
+  const trailUrl = (slug) => `trayectoria.html?id=${slug}&${query()}`;
+  const contactUrl = (type) => `contacto.html?tipo=${type}&${query()}`;
+  const homeUrl = (hash = "") => (page === "home" ? hash : `index.html?${query()}${hash}`);
   const accent = (p) => `--c1:${p.colors[0]};--c2:${p.colors[1]}`;
 
   function detectLang() {
@@ -162,10 +224,105 @@
 
   function renderContact() {
     $("contact-text").textContent = t(CV.contact);
+    $("contact-ways").innerHTML = CV.contactWays.map((w) => `
+      <li><a class="way reveal" href="${contactUrl(w.type)}">
+        <span class="features__icon">${icon(w.icon)}</span>
+        <h3>${esc(t(w.title))}</h3>
+        <p>${esc(t(w.text))}</p>
+        <span class="way__go">${esc(ui().goForm)} ${icon("arrow")}</span>
+      </a></li>`).join("");
+    $("contact-guide").innerHTML = `
+      <div>
+        <h3>${esc(ui().lookingFor)}</h3>
+        <ul class="checks">${CV.lookingFor.filter((x) => !x.draft || draftMode).map((x) => x.draft
+          ? `<li class="checks__draft">${icon("todo")} <span><strong>${esc(ui().draft)}:</strong> ${esc(t(x.ask))}</span></li>`
+          : `<li>${icon("check")} <span>${esc(t(x.text))}</span></li>`).join("")}</ul>
+      </div>
+      <div>
+        <h3>${esc(ui().nextSteps)}</h3>
+        <ol class="nsteps">${ui().steps.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>
+      </div>`;
     $("contact-actions").innerHTML =
+      `<span class="contact__or">${esc(ui().orDirect)}</span>` +
       button(`mailto:${CV.links.email}`, CV.links.email, true) +
+      `<button type="button" class="btn" id="copy-email">${icon("copy")} <span>${esc(ui().copyEmail)}</span></button>` +
       cvButton() +
-      button(CV.links.linkedin, "LinkedIn");
+      button(CV.links.linkedin, "LinkedIn") +
+      button(CV.links.github, "GitHub");
+    $("copy-email").addEventListener("click", (e) => copyText(CV.links.email, e.currentTarget.querySelector("span")));
+  }
+
+  // Copia al portapapeles y confirma en la etiqueta del botón durante un momento.
+  async function copyText(text, label) {
+    try {
+      await navigator.clipboard.writeText(text);
+      const before = label.textContent;
+      label.textContent = ui().copied;
+      setTimeout(() => (label.textContent = before), 1800);
+    } catch (e) {}
+  }
+
+  // ===== Formulario de contacto (contacto.html?tipo=oferta|colaborar|hablar) =====
+  // La web es estática: el formulario prepara el correo y lo abre en la aplicación de quien escribe.
+  const FORMS = {
+    oferta: [["name", true], ["email", true, "email"], ["company", true], ["role", true], ["where", false], ["message", false, "textarea"]],
+    colaborar: [["name", true], ["email", true, "email"], ["project", true, "textarea"], ["message", false, "textarea"]],
+    hablar: [["name", true], ["email", true, "email"], ["message", true, "textarea"]]
+  };
+
+  function renderContactPage() {
+    const type = FORMS[new URLSearchParams(location.search).get("tipo")] ? new URLSearchParams(location.search).get("tipo") : "oferta";
+    const way = CV.contactWays.find((w) => w.type === type);
+    const f = ui().form;
+    document.title = `${t(way.title)} · ${CV.name}`;
+    const field = ([key, required, kind]) => `
+      <label class="field${kind === "textarea" ? " field--wide" : ""}">
+        <span>${esc(f[key])}${required ? "" : ` <em>(${esc(f.optional)})</em>`}</span>
+        ${kind === "textarea"
+          ? `<textarea name="${key}" rows="5"${required ? " required" : ""}></textarea>`
+          : `<input name="${key}" type="${kind || "text"}"${required ? " required" : ""}${key === "name" ? ' autocomplete="name"' : key === "email" ? ' autocomplete="email"' : ""}>`}
+      </label>`;
+    $("contact-page").innerHTML = `
+      <section class="phead">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container form-wrap">
+          <a class="phead__back" href="${homeUrl("#contacto")}">${icon("back")} ${esc(f.back)}</a>
+          <nav class="form-tabs">${CV.contactWays.map((w) => `<a href="${contactUrl(w.type)}"${w.type === type ? ' aria-current="page"' : ""}>${icon(w.icon)} ${esc(t(w.title))}</a>`).join("")}</nav>
+          <h1>${esc(t(way.title))}</h1>
+          <p class="phead__tagline">${esc(t(way.text))}</p>
+          <form class="form" id="contact-form">
+            ${FORMS[type].map(field).join("")}
+            <p class="form__note">${esc(f.note.replace("{email}", CV.links.email))}</p>
+            <button type="submit" class="btn btn--primary">${icon("send")} ${esc(f.submit)}</button>
+          </form>
+          <div class="form__ready" id="form-ready" hidden></div>
+        </div>
+      </section>`;
+
+    $("contact-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = new FormData(e.currentTarget);
+      const lines = FORMS[type]
+        .map(([key]) => [key === "email" ? f.emailBody : f[key], String(data.get(key) || "").trim()])
+        .filter(([, v]) => v)
+        .map(([k, v]) => (v.includes("\n") || v.length > 80 ? `${k}:\n${v}` : `${k}: ${v}`));
+      const who = data.get("company") || data.get("name");
+      const subject = `${f.subject[type]} · ${who}`;
+      const body = lines.join("\n\n");
+      const mailto = `mailto:${CV.links.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const ready = $("form-ready");
+      ready.hidden = false;
+      ready.innerHTML = `
+        <h2>${icon("check")} ${esc(f.readyTitle)}</h2>
+        <p>${esc(f.readyText.replace("{email}", CV.links.email))}</p>
+        <pre>${esc(subject + "\n\n" + body)}</pre>
+        <div class="hero__actions">
+          <button type="button" class="btn" id="copy-msg">${icon("copy")} <span>${esc(f.copy)}</span></button>
+          <a class="btn" href="${mailto}">${icon("mail")} ${esc(f.reopen)}</a>
+        </div>`;
+      $("copy-msg").addEventListener("click", (ev) => copyText(`${CV.links.email}\n${subject}\n\n${body}`, ev.currentTarget.querySelector("span")));
+      window.location.href = mailto;
+    });
   }
 
   function renderAbout() {
@@ -202,6 +359,7 @@
         <h3>${esc(t(i.title))}</h3>
         <p class="tl-item__org">${esc(t(i.org))}</p>
         ${i.points ? list(i.points) : ""}
+        ${i.slug && i.detail ? `<a class="tl-item__more" href="${trailUrl(i.slug)}">${esc(ui().more)} ${icon("arrow")}</a>` : ""}
       </div>`).join("");
   }
 
@@ -213,15 +371,18 @@
       </div>`).join("");
   }
 
-  // ===== Página de proyecto =====
+  // ===== Páginas de detalle (proyectos y trayectoria) =====
 
-  const open = new Set(["about", "role", "features"]); // secciones desplegadas al entrar
+  const open = new Set(["about", "role", "features", "related"]); // secciones desplegadas al entrar
+  const trail = () => [...CV.experience, ...CV.education].filter((e) => e.slug && e.detail);
 
   function sectionTitle(s) {
-    return s.title ? t(s.title) : ui().sec[s.id];
+    if (s.title) return t(s.title);
+    return page === "trail" && s.id === "about" ? ui().summaryTitle : ui().sec[s.id];
   }
 
   function sectionBody(s, p) {
+    if (s.draft) return `<p class="fold__ask"><strong>${esc(ui().draft)}:</strong> ${esc(t(s.ask))}</p>`;
     if (s.paragraphs) return `<div class="prose">${s.paragraphs.map((x) => `<p>${esc(t(x))}</p>`).join("")}</div>`;
     if (s.list) return `<div class="prose">${list(s.list)}</div>`;
     if (s.features) return `<ul class="features">${s.features.map((f) => `
@@ -236,51 +397,68 @@
         <div><p class="milestone__title">${esc(t(m.name))}<span class="milestone__state">${esc(ui().state[m.state])}</span></p>
         ${m.detail ? `<p class="milestone__detail">${esc(t(m.detail))}</p>` : ""}</div>
       </li>`).join("")}</ol>`;
+    if (s.related) return `<ul class="related">${s.related.map((r) => `
+      <li><a href="${r.kind === "project" ? projectUrl(r.slug) : trailUrl(r.slug)}"><strong>${esc(r.name)} ${icon("arrow")}</strong><span>${esc(t(r.text))}</span></a></li>`).join("")}</ul>`;
     if (s.press) return `<ul class="press">${p.press.map((n) => `<li><a href="${n.url}" target="_blank" rel="noopener">${esc(t(n.label))} ${icon("arrow")}</a></li>`).join("")}</ul>`;
     return "";
   }
 
   function sectionCount(s) {
-    const n = (s.features || s.steps || s.items || s.milestones || s.list || []).length;
+    const n = (s.features || s.steps || s.items || s.milestones || s.list || s.related || []).length;
     return n ? `<span class="fold__count">${n}</span>` : "";
   }
 
-  function renderProjectPage() {
-    const slug = new URLSearchParams(location.search).get("p");
-    const p = CV.projects.find((x) => x.slug === slug);
+  // Busca qué mostrar: un proyecto (proyecto.html?p=) o una entrada de trayectoria (trayectoria.html?id=).
+  function currentDetail() {
+    const params = new URLSearchParams(location.search);
+    if (page === "project") {
+      const p = CV.projects.find((x) => x.slug === params.get("p"));
+      return { item: p, list: CV.projects, url: (x) => projectUrl(x.slug), back: [homeUrl("#proyectos"), ui().back] };
+    }
+    const e = trail().find((x) => x.slug === params.get("id"));
+    // Una entrada de trayectoria toma su nombre de title y su detalle de detail.
+    const asItem = (x) => x && { name: x.detail.name || x.title, ...x.detail, slug: x.slug };
+    return { item: asItem(e), list: trail().map(asItem), url: (x) => trailUrl(x.slug), back: [homeUrl("#trayectoria"), ui().backTrail] };
+  }
+
+  function renderDetailPage() {
+    const { item: p, list: all, url, back } = currentDetail();
     const root = $("project-page");
     if (!p) {
-      root.innerHTML = `<div class="container section"><p>${esc(ui().notFound)}</p><p>${button(homeUrl("#proyectos"), ui().back, true)}</p></div>`;
+      root.innerHTML = `<div class="container section"><p>${esc(ui().notFound)}</p><p>${button(back[0], back[1], true)}</p></div>`;
       return;
     }
-    document.title = `${p.name} · ${CV.name}`;
-    const next = CV.projects[(CV.projects.indexOf(p) + 1) % CV.projects.length];
+    const name = t(p.name);
+    document.title = `${name} · ${CV.name}`;
+    const sections = p.sections.filter((s) => !s.draft || draftMode);
+    const next = all[(all.findIndex((x) => x.slug === p.slug) + 1) % all.length];
     const actions =
       (p.url ? button(p.url, ui().visit, true) : "") +
       (p.repo ? button(p.repo, ui().repo) : "") +
-      button(`mailto:${CV.links.email}`, CV.links.email);
+      button(contactUrl("oferta"), ui().writeMe, !p.url);
 
     root.style.cssText = accent(p);
     root.innerHTML = `
       <header class="phead">
         <div class="hero__bg" aria-hidden="true"></div>
-        <div class="container phead__grid">
+        <div class="container phead__grid${p.cover ? "" : " phead__grid--solo"}">
           <div>
-            <a class="phead__back" href="${homeUrl("#proyectos")}">${icon("back")} ${esc(ui().back)}</a>
+            <a class="phead__back" href="${back[0]}">${icon("back")} ${esc(back[1])}</a>
             <p class="eyebrow">${esc(t(p.kind))}</p>
-            <h1>${p.icon ? `<img src="${p.icon}" alt="" class="phead__icon">` : ""}${esc(p.name)}</h1>
+            <h1>${p.icon ? `<img src="${p.icon}" alt="" class="phead__icon">` : ""}${esc(name)}</h1>
             <p class="phead__tagline">${esc(t(p.tagline))}</p>
-            <p class="phead__meta"><span class="badge">${esc(t(p.badge))}</span><span>${esc(t(p.phase))}</span></p>
+            ${p.badge || p.phase || p.date ? `<p class="phead__meta">${p.badge ? `<span class="badge">${esc(t(p.badge))}</span>` : ""}${p.phase ? `<span>${esc(t(p.phase))}</span>` : ""}</p>` : ""}
             <div class="hero__actions">${actions}</div>
           </div>
-          <figure class="window" aria-hidden="true">
+          ${p.cover ? `<figure class="window" aria-hidden="true">
             <span class="window__bar"><i></i><i></i><i></i></span>
             <img src="${p.cover.src}" alt="">
-          </figure>
+          </figure>` : ""}
         </div>
       </header>
 
       <div class="container pbody">
+        ${draftMode ? `<p class="draft-note">${esc(ui().draftNote)}</p>` : ""}
         ${p.figures && p.figures.length ? `<ul class="figures">${p.figures.map((f) => `<li><strong>${esc(f.value)}</strong><span>${esc(t(f.label))}</span></li>`).join("")}</ul>` : ""}
 
         ${p.gallery && p.gallery.length ? `
@@ -290,25 +468,25 @@
         </section>` : ""}
 
         <nav class="toc" aria-label="${esc(ui().onThisPage)}">
-          ${p.sections.map((s) => `<a href="#${s.id}" data-open="${s.id}">${esc(sectionTitle(s))}</a>`).join("")}
+          ${sections.map((s) => `<a href="#${s.id}" data-open="${s.id}"${s.draft ? ' class="toc__draft"' : ""}>${esc(sectionTitle(s))}</a>`).join("")}
           <button type="button" class="toc__all" id="toggle-all"></button>
         </nav>
 
         <div class="folds">
-          ${p.sections.map((s) => `
-          <details class="fold" id="${s.id}"${open.has(s.id) || p.sections.length <= 3 ? " open" : ""}>
-            <summary><h2>${esc(sectionTitle(s))}</h2>${sectionCount(s)}</summary>
+          ${sections.map((s) => `
+          <details class="fold${s.draft ? " fold--draft" : ""}" id="${s.id}"${open.has(s.id) || s.draft || sections.length <= 3 ? " open" : ""}>
+            <summary><h2>${esc(sectionTitle(s))}</h2>${s.draft ? "" : sectionCount(s)}</summary>
             <div class="fold__body">${sectionBody(s, p)}</div>
           </details>`).join("")}
         </div>
 
         <aside class="cta">
           <h2>${esc(ui().ctaTitle)}</h2>
-          <p>${esc(ui().ctaText)}</p>
-          <div class="hero__actions">${button(`mailto:${CV.links.email}`, CV.links.email, true)}${button(CV.links.linkedin, "LinkedIn")}</div>
+          <p>${esc(page === "trail" ? ui().ctaTextTrail : ui().ctaText)}</p>
+          <div class="hero__actions">${button(contactUrl("oferta"), ui().writeMe, true)}${button(CV.links.linkedin, "LinkedIn")}</div>
         </aside>
 
-        ${next !== p ? `<a class="next" href="${projectUrl(next.slug)}" style="${accent(next)}"><span>${esc(ui().next)}</span><strong>${esc(next.name)} ${icon("arrow")}</strong></a>` : ""}
+        ${next && next.slug !== p.slug ? `<a class="next" href="${url(next)}" style="${accent(next)}"><span>${esc(page === "project" ? ui().next : ui().nextTrail)}</span><strong>${esc(t(next.name))} ${icon("arrow")}</strong></a>` : ""}
       </div>`;
     setupProjectInteractions();
   }
@@ -355,8 +533,10 @@
       renderTimeline("education", CV.education);
       renderSkills();
       renderContact();
+    } else if (page === "contact") {
+      renderContactPage();
     } else {
-      renderProjectPage();
+      renderDetailPage();
       const close = document.querySelector("#lightbox button");
       if (close) close.setAttribute("aria-label", ui().close);
     }
