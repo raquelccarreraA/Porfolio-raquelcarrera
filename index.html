@@ -33,7 +33,13 @@
       <a href="#inicio" class="nav__logo" aria-label="Raquel Comesaña Carrera"><span class="nav__mark" aria-hidden="true">RC</span><span class="nav__name">Raquel Comesaña</span></a>
       <button class="nav__menu" id="nav-menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">☰</button>
       <nav class="nav__links" id="nav-links">
-        <a href="#proyectos" data-nav="proyectos">Proyectos</a>
+        <div class="submenu" id="submenu">
+          <button type="button" class="submenu__btn" data-spy="proyectos" aria-expanded="false" aria-controls="submenu-panel"><span data-i18n="projects">Proyectos</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="submenu__panel" id="submenu-panel">
+            <ul id="submenu-list"></ul>
+            <a class="submenu__all" data-nav-all data-i18n="allProjects" href="#proyectos">Todos los proyectos</a>
+          </div>
+        </div>
         <a href="#sobre-mi" data-nav="sobre-mi">Sobre mí</a>
         <a href="#trayectoria" data-nav="trayectoria">Trayectoria</a>
         <a href="#habilidades" data-nav="habilidades">Habilidades</a>

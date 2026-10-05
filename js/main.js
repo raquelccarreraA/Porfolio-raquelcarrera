@@ -8,7 +8,7 @@
     gl: {
       title: "Raquel Comesaña Carrera · Desenvolvedora Full Stack",
       nav: { proyectos: "Proxectos", "sobre-mi": "Sobre min", trayectoria: "Traxectoria", habilidades: "Habilidades", contacto: "Contacto" },
-      projects: "Proxectos", projectsIntro: "O que construín, en produción e premiado. Entra en cada un para ver como está feito.",
+      projects: "Proxectos", allProjects: "Todos os proxectos", projectsIntro: "O que construín, en produción e premiado. Entra en cada un para ver como está feito.",
       about: "Sobre min", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Falamos?",
       seeProjects: "Ver proxectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proxecto", visit: "Visitar a web", repo: "Repositorio",
       back: "Volver a proxectos", onThisPage: "Nesta páxina", expandAll: "Despregar todo", collapseAll: "Pregar todo", gallery: "Capturas",
@@ -21,7 +21,7 @@
     es: {
       title: "Raquel Comesaña Carrera · Desarrolladora Full Stack",
       nav: { proyectos: "Proyectos", "sobre-mi": "Sobre mí", trayectoria: "Trayectoria", habilidades: "Habilidades", contacto: "Contacto" },
-      projects: "Proyectos", projectsIntro: "Lo que he construido, en producción y premiado. Entra en cada uno para ver cómo está hecho.",
+      projects: "Proyectos", allProjects: "Todos los proyectos", projectsIntro: "Lo que he construido, en producción y premiado. Entra en cada uno para ver cómo está hecho.",
       about: "Sobre mí", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "¿Hablamos?",
       seeProjects: "Ver proyectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proyecto", visit: "Visitar la web", repo: "Repositorio",
       back: "Volver a proyectos", onThisPage: "En esta página", expandAll: "Desplegar todo", collapseAll: "Plegar todo", gallery: "Capturas",
@@ -34,7 +34,7 @@
     en: {
       title: "Raquel Comesaña Carrera · Full Stack Developer",
       nav: { proyectos: "Projects", "sobre-mi": "About", trayectoria: "Background", habilidades: "Skills", contacto: "Contact" },
-      projects: "Projects", projectsIntro: "What I've built, live and award-winning. Open each one to see how it's made.",
+      projects: "Projects", allProjects: "All projects", projectsIntro: "What I've built, live and award-winning. Open each one to see how it's made.",
       about: "About me", experience: "Experience", education: "Education", skills: "Skills", contact: "Let's talk",
       seeProjects: "See projects", downloadCv: "Download CV (PDF)", viewProject: "View project", visit: "Visit website", repo: "Repository",
       back: "Back to projects", onThisPage: "On this page", expandAll: "Expand all", collapseAll: "Collapse all", gallery: "Screenshots",
@@ -105,8 +105,36 @@
     });
     document.querySelectorAll(".nav__logo").forEach((a) => a.setAttribute("href", homeUrl("#inicio")));
     document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = ui()[el.dataset.i18n]));
+    document.querySelectorAll("[data-nav-all]").forEach((a) => a.setAttribute("href", homeUrl("#proyectos")));
+    renderSubmenu();
     $("lang-switch").setAttribute("aria-label", ui().language);
     document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  }
+
+  // Submenú «Proyectos» de la cabecera: una entrada con miniatura por proyecto.
+  function renderSubmenu() {
+    const current = page === "project" ? new URLSearchParams(location.search).get("p") : null;
+    $("submenu-list").innerHTML = CV.projects.map((p) => `
+      <li><a class="submenu__item" href="${projectUrl(p.slug)}" style="${accent(p)}"${p.slug === current ? ' aria-current="page"' : ""}>
+        <img src="${p.cover.mini}" alt="">
+        <span class="submenu__text"><strong>${esc(p.name)}</strong><span>${esc(t(p.kind))}</span></span>
+        <span class="submenu__status">${esc(t(p.status))}</span>
+      </a></li>`).join("");
+    document.querySelector(".submenu__btn").classList.toggle("current", !!current);
+  }
+
+  function setupSubmenu() {
+    const box = $("submenu");
+    const btn = box.querySelector(".submenu__btn");
+    const setOpen = (o) => { box.classList.toggle("open", o); btn.setAttribute("aria-expanded", o); };
+    const hover = matchMedia("(hover: hover) and (min-width: 821px)");
+    box.addEventListener("mouseenter", () => hover.matches && setOpen(true));
+    box.addEventListener("mouseleave", () => hover.matches && setOpen(false));
+    // Con ratón, el hover ya lo abrió: el clic no debe cerrarlo. Con teclado (detail 0), alterna.
+    btn.addEventListener("click", (e) => setOpen(hover.matches && e.detail > 0 ? true : !box.classList.contains("open")));
+    document.addEventListener("click", (e) => { if (!box.contains(e.target)) setOpen(false); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+    box.addEventListener("click", (e) => { if (e.target.closest("a")) setOpen(false); });
   }
 
   // ===== Portada =====
@@ -390,9 +418,9 @@
 
   function setupScrollSpy() {
     if (page !== "home") return;
-    const links = document.querySelectorAll("[data-nav]");
+    const links = document.querySelectorAll("[data-nav], [data-spy]");
     const spy = new IntersectionObserver((entries) => entries.forEach((e) => {
-      if (e.isIntersecting) links.forEach((a) => a.classList.toggle("active", a.dataset.nav === e.target.id));
+      if (e.isIntersecting) links.forEach((a) => a.classList.toggle("active", (a.dataset.nav || a.dataset.spy) === e.target.id));
     }), { rootMargin: "-40% 0px -55% 0px" });
     document.querySelectorAll("main section[id]").forEach((s) => spy.observe(s));
   }
@@ -402,6 +430,7 @@
   setupLang();
   setupTheme();
   setupMenu();
+  setupSubmenu();
   setupScrollSpy();
   setupLightbox();
 })();

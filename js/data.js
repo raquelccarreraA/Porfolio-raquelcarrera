@@ -79,6 +79,11 @@ const CV = {
         es: "● En producción",
         en: "● Live"
       },
+      status: {
+        gl: "En produción",
+        es: "En producción",
+        en: "Live"
+      },
       phase: {
         gl: "Premium e VeriAI en beta",
         es: "Premium y VeriAI en beta",
@@ -796,6 +801,11 @@ const CV = {
         gl: "🏆 Primeiro premio · Xunta de Galicia",
         es: "🏆 Primer premio · Xunta de Galicia",
         en: "🏆 First prize · Xunta de Galicia"
+      },
+      status: {
+        gl: "Premiado",
+        es: "Premiado",
+        en: "Award"
       },
       phase: {
         gl: "Curso 2025-26",
