@@ -103,7 +103,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
 .hero__summary { color: var(--text); max-width: 54ch; margin: 0 0 28px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .hero__stats { display: flex; flex-wrap: wrap; gap: clamp(20px, 4vw, 44px); margin: 36px 0 0; padding-top: 22px; border-top: 1px solid var(--line); }
-.hero__stats div { display: flex; flex-direction: column-reverse; max-width: 15ch; }
+.hero__stats div { display: flex; flex-direction: column-reverse; justify-content: flex-end; max-width: 15ch; }
 .hero__stats dt { font-size: 13px; line-height: 1.35; color: var(--muted); }
 .hero__stats dd { margin: 0; font: 600 34px/1.1 var(--serif); color: var(--accent); }
 .hero__visual { position: relative; padding: 0 0 40px 40px; }

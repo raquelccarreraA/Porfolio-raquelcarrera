@@ -4,9 +4,9 @@
 const CV = {
   name: "Raquel Comesaña Carrera",
   role: {
-    gl: "Desenvolvedora Full Stack · Java e React",
-    es: "Desarrolladora Full Stack · Java y React",
-    en: "Full Stack Developer · Java & React"
+    gl: "Desenvolvedora Full Stack · Java · Spring Boot · React",
+    es: "Desarrolladora Full Stack · Java · Spring Boot · React",
+    en: "Full Stack Developer · Java · Spring Boot · React"
   },
   location: {
     gl: "A Coruña, Galicia",
@@ -127,7 +127,7 @@ const CV = {
   highlights: [
     { value: "1", label: { gl: "app propia en produción", es: "app propia en producción", en: "own app in production" } },
     { value: "1.º", label: { gl: "premio de Innovación Educativa", es: "premio de Innovación Educativa", en: "prize for Educational Innovation" } },
-    { value: "9", label: { gl: "meses de prácticas en Seidor", es: "meses de prácticas en Seidor", en: "months interning at Seidor" } }
+    { value: "9", label: { gl: "meses como desenvolvedora en Seidor", es: "meses como desarrolladora en Seidor", en: "months as a developer at Seidor" } }
   ],
 
   // Proyectos: la tarjeta de la portada usa name, kind, badge, summary, cover y tags;
@@ -142,9 +142,9 @@ const CV = {
         "#5b7fb8"
       ],
       kind: {
-        gl: "Traballo de Fin de Ciclo e proxecto persoal · IA",
-        es: "Trabajo de Fin de Ciclo y proyecto personal · IA",
-        en: "Final degree project & personal project · AI"
+        gl: "Proxecto propio · IA",
+        es: "Proyecto propio · IA",
+        en: "Own project · AI"
       },
       badge: {
         gl: "● En produción",
@@ -1058,9 +1058,9 @@ const CV = {
         en: "Apr – Jul 2025 (4 months) · Mar – Jul 2026 (5 months)"
       },
       title: {
-        gl: "Desenvolvedora en prácticas (FP Dual)",
-        es: "Desarrolladora en prácticas (FP Dual)",
-        en: "Developer intern (dual vocational training)"
+        gl: "Desenvolvedora",
+        es: "Desarrolladora",
+        en: "Developer"
       },
       slug: "seidor",
       org: "Seidor",
@@ -1091,9 +1091,9 @@ const CV = {
         ],
         name: "Seidor",
         kind: {
-          gl: "Experiencia · Desenvolvedora en prácticas (FP Dual)",
-          es: "Experiencia · Desarrolladora en prácticas (FP Dual)",
-          en: "Experience · Developer intern (dual vocational training)"
+          gl: "Experiencia · Desenvolvedora",
+          es: "Experiencia · Desarrolladora",
+          en: "Experience · Developer"
         },
         tagline: {
           gl: "Modernización de aplicacións IBM i: da pantalla verde a React.",
@@ -1104,9 +1104,9 @@ const CV = {
           {
             value: "9",
             label: {
-              gl: "meses de prácticas",
-              es: "meses de prácticas",
-              en: "months of internship"
+              gl: "meses en Seidor",
+              es: "meses en Seidor",
+              en: "months at Seidor"
             }
           },
           {
@@ -1131,9 +1131,9 @@ const CV = {
             id: "about",
             paragraphs: [
               {
-                gl: "Fixen as prácticas da FP Dual en Seidor en dous períodos: de abril a xullo de 2025 e de marzo a xullo de 2026.",
-                es: "Hice las prácticas de la FP Dual en Seidor en dos periodos: de abril a julio de 2025 y de marzo a julio de 2026.",
-                en: "I did my dual vocational training internship at Seidor in two periods: April to July 2025 and March to July 2026."
+                gl: "Traballei en Seidor en dous períodos: de abril a xullo de 2025 e de marzo a xullo de 2026.",
+                es: "Trabajé en Seidor en dos periodos: de abril a julio de 2025 y de marzo a julio de 2026.",
+                en: "I worked at Seidor in two periods: April to July 2025 and March to July 2026."
               },
               {
                 gl: "Traballei na modernización de aplicacións IBM i (AS/400): levar a lóxica de negocio escrita en RPG e SQL a servizos REST e substituír as pantallas green-screen por interfaces en React.",
@@ -1368,8 +1368,8 @@ const CV = {
             },
             draft: true,
             ask: {
-              gl: "Ao ser dual, en que empresa farás a parte práctica?",
-              es: "Al ser dual, ¿en qué empresa harás la parte práctica y en qué trabajarás? (si ya lo sabes)",
+              gl: "Ao ser dual, en que empresa farás a parte de empresa?",
+              es: "Al ser dual, ¿en qué empresa harás la parte de empresa y en qué trabajarás? (si ya lo sabes)",
               en: "Being dual, which company will you train at?"
             }
           }
@@ -1396,9 +1396,9 @@ const CV = {
           en: "Education · IES Fernando Wirtz Suárez · 2024 – 2026"
         },
         tagline: {
-          gl: "Ciclo superior dual: formación no instituto e prácticas en empresa.",
-          es: "Ciclo superior dual: formación en el instituto y prácticas en empresa.",
-          en: "Dual higher vocational degree: classes at school and an internship at a company."
+          gl: "Ciclo superior dual: formación no instituto e traballo en empresa.",
+          es: "Ciclo superior dual: formación en el instituto y trabajo en empresa.",
+          en: "Dual higher vocational degree: classes at school and work at a company."
         },
         figures: [
           {
@@ -1436,18 +1436,18 @@ const CV = {
                 en: "Higher vocational degree in Web Application Development, dual mode, at IES Fernando Wirtz Suárez (A Coruña), 2024 to 2026."
               },
               {
-                gl: "A parte en empresa fíxena en Seidor, e do ciclo saíron os meus dous proxectos principais: toVeriAI, o meu Traballo de Fin de Ciclo, e ArgaQuest, premiado pola Xunta de Galicia.",
-                es: "La parte en empresa la hice en Seidor, y del ciclo salieron mis dos proyectos principales: toVeriAI, mi Trabajo de Fin de Ciclo, y ArgaQuest, premiado por la Xunta de Galicia.",
-                en: "I did the company part at Seidor, and my two main projects came out of the course: toVeriAI, my final project, and ArgaQuest, awarded by the Xunta de Galicia."
+                gl: "Durante o ciclo traballei en Seidor, desenvolvín toVeriAI, hoxe en produción, e participei en ArgaQuest, premiado pola Xunta de Galicia.",
+                es: "Durante el ciclo trabajé en Seidor, desarrollé toVeriAI, hoy en producción, y participé en ArgaQuest, premiado por la Xunta de Galicia.",
+                en: "During the course I worked at Seidor, built toVeriAI, now live, and took part in ArgaQuest, awarded by the Xunta de Galicia."
               }
             ]
           },
           {
             id: "related",
             title: {
-              gl: "Proxectos e prácticas do ciclo",
-              es: "Proyectos y prácticas del ciclo",
-              en: "Projects and internship"
+              gl: "Proxectos e experiencia do ciclo",
+              es: "Proyectos y experiencia del ciclo",
+              en: "Projects and experience"
             },
             related: [
               {
@@ -1455,9 +1455,9 @@ const CV = {
                 slug: "toveriai",
                 name: "toVeriAI",
                 text: {
-                  gl: "Traballo de Fin de Ciclo, hoxe en produción.",
-                  es: "Trabajo de Fin de Ciclo, hoy en producción.",
-                  en: "Final project, now live."
+                  gl: "Plataforma de análise de novas con IA, hoxe en produción.",
+                  es: "Plataforma de análisis de noticias con IA, hoy en producción.",
+                  en: "AI news analysis platform, now live."
                 }
               },
               {
@@ -1475,9 +1475,9 @@ const CV = {
                 slug: "seidor",
                 name: "Seidor",
                 text: {
-                  gl: "Prácticas de FP Dual: IBM i e React.",
-                  es: "Prácticas de FP Dual: IBM i y React.",
-                  en: "Dual training internship: IBM i and React."
+                  gl: "Desenvolvemento en IBM i e React.",
+                  es: "Desarrollo en IBM i y React.",
+                  en: "Development on IBM i and React."
                 }
               }
             ]
