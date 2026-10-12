@@ -10,6 +10,7 @@ Web personal con mi CV: presentación, proyectos, experiencia, formación y habi
 index.html       Portada: presentación, proyectos, trayectoria, habilidades y contacto
 proyecto.html    Página de cada proyecto (proyecto.html?p=toveriai, ?p=argaquest)
 trayectoria.html Página de detalle de experiencia y formación (trayectoria.html?id=seidor, fp-daw, ia-big-data)
+presentacion.html Presentación completa (se enlaza desde «Sobre mí»)
 css/styles.css   Estilos (tema claro y oscuro, diseño responsive)
 js/data.js       Todo el contenido del CV y de los proyectos
 js/main.js       Genera las dos páginas a partir de data.js
@@ -51,7 +52,7 @@ Para mandar la web en un idioma concreto, comparte el enlace con `?lang=`, por e
 
 ## Caché del navegador
 
-`index.html`, `proyecto.html` y `trayectoria.html` cargan `styles.css`, `data.js` y `main.js` con `?v=…` al final. Si cambias alguno de esos archivos, cambia ese número en los tres HTML: así los navegadores descargan la versión nueva en vez de usar la que tienen guardada.
+`index.html`, `proyecto.html`, `trayectoria.html` y `presentacion.html` cargan `styles.css`, `data.js` y `main.js` con `?v=…` al final. Si cambias alguno de esos archivos, cambia ese número en los cuatro HTML: así los navegadores descargan la versión nueva en vez de usar la que tienen guardada.
 
 ## Ver en local
 

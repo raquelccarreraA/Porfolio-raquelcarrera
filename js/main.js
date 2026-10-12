@@ -50,21 +50,21 @@
   // Textos de trayectoria, contacto y formulario.
   const UI_MORE = {
     gl: {
-      more: "Ver máis", summaryTitle: "En resumo", ctaTextTrail: "Teño dispoñibilidade inmediata. Escríbeme e falamos.", backTrail: "Volver á traxectoria", nextTrail: "Seguinte", writeMe: "Escríbeme",
+      more: "Ver máis", presLink: "Ler a miña presentación completa", presEyebrow: "Presentación", backAbout: "Volver a Sobre min", summaryTitle: "En resumo", ctaTextTrail: "Teño dispoñibilidade inmediata. Escríbeme e falamos.", backTrail: "Volver á traxectoria", nextTrail: "Seguinte", writeMe: "Escríbeme",
       draft: "Pendente", draftNote: "Modo borrador: as seccións con borde descontinuo só se ven aquí, ata que as completemos.",
       lookingFor: "O que busco", nextSteps: "Como seguimos",
       copyEmail: "Copiar email", copied: "Copiado",
       steps: ["Escríbesme por email.", "Respóndoche canto antes.", "Falamos nunha chamada ou entrevista."]
     },
     es: {
-      more: "Ver más", summaryTitle: "En resumen", ctaTextTrail: "Tengo disponibilidad inmediata. Escríbeme y hablamos.", backTrail: "Volver a trayectoria", nextTrail: "Siguiente", writeMe: "Escríbeme",
+      more: "Ver más", presLink: "Leer mi presentación completa", presEyebrow: "Presentación", backAbout: "Volver a Sobre mí", summaryTitle: "En resumen", ctaTextTrail: "Tengo disponibilidad inmediata. Escríbeme y hablamos.", backTrail: "Volver a trayectoria", nextTrail: "Siguiente", writeMe: "Escríbeme",
       draft: "Pendiente", draftNote: "Modo borrador: las secciones con borde discontinuo solo se ven aquí, hasta que las completemos.",
       lookingFor: "Lo que busco", nextSteps: "Cómo seguimos",
       copyEmail: "Copiar email", copied: "Copiado",
       steps: ["Me escribes por email.", "Te respondo lo antes posible.", "Hablamos en una llamada o entrevista."]
     },
     en: {
-      more: "Read more", summaryTitle: "In short", ctaTextTrail: "I'm available immediately. Write to me and let's talk.", backTrail: "Back to background", nextTrail: "Next", writeMe: "Write to me",
+      more: "Read more", presLink: "Read my full introduction", presEyebrow: "Introduction", backAbout: "Back to About me", summaryTitle: "In short", ctaTextTrail: "I'm available immediately. Write to me and let's talk.", backTrail: "Back to background", nextTrail: "Next", writeMe: "Write to me",
       draft: "Pending", draftNote: "Draft mode: sections with a dashed border are only shown here until we fill them in.",
       lookingFor: "What I'm looking for", nextSteps: "What happens next",
       copyEmail: "Copy email", copied: "Copied",
@@ -116,6 +116,7 @@
   const query = () => `lang=${lang}${draftMode ? "&borrador=1" : ""}`;
   const projectUrl = (slug) => `proyecto.html?p=${slug}&${query()}`;
   const trailUrl = (slug) => `trayectoria.html?id=${slug}&${query()}`;
+  const presentationUrl = () => `presentacion.html?${query()}`;
   const homeUrl = (hash = "") => (page === "home" ? hash : `index.html?${query()}${hash}`);
   const accent = (p) => `--c1:${p.colors[0]};--c2:${p.colors[1]}`;
 
@@ -239,7 +240,39 @@
   function renderAbout() {
     $("letter").innerHTML = t(CV.about)
       .map((p, i) => `<p${i === 0 ? ' class="letter__lead"' : ""}>${esc(p)}</p>`)
-      .join("");
+      .join("") +
+      (CV.presentation ? `<a class="letter__more" href="${presentationUrl()}">${esc(ui().presLink)} ${icon("arrow")}</a>` : "");
+  }
+
+  // Página de presentación (presentacion.html): el texto completo, con aspecto de carta.
+  function renderLetterPage() {
+    const pr = CV.presentation;
+    document.title = `${ui().presEyebrow} · ${CV.name}`;
+    $("letter-page").innerHTML = `
+      <header class="phead">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="container phead__grid phead__grid--solo">
+          <div>
+            <a class="phead__back" href="${homeUrl("#sobre-mi")}">${icon("back")} ${esc(ui().backAbout)}</a>
+            <p class="eyebrow">${esc(ui().presEyebrow)}</p>
+            <h1>${esc(CV.name)}</h1>
+            <p class="phead__tagline">${esc(t(CV.role))}</p>
+          </div>
+        </div>
+      </header>
+      <div class="container pbody">
+        <article class="letter letter--full">
+          ${pr.intro.map((x, i) => `<p${i === 0 ? ' class="letter__lead"' : ""}>${esc(t(x))}</p>`).join("")}
+          <ul class="letter__points">${pr.points.map((x) => `<li><strong>${esc(t(x.title))}</strong>${esc(t(x.text))}</li>`).join("")}</ul>
+          <p>${esc(t(pr.closing))}</p>
+          <p class="letter__sign">${esc(CV.name)}<span>${esc(t(CV.role))}</span></p>
+        </article>
+        <aside class="cta" style="--c1:#2c4a78;--c2:#5b7fb8">
+          <h2>${esc(ui().ctaTitle)}</h2>
+          <p>${esc(ui().ctaTextTrail)}</p>
+          <div class="hero__actions">${button(homeUrl("#contacto"), ui().writeMe, true)}${button(CV.links.linkedin, "LinkedIn")}</div>
+        </aside>
+      </div>`;
   }
 
   function renderProjects() {
@@ -444,6 +477,8 @@
       renderTimeline("education", CV.education);
       renderSkills();
       renderContact();
+    } else if (page === "letter") {
+      renderLetterPage();
     } else {
       renderDetailPage();
       const close = document.querySelector("#lightbox button");
