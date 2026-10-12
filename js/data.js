@@ -31,25 +31,7 @@ const CV = {
     en: "I'm looking for opportunities to work as a developer. Available immediately: write to me and I'll get back to you soon."
   },
 
-  // Contacto: lo que busco y las vías de contacto (cada vía tiene su formulario en contacto.html).
-  lookingFor: [
-    {
-      text: {
-        gl: "Un posto de desenvolvedora full stack con Java, Spring Boot e React.",
-        es: "Un puesto de desarrolladora full stack con Java, Spring Boot y React.",
-        en: "A full stack developer role with Java, Spring Boot and React."
-      }
-    },
-    {
-      text: {
-        gl: "Proxectos nos que poida aplicar o que aprendo de IA e datos.",
-        es: "Proyectos en los que pueda aplicar lo que aprendo de IA y datos.",
-        en: "Projects where I can apply what I'm learning about AI and data."
-      }
-    },
-    { text: { gl: "Incorporación inmediata.", es: "Incorporación inmediata.", en: "Available to start immediately." } }
-  ],
-
+  // Contacto: la tarjeta muestra el correo con un botón para copiarlo.
   contactWays: [
     {
       type: "oferta",

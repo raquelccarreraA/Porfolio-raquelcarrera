@@ -31,7 +31,7 @@ El nombre, el rol y el resumen también aparecen en castellano en `index.html` (
 ## Trayectoria y contacto
 
 Las entradas de `CV.experience` y `CV.education` que llevan `slug` y `detail` tienen página propia y un enlace «Ver más» en la portada. `detail` usa el mismo formato que los proyectos.
-El contacto de la portada se genera con `CV.contactWays` (la tarjeta de contacto, que muestra el correo con un botón para copiarlo) y `CV.lookingFor` («Lo que busco»).
+El contacto de la portada se genera con `CV.contactWays` (la tarjeta de contacto, que muestra el correo con un botón para copiarlo).
 
 ## Modo borrador
 
