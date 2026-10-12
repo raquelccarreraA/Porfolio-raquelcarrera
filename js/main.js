@@ -52,23 +52,17 @@
     gl: {
       more: "Ver máis", presLink: "Ler a miña presentación completa", presEyebrow: "Presentación", backAbout: "Volver a Sobre min", summaryTitle: "En resumo", ctaTextTrail: "Teño dispoñibilidade inmediata. Escríbeme e falamos.", backTrail: "Volver á traxectoria", nextTrail: "Seguinte", writeMe: "Escríbeme",
       draft: "Pendente", draftNote: "Modo borrador: as seccións con borde descontinuo só se ven aquí, ata que as completemos.",
-      nextSteps: "Como seguimos",
-      copyEmail: "Copiar email", copied: "Copiado",
-      steps: ["Escríbesme por email.", "Respóndoche canto antes.", "Falamos nunha chamada ou entrevista."]
+      copyEmail: "Copiar email", copied: "Copiado"
     },
     es: {
       more: "Ver más", presLink: "Leer mi presentación completa", presEyebrow: "Presentación", backAbout: "Volver a Sobre mí", summaryTitle: "En resumen", ctaTextTrail: "Tengo disponibilidad inmediata. Escríbeme y hablamos.", backTrail: "Volver a trayectoria", nextTrail: "Siguiente", writeMe: "Escríbeme",
       draft: "Pendiente", draftNote: "Modo borrador: las secciones con borde discontinuo solo se ven aquí, hasta que las completemos.",
-      nextSteps: "Cómo seguimos",
-      copyEmail: "Copiar email", copied: "Copiado",
-      steps: ["Me escribes por email.", "Te respondo lo antes posible.", "Hablamos en una llamada o entrevista."]
+      copyEmail: "Copiar email", copied: "Copiado"
     },
     en: {
       more: "Read more", presLink: "Read my full introduction", presEyebrow: "Introduction", backAbout: "Back to About me", summaryTitle: "In short", ctaTextTrail: "I'm available immediately. Write to me and let's talk.", backTrail: "Back to background", nextTrail: "Next", writeMe: "Write to me",
       draft: "Pending", draftNote: "Draft mode: sections with a dashed border are only shown here until we fill them in.",
-      nextSteps: "What happens next",
-      copyEmail: "Copy email", copied: "Copied",
-      steps: ["You email me.", "I reply as soon as possible.", "We talk on a call or in an interview."]
+      copyEmail: "Copy email", copied: "Copied"
     }
   };
   LANGS.forEach((l) => Object.assign(UI[l], UI_MORE[l]));
@@ -211,11 +205,6 @@
           <button type="button" class="btn btn--primary copy-email">${icon("copy")} <span>${esc(ui().copyEmail)}</span></button>
         </div>
       </div></li>`).join("");
-    $("contact-guide").innerHTML = `
-      <div>
-        <h3>${esc(ui().nextSteps)}</h3>
-        <ol class="nsteps">${ui().steps.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>
-      </div>`;
     $("contact-actions").innerHTML = cvButton() + button(CV.links.linkedin, "LinkedIn") + button(CV.links.github, "GitHub");
     document.querySelectorAll(".copy-email").forEach((btn) =>
       btn.addEventListener("click", (e) => copyText(CV.links.email, e.currentTarget.querySelector("span"))));
