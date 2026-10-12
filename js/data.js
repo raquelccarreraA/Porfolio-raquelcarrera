@@ -66,19 +66,19 @@ const CV = {
   // Sobre mí: el primer párrafo se muestra destacado.
   about: {
     gl: [
-      "Son desenvolvedora full stack. En Seidor modernicei aplicacións IBM i (AS/400): levei a lóxica de RPG e SQL a servizos REST e convertín pantallas green-screen en interfaces React.",
-      "Ademais, constrúo os meus propios produtos de principio a fin, como toVeriAI. Agora especialízome en Intelixencia Artificial e Big Data.",
-      "Antes de programar formeime en Educación Social, e iso nótase en como me comunico e traballo en equipo."
+      "Son desenvolvedora full stack con base en Java: constrúo backends con Spring Boot e Spring Security e conécteos con interfaces en React. Modernicei sistemas IBM i en Seidor e levei un produto propio con IA, toVeriAI, desde a idea ata a produción.",
+      "En Seidor traballei na migración dunha aplicación IBM i á web: a lóxica en RPG FREE e os datos en DB2, expostos mediante servizos web, coa seguridade de usuarios en Java e unha interface nova en React. Nos meus proxectos estiven en todas as fases: toVeriAI desenvolvino de principio a fin, cunha API en Java e Spring Boot, e en ArgaQuest, primeiro premio de Innovación Educativa da Xunta, fun Project Manager e desenvolvedora frontend.",
+      "Agora especialízome en Intelixencia Artificial e Big Data. Antes de programar formeime en Educación Social, e iso nótase en como me comunico, resolvo conflitos e traballo en equipo."
     ],
     es: [
-      "Soy desarrolladora full stack. En Seidor modernicé aplicaciones IBM i (AS/400): llevé la lógica de RPG y SQL a servicios REST y convertí pantallas green-screen en interfaces React.",
-      "Además, construyo mis propios productos de principio a fin, como toVeriAI. Ahora me especializo en Inteligencia Artificial y Big Data.",
-      "Antes de programar me formé en Educación Social, y eso se nota en cómo me comunico y trabajo en equipo."
+      "Soy desarrolladora full stack con base en Java: construyo backends con Spring Boot y Spring Security y los conecto con interfaces en React. He modernizado sistemas IBM i en Seidor y he llevado un producto propio con IA, toVeriAI, desde la idea hasta producción.",
+      "En Seidor trabajé en la migración de una aplicación IBM i a la web: la lógica en RPG FREE y los datos en DB2, expuestos mediante servicios web, con la seguridad de usuarios en Java y una interfaz nueva en React. En mis proyectos he estado en todas las fases: toVeriAI lo desarrollé de principio a fin, con una API en Java y Spring Boot, y en ArgaQuest, primer premio de Innovación Educativa de la Xunta, fui Project Manager y desarrolladora frontend.",
+      "Ahora me especializo en Inteligencia Artificial y Big Data. Antes de programar me formé en Educación Social, y eso se nota en cómo me comunico, resuelvo conflictos y trabajo en equipo."
     ],
     en: [
-      "I'm a full stack developer. At Seidor I modernized IBM i (AS/400) applications: I moved RPG and SQL logic into REST services and turned green-screen terminals into React interfaces.",
-      "I also build my own products end to end, like toVeriAI. I'm currently specializing in Artificial Intelligence and Big Data.",
-      "Before programming I trained in Social Education, and it shows in how I communicate and work in a team."
+      "I'm a full stack developer with a Java foundation: I build back ends with Spring Boot and Spring Security and connect them to React interfaces. I've modernized IBM i systems at Seidor and taken my own AI product, toVeriAI, from idea to production.",
+      "At Seidor I worked on migrating an IBM i application to the web: RPG FREE logic and DB2 data exposed through web services, with user security in Java and a new React interface. In my projects I've been involved in every stage: I built toVeriAI end to end, with a Java and Spring Boot API, and in ArgaQuest, winner of the Xunta de Galicia's first prize for Educational Innovation, I was Project Manager and front-end developer.",
+      "I'm currently specializing in Artificial Intelligence and Big Data. Before programming I trained in Social Education, and it shows in how I communicate, resolve conflicts and work in a team."
     ]
   },
 
