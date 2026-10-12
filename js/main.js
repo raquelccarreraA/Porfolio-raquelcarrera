@@ -52,47 +52,23 @@
     gl: {
       more: "Ver máis", summaryTitle: "En resumo", ctaTextTrail: "Teño dispoñibilidade inmediata. Escríbeme e falamos.", backTrail: "Volver á traxectoria", nextTrail: "Seguinte", writeMe: "Escríbeme",
       draft: "Pendente", draftNote: "Modo borrador: as seccións con borde descontinuo só se ven aquí, ata que as completemos.",
-      lookingFor: "O que busco", nextSteps: "Como seguimos", goForm: "Ir ao formulario", orDirect: "Ou escríbeme directamente",
+      lookingFor: "O que busco", nextSteps: "Como seguimos",
       copyEmail: "Copiar email", copied: "Copiado",
-      steps: ["Escríbesme co formulario ou por email.", "Respóndoche canto antes.", "Falamos nunha chamada ou entrevista."],
-      form: {
-        back: "Volver a contacto", name: "Nome", email: "O teu correo", emailBody: "Correo", company: "Empresa", role: "Posto", where: "Localización e modalidade",
-        project: "O proxecto", message: "Mensaxe", optional: "opcional", submit: "Preparar o correo",
-        note: "Ao envialo abrirase a túa aplicación de correo coa mensaxe xa preparada para {email}. Só tes que revisala e envíala.",
-        readyTitle: "Mensaxe preparada", readyText: "Se non se abriu o teu correo, copia a mensaxe e envíaa a {email}.",
-        copy: "Copiar mensaxe", reopen: "Abrir de novo o correo",
-        subject: { oferta: "Oferta de traballo", colaborar: "Proposta de colaboración" }
-      }
+      steps: ["Escríbesme por email.", "Respóndoche canto antes.", "Falamos nunha chamada ou entrevista."]
     },
     es: {
       more: "Ver más", summaryTitle: "En resumen", ctaTextTrail: "Tengo disponibilidad inmediata. Escríbeme y hablamos.", backTrail: "Volver a trayectoria", nextTrail: "Siguiente", writeMe: "Escríbeme",
       draft: "Pendiente", draftNote: "Modo borrador: las secciones con borde discontinuo solo se ven aquí, hasta que las completemos.",
-      lookingFor: "Lo que busco", nextSteps: "Cómo seguimos", goForm: "Ir al formulario", orDirect: "O escríbeme directamente",
+      lookingFor: "Lo que busco", nextSteps: "Cómo seguimos",
       copyEmail: "Copiar email", copied: "Copiado",
-      steps: ["Me escribes con el formulario o por email.", "Te respondo lo antes posible.", "Hablamos en una llamada o entrevista."],
-      form: {
-        back: "Volver a contacto", name: "Nombre", email: "Tu correo", emailBody: "Correo", company: "Empresa", role: "Puesto", where: "Ubicación y modalidad",
-        project: "El proyecto", message: "Mensaje", optional: "opcional", submit: "Preparar el correo",
-        note: "Al enviarlo se abrirá tu aplicación de correo con el mensaje ya preparado para {email}. Solo tienes que revisarlo y enviarlo.",
-        readyTitle: "Mensaje preparado", readyText: "Si no se ha abierto tu correo, copia el mensaje y envíalo a {email}.",
-        copy: "Copiar mensaje", reopen: "Abrir de nuevo el correo",
-        subject: { oferta: "Oferta de trabajo", colaborar: "Propuesta de colaboración" }
-      }
+      steps: ["Me escribes por email.", "Te respondo lo antes posible.", "Hablamos en una llamada o entrevista."]
     },
     en: {
       more: "Read more", summaryTitle: "In short", ctaTextTrail: "I'm available immediately. Write to me and let's talk.", backTrail: "Back to background", nextTrail: "Next", writeMe: "Write to me",
       draft: "Pending", draftNote: "Draft mode: sections with a dashed border are only shown here until we fill them in.",
-      lookingFor: "What I'm looking for", nextSteps: "What happens next", goForm: "Go to the form", orDirect: "Or write to me directly",
+      lookingFor: "What I'm looking for", nextSteps: "What happens next",
       copyEmail: "Copy email", copied: "Copied",
-      steps: ["You write to me via the form or by email.", "I reply as soon as possible.", "We talk on a call or in an interview."],
-      form: {
-        back: "Back to contact", name: "Name", email: "Your email", emailBody: "Email", company: "Company", role: "Role", where: "Location and work mode",
-        project: "The project", message: "Message", optional: "optional", submit: "Prepare the email",
-        note: "When you send it, your email app will open with the message ready for {email}. Just review it and send it.",
-        readyTitle: "Message ready", readyText: "If your email app didn't open, copy the message and send it to {email}.",
-        copy: "Copy message", reopen: "Open the email again",
-        subject: { oferta: "Job offer", colaborar: "Collaboration proposal" }
-      }
+      steps: ["You email me.", "I reply as soon as possible.", "We talk on a call or in an interview."]
     }
   };
   LANGS.forEach((l) => Object.assign(UI[l], UI_MORE[l]));
@@ -140,7 +116,6 @@
   const query = () => `lang=${lang}${draftMode ? "&borrador=1" : ""}`;
   const projectUrl = (slug) => `proyecto.html?p=${slug}&${query()}`;
   const trailUrl = (slug) => `trayectoria.html?id=${slug}&${query()}`;
-  const contactUrl = (type) => `contacto.html?tipo=${type}&${query()}`;
   const homeUrl = (hash = "") => (page === "home" ? hash : `index.html?${query()}${hash}`);
   const accent = (p) => `--c1:${p.colors[0]};--c2:${p.colors[1]}`;
 
@@ -224,13 +199,17 @@
 
   function renderContact() {
     $("contact-text").textContent = t(CV.contact);
+    // Cada vía muestra el correo como texto (sin enlace) con un botón para copiarlo.
     $("contact-ways").innerHTML = CV.contactWays.map((w) => `
-      <li><a class="way reveal" href="${contactUrl(w.type)}">
+      <li><div class="way reveal">
         <span class="features__icon">${icon(w.icon)}</span>
         <h3>${esc(t(w.title))}</h3>
         <p>${esc(t(w.text))}</p>
-        <span class="way__go">${esc(ui().goForm)} ${icon("arrow")}</span>
-      </a></li>`).join("");
+        <div class="way__email">
+          <span>${esc(CV.links.email)}</span>
+          <button type="button" class="btn btn--primary copy-email">${icon("copy")} <span>${esc(ui().copyEmail)}</span></button>
+        </div>
+      </div></li>`).join("");
     $("contact-guide").innerHTML = `
       <div>
         <h3>${esc(ui().lookingFor)}</h3>
@@ -242,14 +221,9 @@
         <h3>${esc(ui().nextSteps)}</h3>
         <ol class="nsteps">${ui().steps.map((x) => `<li>${esc(x)}</li>`).join("")}</ol>
       </div>`;
-    $("contact-actions").innerHTML =
-      `<span class="contact__or">${esc(ui().orDirect)}</span>` +
-      button(`mailto:${CV.links.email}`, CV.links.email, true) +
-      `<button type="button" class="btn" id="copy-email">${icon("copy")} <span>${esc(ui().copyEmail)}</span></button>` +
-      cvButton() +
-      button(CV.links.linkedin, "LinkedIn") +
-      button(CV.links.github, "GitHub");
-    $("copy-email").addEventListener("click", (e) => copyText(CV.links.email, e.currentTarget.querySelector("span")));
+    $("contact-actions").innerHTML = cvButton() + button(CV.links.linkedin, "LinkedIn") + button(CV.links.github, "GitHub");
+    document.querySelectorAll(".copy-email").forEach((btn) =>
+      btn.addEventListener("click", (e) => copyText(CV.links.email, e.currentTarget.querySelector("span"))));
   }
 
   // Copia al portapapeles y confirma en la etiqueta del botón durante un momento.
@@ -260,70 +234,6 @@
       label.textContent = ui().copied;
       setTimeout(() => (label.textContent = before), 1800);
     } catch (e) {}
-  }
-
-  // ===== Formulario de contacto (contacto.html?tipo=oferta|colaborar) =====
-  // La web es estática: el formulario prepara el correo y lo abre en la aplicación de quien escribe.
-  const FORMS = {
-    oferta: [["name", true], ["email", true, "email"], ["company", true], ["role", true], ["where", false], ["message", false, "textarea"]],
-    colaborar: [["name", true], ["email", true, "email"], ["project", true, "textarea"], ["message", false, "textarea"]]
-  };
-
-  function renderContactPage() {
-    // Si el tipo pedido no existe (por ejemplo, un enlace antiguo), se usa la primera vía de contacto.
-    const asked = new URLSearchParams(location.search).get("tipo");
-    const way = CV.contactWays.find((w) => w.type === asked) || CV.contactWays[0];
-    const type = way.type;
-    const f = ui().form;
-    document.title = `${t(way.title)} · ${CV.name}`;
-    const field = ([key, required, kind]) => `
-      <label class="field${kind === "textarea" ? " field--wide" : ""}">
-        <span>${esc(f[key])}${required ? "" : ` <em>(${esc(f.optional)})</em>`}</span>
-        ${kind === "textarea"
-          ? `<textarea name="${key}" rows="5"${required ? " required" : ""}></textarea>`
-          : `<input name="${key}" type="${kind || "text"}"${required ? " required" : ""}${key === "name" ? ' autocomplete="name"' : key === "email" ? ' autocomplete="email"' : ""}>`}
-      </label>`;
-    $("contact-page").innerHTML = `
-      <section class="phead">
-        <div class="hero__bg" aria-hidden="true"></div>
-        <div class="container form-wrap">
-          <a class="phead__back" href="${homeUrl("#contacto")}">${icon("back")} ${esc(f.back)}</a>
-          ${CV.contactWays.length < 2 ? "" : `<nav class="form-tabs">${CV.contactWays.map((w) => `<a href="${contactUrl(w.type)}"${w.type === type ? ' aria-current="page"' : ""}>${icon(w.icon)} ${esc(t(w.title))}</a>`).join("")}</nav>`}
-          <h1>${esc(t(way.title))}</h1>
-          <p class="phead__tagline">${esc(t(way.text))}</p>
-          <form class="form" id="contact-form">
-            ${FORMS[type].map(field).join("")}
-            <p class="form__note">${esc(f.note.replace("{email}", CV.links.email))}</p>
-            <button type="submit" class="btn btn--primary">${icon("send")} ${esc(f.submit)}</button>
-          </form>
-          <div class="form__ready" id="form-ready" hidden></div>
-        </div>
-      </section>`;
-
-    $("contact-form").addEventListener("submit", (e) => {
-      e.preventDefault();
-      const data = new FormData(e.currentTarget);
-      const lines = FORMS[type]
-        .map(([key]) => [key === "email" ? f.emailBody : f[key], String(data.get(key) || "").trim()])
-        .filter(([, v]) => v)
-        .map(([k, v]) => (v.includes("\n") || v.length > 80 ? `${k}:\n${v}` : `${k}: ${v}`));
-      const who = data.get("company") || data.get("name");
-      const subject = `${f.subject[type]} · ${who}`;
-      const body = lines.join("\n\n");
-      const mailto = `mailto:${CV.links.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      const ready = $("form-ready");
-      ready.hidden = false;
-      ready.innerHTML = `
-        <h2>${icon("check")} ${esc(f.readyTitle)}</h2>
-        <p>${esc(f.readyText.replace("{email}", CV.links.email))}</p>
-        <pre>${esc(subject + "\n\n" + body)}</pre>
-        <div class="hero__actions">
-          <button type="button" class="btn" id="copy-msg">${icon("copy")} <span>${esc(f.copy)}</span></button>
-          <a class="btn" href="${mailto}">${icon("mail")} ${esc(f.reopen)}</a>
-        </div>`;
-      $("copy-msg").addEventListener("click", (ev) => copyText(`${CV.links.email}\n${subject}\n\n${body}`, ev.currentTarget.querySelector("span")));
-      window.location.href = mailto;
-    });
   }
 
   function renderAbout() {
@@ -436,7 +346,7 @@
     const actions =
       (p.url ? button(p.url, ui().visit, true) : "") +
       (p.repo ? button(p.repo, ui().repo) : "") +
-      button(contactUrl("oferta"), ui().writeMe, !p.url);
+      button(homeUrl("#contacto"), ui().writeMe, !p.url);
 
     root.style.cssText = accent(p);
     root.innerHTML = `
@@ -484,7 +394,7 @@
         <aside class="cta">
           <h2>${esc(ui().ctaTitle)}</h2>
           <p>${esc(page === "trail" ? ui().ctaTextTrail : ui().ctaText)}</p>
-          <div class="hero__actions">${button(contactUrl("oferta"), ui().writeMe, true)}${button(CV.links.linkedin, "LinkedIn")}</div>
+          <div class="hero__actions">${button(homeUrl("#contacto"), ui().writeMe, true)}${button(CV.links.linkedin, "LinkedIn")}</div>
         </aside>
 
         ${next && next.slug !== p.slug ? `<a class="next" href="${url(next)}" style="${accent(next)}"><span>${esc(page === "project" ? ui().next : ui().nextTrail)}</span><strong>${esc(t(next.name))} ${icon("arrow")}</strong></a>` : ""}
@@ -534,8 +444,6 @@
       renderTimeline("education", CV.education);
       renderSkills();
       renderContact();
-    } else if (page === "contact") {
-      renderContactPage();
     } else {
       renderDetailPage();
       const close = document.querySelector("#lightbox button");

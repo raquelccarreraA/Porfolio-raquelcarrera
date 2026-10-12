@@ -31,7 +31,7 @@ const CV = {
     en: "I'm looking for opportunities to work as a developer. Available immediately: write to me and I'll get back to you soon."
   },
 
-  // Contacto: lo que busco y las vías de contacto (cada vía tiene su formulario en contacto.html).
+  // Contacto: lo que busco y las vías de contacto (cada una muestra el correo con un botón para copiarlo).
   lookingFor: [
     {
       text: {
@@ -56,9 +56,9 @@ const CV = {
       icon: "briefcase",
       title: { gl: "Teño unha oferta para ti", es: "Tengo una oferta para ti", en: "I have a job for you" },
       text: {
-        gl: "Cóntame o posto e o equipo e respóndoche canto antes.",
-        es: "Cuéntame el puesto y el equipo y te respondo lo antes posible.",
-        en: "Tell me about the role and the team and I'll get back to you as soon as possible."
+        gl: "Cóntame o posto e respóndoche canto antes.",
+        es: "Cuéntame el puesto y te respondo lo antes posible.",
+        en: "Tell me about the role and I'll get back to you as soon as possible."
       }
     }
   ],
