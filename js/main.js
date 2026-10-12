@@ -270,8 +270,10 @@
   };
 
   function renderContactPage() {
-    const type = FORMS[new URLSearchParams(location.search).get("tipo")] ? new URLSearchParams(location.search).get("tipo") : "oferta";
-    const way = CV.contactWays.find((w) => w.type === type);
+    // Si el tipo pedido no existe (por ejemplo, un enlace antiguo), se usa la primera vía de contacto.
+    const asked = new URLSearchParams(location.search).get("tipo");
+    const way = CV.contactWays.find((w) => w.type === asked) || CV.contactWays[0];
+    const type = way.type;
     const f = ui().form;
     document.title = `${t(way.title)} · ${CV.name}`;
     const field = ([key, required, kind]) => `
@@ -286,7 +288,7 @@
         <div class="hero__bg" aria-hidden="true"></div>
         <div class="container form-wrap">
           <a class="phead__back" href="${homeUrl("#contacto")}">${icon("back")} ${esc(f.back)}</a>
-          <nav class="form-tabs">${CV.contactWays.map((w) => `<a href="${contactUrl(w.type)}"${w.type === type ? ' aria-current="page"' : ""}>${icon(w.icon)} ${esc(t(w.title))}</a>`).join("")}</nav>
+          ${CV.contactWays.length < 2 ? "" : `<nav class="form-tabs">${CV.contactWays.map((w) => `<a href="${contactUrl(w.type)}"${w.type === type ? ' aria-current="page"' : ""}>${icon(w.icon)} ${esc(t(w.title))}</a>`).join("")}</nav>`}
           <h1>${esc(t(way.title))}</h1>
           <p class="phead__tagline">${esc(t(way.text))}</p>
           <form class="form" id="contact-form">

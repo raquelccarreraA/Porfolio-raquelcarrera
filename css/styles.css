@@ -222,7 +222,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
 .weights__head { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
 .weights__head span { font: 600 13px var(--mono); color: var(--accent); }
 .stack { margin: 0; display: grid; gap: 14px; }
-.stack div { display: grid; grid-template-columns: 170px 1fr; gap: 12px; align-items: start; }
+.stack > div { display: grid; grid-template-columns: 170px 1fr; gap: 12px; align-items: start; }
 .stack dt { font-weight: 600; color: var(--ink); padding-top: 3px; }
 .stack dd { margin: 0; }
 .milestones { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
@@ -343,7 +343,7 @@ button.btn { cursor: pointer; font-family: var(--sans); color: var(--ink); }
   .window { transform: none; }
   .gallery__item[data-wide] { grid-column: auto; grid-row: auto; }
   .toc { position: static; border-radius: var(--radius); }
-  .stack div { grid-template-columns: 1fr; gap: 6px; }
+  .stack > div { grid-template-columns: 1fr; gap: 6px; }
   .fold summary { padding: 18px; }
   .fold__body { padding: 0 18px 18px; }
   .nav__inner { gap: 10px; }
