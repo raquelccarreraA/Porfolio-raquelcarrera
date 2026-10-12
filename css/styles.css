@@ -288,6 +288,16 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
 .btn .icon { width: 16px; height: 16px; }
 button.btn { cursor: pointer; font-family: var(--sans); color: var(--ink); }
 
+/* ===== 8d. Presentación ===== */
+.letter__more { display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; font-weight: 600; color: var(--accent); }
+.letter__more:hover .icon { transform: translate(2px, -2px); }
+.letter--full { max-width: 860px; }
+.letter .letter__points { list-style: none; padding: 0; margin: 8px 0 24px; display: grid; gap: 16px; }
+.letter .letter__points li { padding-left: 18px; border-left: 3px solid var(--accent); color: var(--text); }
+.letter .letter__points strong { display: block; color: var(--ink); margin-bottom: 2px; }
+.letter__sign { margin: 28px 0 0 !important; font: 600 20px var(--serif); color: var(--ink) !important; }
+.letter__sign span { display: block; font: 400 14px var(--sans); color: var(--muted); }
+
 /* ===== 9. Timeline ===== */
 .timeline { display: grid; gap: 32px; border-left: 2px solid var(--line); padding-left: 32px; }
 .tl-item { position: relative; }

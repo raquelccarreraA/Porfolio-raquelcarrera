@@ -31,7 +31,7 @@ const CV = {
     en: "I'm looking for opportunities to work as a developer. Available immediately: write to me and I'll get back to you soon."
   },
 
-  // Contacto: lo que busco y las vías de contacto (cada una muestra el correo con un botón para copiarlo).
+  // Contacto: lo que busco y las vías de contacto (cada vía tiene su formulario en contacto.html).
   lookingFor: [
     {
       text: {
@@ -80,6 +80,53 @@ const CV = {
       "I also build my own products end to end, like toVeriAI. I'm currently specializing in Artificial Intelligence and Big Data.",
       "Before programming I trained in Social Education, and it shows in how I communicate and work in a team."
     ]
+  },
+
+  // Presentación completa (presentacion.html): se enlaza desde «Sobre mí».
+  presentation: {
+    intro: [
+      {
+        gl: "Desenvolvedora Full Stack (Java · Spring Boot · React) con experiencia na modernización de aplicacións de xestión en Seidor e formación sólida en Desenvolvemento de Aplicacións Web (DAW). Na actualidade amplío coñecementos cunha especialización en Intelixencia Artificial e Big Data.",
+        es: "Desarrolladora Full Stack (Java · Spring Boot · React) con experiencia en la modernización de aplicaciones de gestión en Seidor y formación sólida en Desarrollo de Aplicaciones Web (DAW). Actualmente amplío conocimientos con una especialización en Inteligencia Artificial y Big Data.",
+        en: "Full Stack Developer (Java · Spring Boot · React) with experience modernizing business applications at Seidor and a solid background in Web Application Development. I'm currently expanding my skills with a specialization in Artificial Intelligence and Big Data."
+      },
+      {
+        gl: "O meu perfil combina o desenvolvemento web moderno coa comprensión de sistemas herdados e arquitecturas complexas:",
+        es: "Mi perfil combina el desarrollo web moderno con la comprensión de sistemas heredados y arquitecturas complejas:",
+        en: "My profile combines modern web development with an understanding of legacy systems and complex architectures:"
+      }
+    ],
+    points: [
+      {
+        title: { gl: "Backend e modernización", es: "Backend y modernización", en: "Backend and modernization" },
+        text: {
+          gl: "Desenvolvemento con Java, Spring Boot, Spring Security/JWT, APIs REST e probas con JUnit e Mockito. En Seidor traballei sobre IBM i (AS/400) con RPG FREE e SQL embebido, en tarefas de mantemento, migración e exposición de datos mediante servizos REST.",
+          es: "Desarrollo con Java, Spring Boot, Spring Security/JWT, APIs REST y pruebas con JUnit y Mockito. En Seidor trabajé sobre IBM i (AS/400) con RPG FREE y SQL embebido, en tareas de mantenimiento, migración y exposición de datos mediante servicios REST.",
+          en: "Development with Java, Spring Boot, Spring Security/JWT, REST APIs and testing with JUnit and Mockito. At Seidor I worked on IBM i (AS/400) with RPG FREE and embedded SQL, on maintenance, migration and exposing data through REST services."
+        }
+      },
+      {
+        title: { gl: "Frontend e proxectos propios", es: "Frontend y proyectos propios", en: "Front end and own projects" },
+        text: {
+          gl: "Desenvolvemento con React, incluída a modernización de interfaces green-screen a aplicacións web. Construín toVeriAI, unha plataforma en produción que avalía a credibilidade de novas con IA multimodal, e ArgaQuest, unha plataforma educativa desenvolvida en equipo e gañadora do primeiro premio de Innovación Educativa da Xunta (Plan Proxecta), asumindo o ciclo de vida completo das aplicacións, do deseño ao despregamento.",
+          es: "Desarrollo con React, incluida la modernización de interfaces green-screen a aplicaciones web. He construido toVeriAI, una plataforma en producción que evalúa la credibilidad de noticias con IA multimodal, y ArgaQuest, una plataforma educativa desarrollada en equipo y ganadora del primer premio de Innovación Educativa de la Xunta (Plan Proxecta), asumiendo el ciclo de vida completo de las aplicaciones, del diseño al despliegue.",
+          en: "Development with React, including modernizing green-screen interfaces into web applications. I built toVeriAI, a live platform that assesses news credibility with multimodal AI, and ArgaQuest, an educational platform built as a team that won the Xunta de Galicia's first prize for Educational Innovation (Plan Proxecta), owning the full application lifecycle, from design to deployment."
+        }
+      },
+      {
+        title: { gl: "Bases de datos e ferramentas", es: "Bases de datos y herramientas", en: "Databases and tools" },
+        text: {
+          gl: "MySQL, SQL, Docker, Git/GitHub e metodoloxías áxiles (Scrum).",
+          es: "MySQL, SQL, Docker, Git/GitHub y metodologías ágiles (Scrum).",
+          en: "MySQL, SQL, Docker, Git/GitHub and agile methodologies (Scrum)."
+        }
+      }
+    ],
+    closing: {
+      gl: "O meu grao en Educación Social achégame comunicación, empatía, resolución de conflitos e un alto sentido da responsabilidade no traballo en equipo.",
+      es: "Mi grado en Educación Social me aporta comunicación, empatía, resolución de conflictos y un alto sentido de la responsabilidad en el trabajo en equipo.",
+      en: "My degree in Social Education gives me communication skills, empathy, conflict resolution and a strong sense of responsibility in teamwork."
+    }
   },
 
   // Cifras destacadas bajo el saludo de la portada.
@@ -1004,7 +1051,7 @@ const CV = {
         "Groq"
       ]
     },
-    { group: { gl: "Ferramentas", es: "Herramientas", en: "Tools" }, items: ["Git", "GitHub", "Docker", "JUnit", "Postman"] },
+    { group: { gl: "Ferramentas", es: "Herramientas", en: "Tools" }, items: ["Git", "GitHub", "Docker", "JUnit", "Mockito", "Postman"] },
     {
       group: { gl: "Metodoloxía e idiomas", es: "Metodología e idiomas", en: "Methodology & languages" },
       items: [
