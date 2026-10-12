@@ -3,16 +3,15 @@
 // Lo que no cambia según el idioma (nombres, enlaces, tecnologías) va como texto normal.
 const CV = {
   name: "Raquel Comesaña Carrera",
+
   role: {
     gl: "Desenvolvedora Full Stack · Java · Spring Boot · React",
     es: "Desarrolladora Full Stack · Java · Spring Boot · React",
     en: "Full Stack Developer · Java · Spring Boot · React"
   },
-  location: {
-    gl: "A Coruña, Galicia",
-    es: "A Coruña, Galicia",
-    en: "A Coruña, Galicia, Spain"
-  },
+
+  location: { gl: "A Coruña, Galicia", es: "A Coruña, Galicia", en: "A Coruña, Galicia, Spain" },
+
   summary: {
     gl: "Modernizo sistemas legacy e constrúo aplicacións web completas, do backend á interface. Creadora de toVeriAI, unha aplicación en produción. Agora especialízome en IA e Big Data.",
     es: "Modernizo sistemas legacy y construyo aplicaciones web completas, del backend a la interfaz. Creadora de toVeriAI, una aplicación en producción. Ahora me especializo en IA y Big Data.",
@@ -23,7 +22,7 @@ const CV = {
     email: "raquel.ccarrera@gmail.com",
     linkedin: "https://www.linkedin.com/in/raquel-comesa%C3%B1a-carrera-1646ba195",
     github: "https://github.com/raquelccarreraA",
-    cv: ""                                  // ruta al PDF, p. ej. "assets/CV-Raquel-Comesana.pdf"; vacío = sin botón
+    cv: ""  // ruta a un PDF, p. ej. "assets/CV.pdf"; vacío = sin botón
   },
 
   contact: {
@@ -31,7 +30,8 @@ const CV = {
     es: "Busco oportunidades para trabajar como programadora. Disponibilidad inmediata: escríbeme y te respondo pronto.",
     en: "I'm looking for opportunities to work as a developer. Available immediately: write to me and I'll get back to you soon."
   },
-  // Contacto: lo que busco (lo marcado draft solo se ve con ?borrador=1) y las vías de contacto.
+
+  // Contacto: lo que busco y las vías de contacto (cada vía tiene su formulario en contacto.html).
   lookingFor: [
     {
       text: {
@@ -47,62 +47,21 @@ const CV = {
         en: "Projects where I can apply what I'm learning about AI and data."
       }
     },
-    {
-      text: {
-        gl: "Incorporación inmediata.",
-        es: "Incorporación inmediata.",
-        en: "Available to start immediately."
-      }
-    },
-    {
-      draft: true,
-      ask: {
-        gl: "Modalidade e localización: presencial na Coruña, híbrido, remoto?",
-        es: "Modalidad y ubicación: ¿presencial en A Coruña, híbrido, remoto?",
-        en: "Work mode and location: on-site in A Coruña, hybrid, remote?"
-      }
-    },
-    {
-      draft: true,
-      ask: {
-        gl: "Xornada: completa, parcial? Compatible coa especialización?",
-        es: "Jornada: ¿completa, parcial? ¿Compatible con la especialización?",
-        en: "Hours: full-time, part-time? Compatible with the specialization?"
-      }
-    }
+    { text: { gl: "Incorporación inmediata.", es: "Incorporación inmediata.", en: "Available to start immediately." } }
   ],
 
   contactWays: [
     {
       type: "oferta",
       icon: "briefcase",
-      title: {
-        gl: "Teño unha oferta para ti",
-        es: "Tengo una oferta para ti",
-        en: "I have a job for you"
-      },
+      title: { gl: "Teño unha oferta para ti", es: "Tengo una oferta para ti", en: "I have a job for you" },
       text: {
         gl: "Cóntame o posto e o equipo e respóndoche canto antes.",
         es: "Cuéntame el puesto y el equipo y te respondo lo antes posible.",
         en: "Tell me about the role and the team and I'll get back to you as soon as possible."
       }
-    },
-    {
-      type: "colaborar",
-      icon: "users",
-      title: {
-        gl: "Colaborar nun proxecto",
-        es: "Colaborar en un proyecto",
-        en: "Collaborate on a project"
-      },
-      text: {
-        gl: "Un proxecto no que encaixaría? Falemos do que precisas.",
-        es: "¿Un proyecto en el que encajaría? Hablemos de qué necesitas.",
-        en: "A project I'd fit into? Let's talk about what you need."
-      }
     }
   ],
-
 
   // Sobre mí: el primer párrafo se muestra destacado.
   about: {
@@ -127,40 +86,25 @@ const CV = {
   highlights: [
     { value: "1", label: { gl: "app propia en produción", es: "app propia en producción", en: "own app in production" } },
     { value: "1.º", label: { gl: "premio de Innovación Educativa", es: "premio de Innovación Educativa", en: "prize for Educational Innovation" } },
-    { value: "9", label: { gl: "meses como desenvolvedora en Seidor", es: "meses como desarrolladora en Seidor", en: "months as a developer at Seidor" } }
+    {
+      value: "9",
+      label: { gl: "meses como desenvolvedora en Seidor", es: "meses como desarrolladora en Seidor", en: "months as a developer at Seidor" }
+    }
   ],
 
   // Proyectos: la tarjeta de la portada usa name, kind, badge, summary, cover y tags;
   // la página del proyecto (proyecto.html?p=slug) usa además figures, gallery y sections.
+  // Una sección con draft: true y ask solo se ve con ?borrador=1 (hueco pendiente de completar).
   projects: [
     {
       slug: "toveriai",
       name: "toVeriAI",
       icon: "assets/projects/toveriai/icono.png",
-      colors: [
-        "#1f3a66",
-        "#5b7fb8"
-      ],
-      kind: {
-        gl: "Proxecto propio · IA",
-        es: "Proyecto propio · IA",
-        en: "Own project · AI"
-      },
-      badge: {
-        gl: "● En produción",
-        es: "● En producción",
-        en: "● Live"
-      },
-      status: {
-        gl: "En produción",
-        es: "En producción",
-        en: "Live"
-      },
-      phase: {
-        gl: "Premium e VeriAI en beta",
-        es: "Premium y VeriAI en beta",
-        en: "Premium and VeriAI in beta"
-      },
+      colors: ["#1f3a66", "#5b7fb8"],
+      kind: { gl: "Proxecto propio · IA", es: "Proyecto propio · IA", en: "Own project · AI" },
+      badge: { gl: "● En produción", es: "● En producción", en: "● Live" },
+      status: { gl: "En produción", es: "En producción", en: "Live" },
+      phase: { gl: "Premium e VeriAI en beta", es: "Premium y VeriAI en beta", en: "Premium and VeriAI in beta" },
       tagline: {
         gl: "A verdade non é binaria: un índice que explica canto te podes fiar dunha nova.",
         es: "La verdad no es binaria: un índice que explica cuánto puedes fiarte de una noticia.",
@@ -174,71 +118,18 @@ const CV = {
       cover: {
         src: "assets/projects/toveriai/portada.webp",
         mini: "assets/projects/toveriai/portada-mini.webp",
-        alt: {
-          gl: "Páxina de inicio de toVeriAI",
-          es: "Página de inicio de toVeriAI",
-          en: "toVeriAI home page"
-        }
+        alt: { gl: "Páxina de inicio de toVeriAI", es: "Página de inicio de toVeriAI", en: "toVeriAI home page" }
       },
       url: "https://www.toveriai.com",
       repo: "https://github.com/raquelccarreraA/ToVeriAI",
-      tags: [
-        "React",
-        "Spring Boot",
-        "Java",
-        "MySQL",
-        "LLMs",
-        "Ollama"
-      ],
+      tags: ["React", "Spring Boot", "Java", "MySQL", "LLMs", "Ollama"],
       figures: [
-        {
-          value: "0–100",
-          label: {
-            gl: "índice IMI",
-            es: "índice IMI",
-            en: "IMI score"
-          }
-        },
-        {
-          value: "9",
-          label: {
-            gl: "dimensións de análise",
-            es: "dimensiones de análisis",
-            en: "analysis dimensions"
-          }
-        },
-        {
-          value: "3",
-          label: {
-            gl: "modos: texto, ligazón ou captura",
-            es: "modos: texto, enlace o captura",
-            en: "modes: text, link or screenshot"
-          }
-        },
-        {
-          value: "5",
-          label: {
-            gl: "provedores de IA en rotación",
-            es: "proveedores de IA en rotación",
-            en: "AI providers in rotation"
-          }
-        },
-        {
-          value: "5",
-          label: {
-            gl: "idiomas",
-            es: "idiomas",
-            en: "languages"
-          }
-        },
-        {
-          value: "v2",
-          label: {
-            gl: "de VeriAI, o meu modelo propio",
-            es: "de VeriAI, mi modelo propio",
-            en: "of VeriAI, my own model"
-          }
-        }
+        { value: "0–100", label: { gl: "índice IMI", es: "índice IMI", en: "IMI score" } },
+        { value: "9", label: { gl: "dimensións de análise", es: "dimensiones de análisis", en: "analysis dimensions" } },
+        { value: "3", label: { gl: "modos: texto, ligazón ou captura", es: "modos: texto, enlace o captura", en: "modes: text, link or screenshot" } },
+        { value: "5", label: { gl: "provedores de IA en rotación", es: "proveedores de IA en rotación", en: "AI providers in rotation" } },
+        { value: "5", label: { gl: "idiomas", es: "idiomas", en: "languages" } },
+        { value: "v2", label: { gl: "de VeriAI, o meu modelo propio", es: "de VeriAI, mi modelo propio", en: "of VeriAI, my own model" } }
       ],
       gallery: [
         {
@@ -280,12 +171,8 @@ const CV = {
         {
           src: "assets/projects/toveriai/veriai.webp",
           mini: "assets/projects/toveriai/veriai-mini.webp",
-          alt: {
-            gl: "VeriAI, o modelo propio da plataforma",
-            es: "VeriAI, el modelo propio de la plataforma",
-            en: "VeriAI, the platform's own model"
-          }
-        },
+          alt: { gl: "VeriAI, o modelo propio da plataforma", es: "VeriAI, el modelo propio de la plataforma", en: "VeriAI, the platform's own model" }
+        }
       ],
       sections: [
         {
@@ -338,11 +225,7 @@ const CV = {
           features: [
             {
               icon: "gauge",
-              title: {
-                gl: "Índice IMI de 0 a 100",
-                es: "Índice IMI de 0 a 100",
-                en: "IMI score from 0 to 100"
-              },
+              title: { gl: "Índice IMI de 0 a 100", es: "Índice IMI de 0 a 100", en: "IMI score from 0 to 100" },
               text: {
                 gl: "Parte de 100 e desconta por cada alerta segundo o peso da súa dimensión. Por riba de 70, credibilidade alta; por baixo de 40, baixa.",
                 es: "Parte de 100 y descuenta por cada alerta según el peso de su dimensión. Por encima de 70, credibilidad alta; por debajo de 40, baja.",
@@ -351,11 +234,7 @@ const CV = {
             },
             {
               icon: "highlighter",
-              title: {
-                gl: "Fragmentos sinalados",
-                es: "Fragmentos señalados",
-                en: "Highlighted fragments"
-              },
+              title: { gl: "Fragmentos sinalados", es: "Fragmentos señalados", en: "Highlighted fragments" },
               text: {
                 gl: "Cada alerta márcase sobre o propio texto, coa súa categoría, para ver exactamente onde está o problema.",
                 es: "Cada alerta se marca sobre el propio texto, con su categoría, para ver exactamente dónde está el problema.",
@@ -364,11 +243,7 @@ const CV = {
             },
             {
               icon: "image",
-              title: {
-                gl: "Texto, ligazón ou captura",
-                es: "Texto, enlace o captura",
-                en: "Text, link or screenshot"
-              },
+              title: { gl: "Texto, ligazón ou captura", es: "Texto, enlace o captura", en: "Text, link or screenshot" },
               text: {
                 gl: "Cunha ligazón, tamén revisa o sitio do medio para avaliar a súa transparencia e a autoría. As capturas serven para redes sociais.",
                 es: "Con un enlace, también revisa el sitio del medio para evaluar su transparencia y la autoría. Las capturas sirven para redes sociales.",
@@ -377,11 +252,7 @@ const CV = {
             },
             {
               icon: "languages",
-              title: {
-                gl: "Cinco idiomas",
-                es: "Cinco idiomas",
-                en: "Five languages"
-              },
+              title: { gl: "Cinco idiomas", es: "Cinco idiomas", en: "Five languages" },
               text: {
                 gl: "Castelán, galego, catalán, éuscaro e inglés, tanto na interface como nas análises.",
                 es: "Castellano, gallego, catalán, euskera e inglés, tanto en la interfaz como en los análisis.",
@@ -390,11 +261,7 @@ const CV = {
             },
             {
               icon: "chart",
-              title: {
-                gl: "Comunidade e seguimento de medios",
-                es: "Comunidad y seguimiento de medios",
-                en: "Community and outlet tracking"
-              },
+              title: { gl: "Comunidade e seguimento de medios", es: "Comunidad y seguimiento de medios", en: "Community and outlet tracking" },
               text: {
                 gl: "Feed público revisado con votos por dimensión, ranking de medios e aviso se a fiabilidade media dun medio que segues cambia.",
                 es: "Feed público revisado con votos por dimensión, ranking de medios y aviso si la fiabilidad media de un medio que sigues cambia.",
@@ -403,11 +270,7 @@ const CV = {
             },
             {
               icon: "cpu",
-              title: {
-                gl: "VeriAI, modelo propio",
-                es: "VeriAI, modelo propio",
-                en: "VeriAI, an in-house model"
-              },
+              title: { gl: "VeriAI, modelo propio", es: "VeriAI, modelo propio", en: "VeriAI, an in-house model" },
               text: {
                 gl: "Un modelo local que se adestra coas análises da plataforma: cada 6.000 análises sae unha versión nova. Vai pola v2 (Qwen 2.5 7B).",
                 es: "Un modelo local que se entrena con los análisis de la plataforma: cada 6.000 análisis sale una versión nueva. Va por la v2 (Qwen 2.5 7B).",
@@ -420,11 +283,7 @@ const CV = {
           id: "steps",
           steps: [
             {
-              title: {
-                gl: "Envías o contido",
-                es: "Envías el contenido",
-                en: "You submit the content"
-              },
+              title: { gl: "Envías o contido", es: "Envías el contenido", en: "You submit the content" },
               text: {
                 gl: "Texto, ligazón ou capturas. Un filtro previo descarta o que non se pode analizar, como textos demasiado curtos.",
                 es: "Texto, enlace o capturas. Un filtro previo descarta lo que no se puede analizar, como textos demasiado cortos.",
@@ -432,11 +291,7 @@ const CV = {
               }
             },
             {
-              title: {
-                gl: "A IA identifica o tipo de texto",
-                es: "La IA identifica el tipo de texto",
-                en: "The AI identifies the type of text"
-              },
+              title: { gl: "A IA identifica o tipo de texto", es: "La IA identifica el tipo de texto", en: "The AI identifies the type of text" },
               text: {
                 gl: "Nova, comunicado oficial, publicación en redes ou contido sen autoría: as regras cambian segundo o caso.",
                 es: "Noticia, comunicado oficial, publicación en redes o contenido sin autoría: las reglas cambian según el caso.",
@@ -444,11 +299,7 @@ const CV = {
               }
             },
             {
-              title: {
-                gl: "Analiza cada dimensión",
-                es: "Analiza cada dimensión",
-                en: "It analyses each dimension"
-              },
+              title: { gl: "Analiza cada dimensión", es: "Analiza cada dimensión", en: "It analyses each dimension" },
               text: {
                 gl: "Ata nove, cada unha coas súas alertas e os fragmentos concretos que as provocan.",
                 es: "Hasta nueve, cada una con sus alertas y los fragmentos concretos que las provocan.",
@@ -456,11 +307,7 @@ const CV = {
               }
             },
             {
-              title: {
-                gl: "Calcula o IMI e explícao",
-                es: "Calcula el IMI y lo explica",
-                en: "It calculates and explains the IMI"
-              },
+              title: { gl: "Calcula o IMI e explícao", es: "Calcula el IMI y lo explica", en: "It calculates and explains the IMI" },
               text: {
                 gl: "Devolve a puntuación de 0 a 100, o detalle por dimensión e un resumo que guía a lectura crítica.",
                 es: "Devuelve la puntuación de 0 a 100, el detalle por dimensión y un resumen que guía la lectura crítica.",
@@ -471,11 +318,7 @@ const CV = {
         },
         {
           id: "dimensions",
-          title: {
-            gl: "As dimensións do IMI",
-            es: "Las dimensiones del IMI",
-            en: "The IMI dimensions"
-          },
+          title: { gl: "As dimensións do IMI", es: "Las dimensiones del IMI", en: "The IMI dimensions" },
           intro: {
             gl: "Os pesos parten do marco de NewsGuard, completado con IFCN e The Trust Project. Con texto ou capturas úsanse as sete dimensións de contido; cunha ligazón súmanse dúas de transparencia, que pesan un 15 % do total.",
             es: "Los pesos parten del marco de NewsGuard, completado con IFCN y The Trust Project. Con texto o capturas se usan las siete dimensiones de contenido; con un enlace se suman dos de transparencia, que pesan un 15 % del total.",
@@ -483,11 +326,7 @@ const CV = {
           },
           items: [
             {
-              name: {
-                gl: "Verificación factual",
-                es: "Verificación factual",
-                en: "Factual verification"
-              },
+              name: { gl: "Verificación factual", es: "Verificación factual", en: "Factual verification" },
               value: "26 %",
               text: {
                 gl: "Se hai afirmacións falsas, inverificables ou enganosas. Escribir ben non equivale a ser veraz.",
@@ -496,11 +335,7 @@ const CV = {
               }
             },
             {
-              name: {
-                gl: "Consistencia interna",
-                es: "Consistencia interna",
-                en: "Internal consistency"
-              },
+              name: { gl: "Consistencia interna", es: "Consistencia interna", en: "Internal consistency" },
               value: "24 %",
               text: {
                 gl: "Contradicións, saltos lóxicos ou un titular que non se corresponde co corpo.",
@@ -509,11 +344,7 @@ const CV = {
               }
             },
             {
-              name: {
-                gl: "Fontes",
-                es: "Fuentes",
-                en: "Sources"
-              },
+              name: { gl: "Fontes", es: "Fuentes", en: "Sources" },
               value: "15 %",
               text: {
                 gl: "Trazabilidade: unha fonte con nome e cargo fronte a «segundo expertos» ou «fontes próximas».",
@@ -522,11 +353,7 @@ const CV = {
               }
             },
             {
-              name: {
-                gl: "Nesgo",
-                es: "Sesgo",
-                en: "Bias"
-              },
+              name: { gl: "Nesgo", es: "Sesgo", en: "Bias" },
               value: "12 %",
               text: {
                 gl: "O encadre que dá o propio xornalista e as perspectivas que omite.",
@@ -535,11 +362,7 @@ const CV = {
               }
             },
             {
-              name: {
-                gl: "Ton",
-                es: "Tono",
-                en: "Tone"
-              },
+              name: { gl: "Ton", es: "Tono", en: "Tone" },
               value: "12 %",
               text: {
                 gl: "Se o texto informa ou persuade: alarmismo, catastrofismo ou procura de indignación.",
@@ -548,11 +371,7 @@ const CV = {
               }
             },
             {
-              name: {
-                gl: "Semántica",
-                es: "Semántica",
-                en: "Semantics"
-              },
+              name: { gl: "Semántica", es: "Semántica", en: "Semantics" },
               value: "6 %",
               text: {
                 gl: "Termos cargados, eufemismos ou hipérboles na voz do autor, non nas citas.",
@@ -561,11 +380,7 @@ const CV = {
               }
             },
             {
-              name: {
-                gl: "Cifras",
-                es: "Cifras",
-                en: "Figures"
-              },
+              name: { gl: "Cifras", es: "Cifras", en: "Figures" },
               value: "5 %",
               text: {
                 gl: "Datos e estatísticas con fonte e contexto.",
@@ -574,11 +389,7 @@ const CV = {
               }
             },
             {
-              name: {
-                gl: "Transparencia do medio",
-                es: "Transparencia del medio",
-                en: "Outlet transparency"
-              },
+              name: { gl: "Transparencia do medio", es: "Transparencia del medio", en: "Outlet transparency" },
               value: "URL",
               text: {
                 gl: "Só con ligazón: se o medio di quen o posúe e como se financia.",
@@ -587,11 +398,7 @@ const CV = {
               }
             },
             {
-              name: {
-                gl: "Autoría",
-                es: "Autoría",
-                en: "Authorship"
-              },
+              name: { gl: "Autoría", es: "Autoría", en: "Authorship" },
               value: "URL",
               text: {
                 gl: "Só con ligazón: se o artigo o asina unha persoa identificable.",
@@ -606,11 +413,7 @@ const CV = {
           features: [
             {
               icon: "lightbulb",
-              title: {
-                gl: "Métricas, non veredictos",
-                es: "Métricas, no veredictos",
-                en: "Metrics, not verdicts"
-              },
+              title: { gl: "Métricas, non veredictos", es: "Métricas, no veredictos", en: "Metrics, not verdicts" },
               text: {
                 gl: "En vez de dicir se algo é verdade ou mentira, o índice explica que falla e onde, para que o lector saque as súas propias conclusións.",
                 es: "En lugar de decir si algo es verdad o mentira, el índice explica qué falla y dónde, para que el lector saque sus propias conclusiones.",
@@ -619,11 +422,7 @@ const CV = {
             },
             {
               icon: "lightbulb",
-              title: {
-                gl: "Rotación de provedores de IA",
-                es: "Rotación de proveedores de IA",
-                en: "Rotating AI providers"
-              },
+              title: { gl: "Rotación de provedores de IA", es: "Rotación de proveedores de IA", en: "Rotating AI providers" },
               text: {
                 gl: "Cerebras, Gemini, Mistral, SambaNova e Cloudflare repártense as análises por quendas, con failover automático: se un falla ou esgota a súa cota, responde o seguinte.",
                 es: "Cerebras, Gemini, Mistral, SambaNova y Cloudflare se reparten los análisis por turnos, con failover automático: si uno falla o agota su cuota, responde el siguiente.",
@@ -645,11 +444,7 @@ const CV = {
             },
             {
               icon: "lightbulb",
-              title: {
-                gl: "Provedores escollidos con datos",
-                es: "Proveedores elegidos con datos",
-                en: "Providers chosen with data"
-              },
+              title: { gl: "Provedores escollidos con datos", es: "Proveedores elegidos con datos", en: "Providers chosen with data" },
               text: {
                 gl: "Groq formaba parte da rotación, pero en probas con novas falsas daba notas máis altas ca o resto, é dicir, detectaba peor. Saqueino da puntuación e só le o texto das imaxes.",
                 es: "Groq formaba parte de la rotación, pero en pruebas con noticias falsas daba notas más altas que el resto, es decir, detectaba peor. Lo saqué de la puntuación y solo lee el texto de las imágenes.",
@@ -675,86 +470,20 @@ const CV = {
           id: "stack",
           stack: [
             {
-              layer: {
-                gl: "Interface",
-                es: "Interfaz",
-                en: "Frontend"
-              },
-              items: [
-                "React 19",
-                "Vite",
-                "React Router",
-                "Recharts",
-                "UnoCSS",
-                "i18n propio (5 idiomas)"
-              ]
+              layer: { gl: "Interface", es: "Interfaz", en: "Frontend" },
+              items: ["React 19", "Vite", "React Router", "Recharts", "UnoCSS", "i18n propio (5 idiomas)"]
             },
             {
-              layer: {
-                gl: "Servidor",
-                es: "Servidor",
-                en: "Backend"
-              },
-              items: [
-                "Java 17",
-                "Spring Boot 3.5",
-                "Spring Security + JWT",
-                "Spring Data JPA / Hibernate",
-                "Maven",
-                "JUnit"
-              ]
+              layer: { gl: "Servidor", es: "Servidor", en: "Backend" },
+              items: ["Java 17", "Spring Boot 3.5", "Spring Security + JWT", "Spring Data JPA / Hibernate", "Maven", "JUnit"]
             },
+            { layer: { gl: "Datos", es: "Datos", en: "Data" }, items: ["MySQL 8"] },
             {
-              layer: {
-                gl: "Datos",
-                es: "Datos",
-                en: "Data"
-              },
-              items: [
-                "MySQL 8"
-              ]
+              layer: { gl: "Intelixencia artificial", es: "Inteligencia artificial", en: "Artificial intelligence" },
+              items: ["Cerebras", "Gemini", "Mistral", "SambaNova", "Cloudflare AI", "Groq Vision", "Ollama", "Qwen 2.5 7B"]
             },
-            {
-              layer: {
-                gl: "Intelixencia artificial",
-                es: "Inteligencia artificial",
-                en: "Artificial intelligence"
-              },
-              items: [
-                "Cerebras",
-                "Gemini",
-                "Mistral",
-                "SambaNova",
-                "Cloudflare AI",
-                "Groq Vision",
-                "Ollama",
-                "Qwen 2.5 7B"
-              ]
-            },
-            {
-              layer: {
-                gl: "Despregamento",
-                es: "Despliegue",
-                en: "Deployment"
-              },
-              items: [
-                "Docker",
-                "Render (API)",
-                "Vercel (web)",
-                "Cloudflare"
-              ]
-            },
-            {
-              layer: {
-                gl: "Acceso",
-                es: "Acceso",
-                en: "Access"
-              },
-              items: [
-                "Email y contraseña",
-                "Inicio de sesión con Google"
-              ]
-            }
+            { layer: { gl: "Despregamento", es: "Despliegue", en: "Deployment" }, items: ["Docker", "Render (API)", "Vercel (web)", "Cloudflare"] },
+            { layer: { gl: "Acceso", es: "Acceso", en: "Access" }, items: ["Email y contraseña", "Inicio de sesión con Google"] }
           ]
         },
         {
@@ -762,32 +491,17 @@ const CV = {
           milestones: [
             {
               state: "done",
-              name: {
-                gl: "Primeira versión: análise de texto",
-                es: "Primera versión: análisis de texto",
-                en: "First version: text analysis"
-              },
+              name: { gl: "Primeira versión: análise de texto", es: "Primera versión: análisis de texto", en: "First version: text analysis" },
               detail: {
                 gl: "Sete dimensións de contido combinadas no índice IMI de 0 a 100.",
                 es: "Siete dimensiones de contenido combinadas en el índice IMI de 0 a 100.",
                 en: "Seven content dimensions combined into the 0–100 IMI score."
               }
             },
+            { state: "done", name: { gl: "Publicación en toveriai.com", es: "Publicación en toveriai.com", en: "Launch at toveriai.com" } },
             {
               state: "done",
-              name: {
-                gl: "Publicación en toveriai.com",
-                es: "Publicación en toveriai.com",
-                en: "Launch at toveriai.com"
-              }
-            },
-            {
-              state: "done",
-              name: {
-                gl: "Análise de URL e imaxes",
-                es: "Análisis de URL e imágenes",
-                en: "URL and image analysis"
-              },
+              name: { gl: "Análise de URL e imaxes", es: "Análisis de URL e imágenes", en: "URL and image analysis" },
               detail: {
                 gl: "Nove dimensións en modo URL e varias capturas por análise.",
                 es: "Nueve dimensiones en modo URL y varias capturas por análisis.",
@@ -796,19 +510,11 @@ const CV = {
             },
             {
               state: "done",
-              name: {
-                gl: "Contas, historial e feed público",
-                es: "Cuentas, historial y feed público",
-                en: "Accounts, history and public feed"
-              }
+              name: { gl: "Contas, historial e feed público", es: "Cuentas, historial y feed público", en: "Accounts, history and public feed" }
             },
             {
               state: "progress",
-              name: {
-                gl: "Premium (beta)",
-                es: "Premium (beta)",
-                en: "Premium (beta)"
-              },
+              name: { gl: "Premium (beta)", es: "Premium (beta)", en: "Premium (beta)" },
               detail: {
                 gl: "Análises ilimitadas, informes en PDF e tarxetas e selos para compartir.",
                 es: "Análisis ilimitados, informes en PDF y tarjetas y sellos para compartir.",
@@ -817,11 +523,7 @@ const CV = {
             },
             {
               state: "progress",
-              name: {
-                gl: "VeriAI, modelo propio",
-                es: "VeriAI, modelo propio",
-                en: "VeriAI in-house model"
-              },
+              name: { gl: "VeriAI, modelo propio", es: "VeriAI, modelo propio", en: "VeriAI in-house model" },
               detail: {
                 gl: "Versión 2 sobre Qwen 2.5 7B e unha variante sobre Qwen 3.5 7B en adestramento. Readéstrase cada 6.000 análises.",
                 es: "Versión 2 sobre Qwen 2.5 7B y una variante sobre Qwen 3.5 7B en entrenamiento. Se reentrena cada 6.000 análisis.",
@@ -860,30 +562,11 @@ const CV = {
     {
       slug: "argaquest",
       name: "ArgaQuest",
-      colors: [
-        "#3b2f4a",
-        "#8a6bb0"
-      ],
-      kind: {
-        gl: "Plan Proxecta · Xogo educativo",
-        es: "Plan Proxecta · Juego educativo",
-        en: "Plan Proxecta · Educational game"
-      },
-      badge: {
-        gl: "🏆 Primeiro premio · Xunta de Galicia",
-        es: "🏆 Primer premio · Xunta de Galicia",
-        en: "🏆 First prize · Xunta de Galicia"
-      },
-      status: {
-        gl: "Premiado",
-        es: "Premiado",
-        en: "Award"
-      },
-      phase: {
-        gl: "Curso 2025-26",
-        es: "Curso 2025-26",
-        en: "2025-26 school year"
-      },
+      colors: ["#3b2f4a", "#8a6bb0"],
+      kind: { gl: "Plan Proxecta · Xogo educativo", es: "Plan Proxecta · Juego educativo", en: "Plan Proxecta · Educational game" },
+      badge: { gl: "🏆 Primeiro premio · Xunta de Galicia", es: "🏆 Primer premio · Xunta de Galicia", en: "🏆 First prize · Xunta de Galicia" },
+      status: { gl: "Premiado", es: "Premiado", en: "Award" },
+      phase: { gl: "Curso 2025-26", es: "Curso 2025-26", en: "2025-26 school year" },
       tagline: {
         gl: "Aprender vocabulario en galego xogando.",
         es: "Aprender vocabulario en gallego jugando.",
@@ -897,64 +580,33 @@ const CV = {
       cover: {
         src: "assets/argaquest.png",
         mini: "assets/argaquest.png",
-        alt: {
-          gl: "Captura de ArgaQuest",
-          es: "Captura de ArgaQuest",
-          en: "Screenshot of ArgaQuest"
-        }
+        alt: { gl: "Captura de ArgaQuest", es: "Captura de ArgaQuest", en: "Screenshot of ArgaQuest" }
       },
       url: "https://argaquest.fernandowirtz.com/",
       repo: "",
-      tags: [
-        "React",
-        "Spring Boot",
-        "WebSockets",
-        "Docker"
-      ],
+      tags: ["React", "Spring Boot", "WebSockets", "Project Management"],
       figures: [
         {
           value: "1.º",
-          label: {
-            gl: "premio de Innovación Educativa",
-            es: "premio de Innovación Educativa",
-            en: "prize for Educational Innovation"
-          }
+          label: { gl: "premio de Innovación Educativa", es: "premio de Innovación Educativa", en: "prize for Educational Innovation" }
         },
-        {
-          value: "4",
-          label: {
-            gl: "medios fixéronse eco",
-            es: "medios se hicieron eco",
-            en: "media outlets covered it"
-          }
-        }
+        { value: "4", label: { gl: "medios fixéronse eco", es: "medios se hicieron eco", en: "media outlets covered it" } }
       ],
       gallery: [],
       press: [
         {
-          label: {
-            gl: "El Ideal Gallego (o xogo)",
-            es: "El Ideal Gallego (el juego)",
-            en: "El Ideal Gallego (the game)"
-          },
+          label: { gl: "El Ideal Gallego (o xogo)", es: "El Ideal Gallego (el juego)", en: "El Ideal Gallego (the game)" },
           url: "https://www.elidealgallego.com/a-coruna/2026-05-07/el-ies-fernando-wirtz-crea-argaquest-un-videojuego-para-dinamizar-la-lengua-gallega-854108.html"
         },
         {
-          label: {
-            gl: "El Ideal Gallego (o premio)",
-            es: "El Ideal Gallego (el premio)",
-            en: "El Ideal Gallego (the prize)"
-          },
+          label: { gl: "El Ideal Gallego (o premio)", es: "El Ideal Gallego (el premio)", en: "El Ideal Gallego (the prize)" },
           url: "https://www.elidealgallego.com/a-coruna/2026-05-27/o-ies-fernando-wirtz-da-coruna-recibe-2-000-euros-grazas-a-un-videoxogo-que-impulsa-a-lingua-galega-858142.html"
         },
         {
           label: "Neofalantes",
           url: "https://neofalantes.gal/un-oso-letras-e-moito-vocabulario-asi-e-argaquest-o-videoxogo-galego-creado-nun-instituto-da-coruna/"
         },
-        {
-          label: "CSIF",
-          url: "https://www.csif.es/es/articulo/galicia/educacion/91509"
-        }
+        { label: "CSIF", url: "https://www.csif.es/es/articulo/galicia/educacion/91509" }
       ],
       sections: [
         {
@@ -974,82 +626,75 @@ const CV = {
         },
         {
           id: "role",
-          draft: true,
-          ask: {
-            gl: "Que fixeches ti en ArgaQuest? E nun equipo de cantas persoas?",
-            es: "¿Qué hiciste tú en ArgaQuest? (frontend, backend, WebSockets, diseño, coordinación…) y en un equipo de cuántas personas.",
-            en: "What did you do in ArgaQuest, and how big was the team?"
-          }
-        },
-        {
-          id: "steps",
-          draft: true,
-          ask: {
-            gl: "Como se xoga? En 3 ou 4 pasos.",
-            es: "¿Cómo se juega? Explícalo en 3 o 4 pasos (crear partida, unirse, retos…).",
-            en: "How is it played? In 3 or 4 steps."
-          }
-        },
-        {
-          id: "decisions",
-          draft: true,
-          ask: {
-            gl: "Algunha decisión técnica que queiras contar?",
-            es: "¿Alguna decisión técnica que quieras contar? Por ejemplo, por qué WebSockets para las partidas en tiempo real.",
-            en: "Any technical decision you want to explain?"
-          }
-        },
-        {
-          id: "stack",
-          stack: [
+          list: [
             {
-              layer: {
-                gl: "Interface",
-                es: "Interfaz",
-                en: "Front end"
-              },
-              items: [
-                "React",
-                "SCSS"
-              ]
+              gl: "Project Manager do equipo: planificación, reparto de tarefas e seguimento con Scrum.",
+              es: "Project Manager del equipo: planificación, reparto de tareas y seguimiento con Scrum.",
+              en: "Team Project Manager: planning, task assignment and follow-up with Scrum."
             },
             {
-              layer: {
-                gl: "Servidor",
-                es: "Servidor",
-                en: "Back end"
-              },
-              items: [
-                "Java",
-                "Spring Boot",
-                "REST",
-                "WebSockets",
-                "JPA"
-              ]
+              gl: "Desenvolvemento do frontend en React e SCSS.",
+              es: "Desarrollo del frontend en React y SCSS.",
+              en: "Front-end development in React and SCSS."
             },
             {
-              layer: {
-                gl: "Calidade e equipo",
-                es: "Calidad y equipo",
-                en: "Quality & teamwork"
-              },
-              items: [
-                "Docker",
-                "JUnit",
-                "Git",
-                "Scrum"
-              ]
+              gl: "Apoio técnico transversal onde o proxecto o precisaba, incluído o multixogador en tempo real con WebSockets.",
+              es: "Apoyo técnico transversal donde el proyecto lo necesitaba, incluido el multijugador en tiempo real con WebSockets.",
+              en: "Cross-team technical support wherever the project needed it, including real-time multiplayer with WebSockets."
             }
           ]
         },
         {
-          id: "press",
-          press: true
-        }
+          id: "steps",
+          steps: [
+            {
+              title: { gl: "Dinámica", es: "Dinámica", en: "Gameplay" },
+              text: {
+                gl: "En cada partida recibes un conxunto de letras: vogais, consoantes e comodíns.",
+                es: "En cada partida recibes un conjunto de letras: vocales, consonantes y comodines.",
+                en: "Each round you get a set of letters: vowels, consonants and wildcards."
+              }
+            },
+            {
+              title: { gl: "Obxectivo", es: "Objetivo", en: "Goal" },
+              text: {
+                gl: "Formar palabras en galego nun tempo limitado; canto máis longas, máis puntos.",
+                es: "Formar palabras en gallego en un tiempo limitado; cuanto más largas, más puntos.",
+                en: "Make Galician words against the clock; the longer the word, the more points."
+              }
+            },
+            {
+              title: { gl: "Validación", es: "Validación", en: "Validation" },
+              text: {
+                gl: "As palabras compróbanse automaticamente co dicionario da Real Academia Galega.",
+                es: "Las palabras se comprueban automáticamente con el diccionario de la Real Academia Galega.",
+                en: "Words are checked automatically against the Real Academia Galega dictionary."
+              }
+            },
+            {
+              title: { gl: "Multixogador", es: "Multijugador", en: "Multiplayer" },
+              text: {
+                gl: "Xógase con amigos na aula ou a distancia, sen necesidade de rexistro.",
+                es: "Se juega con amigos en el aula o a distancia, sin necesidad de registro.",
+                en: "Play with friends in class or remotely, no sign-up needed."
+              }
+            }
+          ]
+        },
+        {
+          id: "stack",
+          stack: [
+            { layer: { gl: "Interface", es: "Interfaz", en: "Front end" }, items: ["React", "SCSS"] },
+            { layer: { gl: "Servidor", es: "Servidor", en: "Back end" }, items: ["Java", "Spring Boot", "REST", "WebSockets", "JPA"] },
+            { layer: { gl: "Calidade e equipo", es: "Calidad y equipo", en: "Quality & teamwork" }, items: ["Docker", "JUnit", "Git", "Scrum"] }
+          ]
+        },
+        { id: "press", press: true }
       ]
     }
   ],
 
+  // Experiencia y formación: las entradas con slug y detail tienen página propia (trayectoria.html?id=slug).
   experience: [
     {
       date: {
@@ -1057,73 +702,44 @@ const CV = {
         es: "Abril – Julio 2025 (4 meses) · Marzo – Julio 2026 (5 meses)",
         en: "Apr – Jul 2025 (4 months) · Mar – Jul 2026 (5 months)"
       },
-      title: {
-        gl: "Desenvolvedora",
-        es: "Desarrolladora",
-        en: "Developer"
-      },
+      title: { gl: "Desenvolvedora", es: "Desarrolladora", en: "Developer" },
       slug: "seidor",
       org: "Seidor",
       points: {
         gl: [
-          "Desenvolvemento en IBM i (AS/400): RPG FREE, SQL embebido e servizos REST.",
-          "Modelos e migración a SQL con formato JSON orientado a React.",
-          "Modernización de interfaces green-screen a unha contorna gráfica React.",
-          "Git/GitHub para código IBM i e traballo en equipo con Scrum."
+          "Migración dunha aplicación IBM i a web: a lóxica en RPG FREE e os datos en DB2 exponse mediante servizos web.",
+          "Substitución da pantalla verde por unha interface en React, despregada en Vercel.",
+          "Consultas a DB2 con SQL embebido e seguridade de usuarios con Java.",
+          "Traballo en equipo con Git/GitHub e Scrum."
         ],
         es: [
-          "Desarrollo en IBM i (AS/400): RPG FREE, SQL embebido y servicios REST.",
-          "Modelos y migración a SQL con formateo JSON orientado a React.",
-          "Modernización de interfaces green-screen a un entorno gráfico React.",
-          "Git/GitHub para código IBM i y trabajo en equipo con Scrum."
+          "Migración de una aplicación IBM i a web: la lógica en RPG FREE y los datos en DB2 se exponen mediante servicios web.",
+          "Sustitución de la pantalla verde por una interfaz en React, desplegada en Vercel.",
+          "Consultas a DB2 con SQL embebido y seguridad de usuarios con Java.",
+          "Trabajo en equipo con Git/GitHub y Scrum."
         ],
         en: [
-          "IBM i (AS/400) development: RPG FREE, embedded SQL and REST services.",
-          "Data models and migration to SQL with JSON output for React.",
-          "Modernized green-screen interfaces into a graphical React front end.",
-          "Git/GitHub for IBM i code and teamwork with Scrum."
+          "Migrating an IBM i application to the web: RPG FREE logic and DB2 data exposed through web services.",
+          "Replacing the green screen with a React interface, deployed on Vercel.",
+          "DB2 queries with embedded SQL and user security with Java.",
+          "Teamwork with Git/GitHub and Scrum."
         ]
       },
       detail: {
-        colors: [
-          "#2c4a78",
-          "#5b7fb8"
-        ],
+        colors: ["#2c4a78", "#5b7fb8"],
         name: "Seidor",
-        kind: {
-          gl: "Experiencia · Desenvolvedora",
-          es: "Experiencia · Desarrolladora",
-          en: "Experience · Developer"
-        },
+        kind: { gl: "Experiencia · Desenvolvedora", es: "Experiencia · Desarrolladora", en: "Experience · Developer" },
         tagline: {
           gl: "Modernización de aplicacións IBM i: da pantalla verde a React.",
           es: "Modernización de aplicaciones IBM i: de la pantalla verde a React.",
           en: "Modernizing IBM i applications: from green screen to React."
         },
         figures: [
-          {
-            value: "9",
-            label: {
-              gl: "meses en Seidor",
-              es: "meses en Seidor",
-              en: "months at Seidor"
-            }
-          },
-          {
-            value: "2",
-            label: {
-              gl: "períodos: 2025 e 2026",
-              es: "periodos: 2025 y 2026",
-              en: "periods: 2025 and 2026"
-            }
-          },
+          { value: "9", label: { gl: "meses en Seidor", es: "meses en Seidor", en: "months at Seidor" } },
+          { value: "2", label: { gl: "períodos: 2025 e 2026", es: "periodos: 2025 y 2026", en: "periods: 2025 and 2026" } },
           {
             value: "IBM i",
-            label: {
-              gl: "sistemas AS/400 modernizados a web",
-              es: "sistemas AS/400 modernizados a web",
-              en: "AS/400 systems modernized for the web"
-            }
+            label: { gl: "sistemas AS/400 modernizados a web", es: "sistemas AS/400 modernizados a web", en: "AS/400 systems modernized for the web" }
           }
         ],
         sections: [
@@ -1131,148 +747,63 @@ const CV = {
             id: "about",
             paragraphs: [
               {
-                gl: "Traballei en Seidor en dous períodos: de abril a xullo de 2025 e de marzo a xullo de 2026.",
-                es: "Trabajé en Seidor en dos periodos: de abril a julio de 2025 y de marzo a julio de 2026.",
-                en: "I worked at Seidor in two periods: April to July 2025 and March to July 2026."
-              },
-              {
-                gl: "Traballei na modernización de aplicacións IBM i (AS/400): levar a lóxica de negocio escrita en RPG e SQL a servizos REST e substituír as pantallas green-screen por interfaces en React.",
-                es: "Trabajé en la modernización de aplicaciones IBM i (AS/400): llevar la lógica de negocio escrita en RPG y SQL a servicios REST y sustituir las pantallas green-screen por interfaces en React.",
-                en: "I worked on modernizing IBM i (AS/400) applications: moving business logic written in RPG and SQL into REST services and replacing green-screen terminals with React interfaces."
+                gl: "Traballei en Seidor de abril a xullo de 2025 e de marzo a xullo de 2026, na modernización dunha aplicación IBM i para levala á web.",
+                es: "Trabajé en Seidor de abril a julio de 2025 y de marzo a julio de 2026, en la modernización de una aplicación IBM i para llevarla a la web.",
+                en: "I worked at Seidor from April to July 2025 and from March to July 2026, modernizing an IBM i application to bring it to the web."
               }
             ]
           },
           {
             id: "role",
-            title: {
-              gl: "Que fixen",
-              es: "Qué hice",
-              en: "What I did"
-            },
+            title: { gl: "Que fixen", es: "Qué hice", en: "What I did" },
             list: [
               {
-                gl: "Desenvolvemento en IBM i (AS/400): RPG FREE, SQL embebido e servizos REST.",
-                es: "Desarrollo en IBM i (AS/400): RPG FREE, SQL embebido y servicios REST.",
-                en: "IBM i (AS/400) development: RPG FREE, embedded SQL and REST services."
+                gl: "Migración dunha aplicación IBM i a web: a lóxica en RPG FREE e os datos en DB2 exponse mediante servizos web.",
+                es: "Migración de una aplicación IBM i a web: la lógica en RPG FREE y los datos en DB2 se exponen mediante servicios web.",
+                en: "Migrating an IBM i application to the web: RPG FREE logic and DB2 data exposed through web services."
               },
               {
-                gl: "Modelos e migración a SQL con formato JSON orientado a React.",
-                es: "Modelos y migración a SQL con formateo JSON orientado a React.",
-                en: "Data models and migration to SQL with JSON output for React."
+                gl: "Substitución da pantalla verde por unha interface en React, despregada en Vercel.",
+                es: "Sustitución de la pantalla verde por una interfaz en React, desplegada en Vercel.",
+                en: "Replacing the green screen with a React interface, deployed on Vercel."
               },
               {
-                gl: "Modernización de interfaces green-screen a unha contorna gráfica React.",
-                es: "Modernización de interfaces green-screen a un entorno gráfico React.",
-                en: "Modernized green-screen interfaces into a graphical React front end."
+                gl: "Consultas a DB2 con SQL embebido e seguridade de usuarios con Java.",
+                es: "Consultas a DB2 con SQL embebido y seguridad de usuarios con Java.",
+                en: "DB2 queries with embedded SQL and user security with Java."
               },
               {
-                gl: "Git/GitHub para código IBM i e traballo en equipo con Scrum.",
-                es: "Git/GitHub para código IBM i y trabajo en equipo con Scrum.",
-                en: "Git/GitHub for IBM i code and teamwork with Scrum."
+                gl: "Traballo en equipo con Git/GitHub e Scrum.",
+                es: "Trabajo en equipo con Git/GitHub y Scrum.",
+                en: "Teamwork with Git/GitHub and Scrum."
               }
             ]
           },
           {
-            id: "projects",
-            title: {
-              gl: "Proxectos nos que participei",
-              es: "Proyectos en los que participé",
-              en: "Projects I worked on"
-            },
-            draft: true,
-            ask: {
-              gl: "En que tipo de proxectos ou aplicacións traballaches? (sen nomes de clientes se son confidenciais)",
-              es: "¿En qué tipo de proyectos o aplicaciones trabajaste? (sin nombres de clientes si son confidenciales)",
-              en: "What kind of projects or applications did you work on?"
-            }
-          },
-          {
-            id: "achievement",
-            title: {
-              gl: "Un logro concreto",
-              es: "Un logro concreto",
-              en: "A concrete achievement"
-            },
-            draft: true,
-            ask: {
-              gl: "Algo concreto do que esteas orgullosa? Mellor cun dato.",
-              es: "¿Algo concreto de lo que estés orgullosa? Mejor con un dato: pantallas migradas, tiempo ahorrado, algo que se puso en producción…",
-              en: "Something concrete you are proud of, ideally with a number."
-            }
-          },
-          {
-            id: "team",
-            title: {
-              gl: "Equipo e forma de traballo",
-              es: "Equipo y forma de trabajo",
-              en: "Team and way of working"
-            },
-            draft: true,
-            ask: {
-              gl: "Con canta xente traballabas e como vos organizabades?",
-              es: "¿Con cuánta gente trabajabas y cómo os organizabais (Scrum, sprints, revisiones de código…)?",
-              en: "How big was the team and how did you work?"
-            }
-          },
-          {
             id: "stack",
             stack: [
-              {
-                layer: {
-                  gl: "IBM i",
-                  es: "IBM i",
-                  en: "IBM i"
-                },
-                items: [
-                  "AS/400",
-                  "RPG FREE",
-                  "SQL embebido"
-                ]
-              },
-              {
-                layer: {
-                  gl: "Servizos",
-                  es: "Servicios",
-                  en: "Services"
-                },
-                items: [
-                  "APIs REST",
-                  "JSON"
-                ]
-              },
-              {
-                layer: {
-                  gl: "Interface",
-                  es: "Interfaz",
-                  en: "Front end"
-                },
-                items: [
-                  "React"
-                ]
-              },
-              {
-                layer: {
-                  gl: "Equipo",
-                  es: "Equipo",
-                  en: "Teamwork"
-                },
-                items: [
-                  "Git",
-                  "GitHub",
-                  "Scrum"
-                ]
-              }
+              { layer: { gl: "IBM i", es: "IBM i", en: "IBM i" }, items: ["AS/400", "RPG", "RPG FREE", "DB2", "SQL embebido"] },
+              { layer: { gl: "Servizos", es: "Servicios", en: "Services" }, items: ["Servicios web REST", "JSON", "Java (seguridad)"] },
+              { layer: { gl: "Interface", es: "Interfaz", en: "Front end" }, items: ["React", "Vercel"] },
+              { layer: { gl: "Equipo", es: "Equipo", en: "Teamwork" }, items: ["Git", "GitHub", "Scrum"] }
             ]
           },
           {
             id: "learnings",
             title: null,
-            draft: true,
-            ask: {
-              gl: "Que aprendiches en Seidor?",
-              es: "¿Qué aprendiste en Seidor? Dos o tres frases.",
-              en: "What did you learn at Seidor?"
-            }
+            list: [
+              {
+                gl: "Programar en RPG e RPG FREE sobre IBM i.",
+                es: "Programar en RPG y RPG FREE sobre IBM i.",
+                en: "Programming in RPG and RPG FREE on IBM i."
+              },
+              { gl: "Traballar con DB2 mediante SQL.", es: "Trabajar con DB2 mediante SQL.", en: "Working with DB2 through SQL." },
+              {
+                gl: "Conectar un sistema legacy cunha interface web moderna a través de servizos web.",
+                es: "Conectar un sistema legacy con una interfaz web moderna a través de servicios web.",
+                en: "Connecting a legacy system to a modern web interface through web services."
+              }
+            ]
           }
         ]
       }
@@ -1290,15 +821,8 @@ const CV = {
       slug: "ia-big-data",
       org: "IES Fernando Wirtz Suárez",
       detail: {
-        colors: [
-          "#1f3a66",
-          "#8a6bb0"
-        ],
-        badge: {
-          gl: "● En curso",
-          es: "● En curso",
-          en: "● In progress"
-        },
+        colors: ["#1f3a66", "#8a6bb0"],
+        badge: { gl: "● En curso", es: "● En curso", en: "● In progress" },
         kind: {
           gl: "Formación · IES Fernando Wirtz Suárez · 2026 – 2027",
           es: "Formación · IES Fernando Wirtz Suárez · 2026 – 2027",
@@ -1327,11 +851,7 @@ const CV = {
           },
           {
             id: "related",
-            title: {
-              gl: "Onde o aplico",
-              es: "Dónde lo aplico",
-              en: "Where I apply it"
-            },
+            title: { gl: "Onde o aplico", es: "Dónde lo aplico", en: "Where I apply it" },
             related: [
               {
                 kind: "project",
@@ -1347,31 +867,21 @@ const CV = {
           },
           {
             id: "modules",
-            title: {
-              gl: "Módulos e ferramentas",
-              es: "Módulos y herramientas",
-              en: "Modules and tools"
-            },
-            draft: true,
-            ask: {
-              gl: "Que módulos e ferramentas estás vendo?",
-              es: "¿Qué módulos y herramientas estás viendo (Python, ML, Spark, cloud…)?",
-              en: "Which modules and tools are you studying?"
-            }
-          },
-          {
-            id: "company",
-            title: {
-              gl: "Formación en empresa",
-              es: "Formación en empresa",
-              en: "Company training"
-            },
-            draft: true,
-            ask: {
-              gl: "Ao ser dual, en que empresa farás a parte de empresa?",
-              es: "Al ser dual, ¿en qué empresa harás la parte de empresa y en qué trabajarás? (si ya lo sabes)",
-              en: "Being dual, which company will you train at?"
-            }
+            title: { gl: "Que estou aprendendo", es: "Qué estoy aprendiendo", en: "What I'm learning" },
+            list: [
+              {
+                gl: "Python para intelixencia artificial e datos.",
+                es: "Python para inteligencia artificial y datos.",
+                en: "Python for artificial intelligence and data."
+              },
+              { gl: "Contorna Linux con WSL.", es: "Entorno Linux con WSL.", en: "Linux environment with WSL." },
+              {
+                gl: "Bases de datos non relacionais (NoSQL) para Big Data.",
+                es: "Bases de datos no relacionales (NoSQL) para Big Data.",
+                en: "Non-relational (NoSQL) databases for Big Data."
+              },
+              { gl: "Máis adiante: creación de axentes de IA.", es: "Más adelante: creación de agentes de IA.", en: "Coming up: building AI agents." }
+            ]
           }
         ]
       }
@@ -1386,10 +896,7 @@ const CV = {
       slug: "fp-daw",
       org: "IES Fernando Wirtz Suárez",
       detail: {
-        colors: [
-          "#7a3d1f",
-          "#a4532a"
-        ],
+        colors: ["#7a3d1f", "#a4532a"],
         kind: {
           gl: "Formación · IES Fernando Wirtz Suárez · 2024 – 2026",
           es: "Formación · IES Fernando Wirtz Suárez · 2024 – 2026",
@@ -1401,30 +908,9 @@ const CV = {
           en: "Dual higher vocational degree: classes at school and work at a company."
         },
         figures: [
-          {
-            value: "2",
-            label: {
-              gl: "anos de ciclo",
-              es: "años de ciclo",
-              en: "years"
-            }
-          },
-          {
-            value: "9",
-            label: {
-              gl: "meses en empresa (Seidor)",
-              es: "meses en empresa (Seidor)",
-              en: "months at a company (Seidor)"
-            }
-          },
-          {
-            value: "2",
-            label: {
-              gl: "proxectos destacados",
-              es: "proyectos destacados",
-              en: "standout projects"
-            }
-          }
+          { value: "2", label: { gl: "anos de ciclo", es: "años de ciclo", en: "years" } },
+          { value: "9", label: { gl: "meses en empresa (Seidor)", es: "meses en empresa (Seidor)", en: "months at a company (Seidor)" } },
+          { value: "2", label: { gl: "proxectos destacados", es: "proyectos destacados", en: "standout projects" } }
         ],
         sections: [
           {
@@ -1444,11 +930,7 @@ const CV = {
           },
           {
             id: "related",
-            title: {
-              gl: "Proxectos e experiencia do ciclo",
-              es: "Proyectos y experiencia del ciclo",
-              en: "Projects and experience"
-            },
+            title: { gl: "Proxectos e experiencia do ciclo", es: "Proyectos y experiencia del ciclo", en: "Projects and experience" },
             related: [
               {
                 kind: "project",
@@ -1474,48 +956,16 @@ const CV = {
                 kind: "trail",
                 slug: "seidor",
                 name: "Seidor",
-                text: {
-                  gl: "Desenvolvemento en IBM i e React.",
-                  es: "Desarrollo en IBM i y React.",
-                  en: "Development on IBM i and React."
-                }
+                text: { gl: "Desenvolvemento en IBM i e React.", es: "Desarrollo en IBM i y React.", en: "Development on IBM i and React." }
               }
             ]
-          },
-          {
-            id: "modules",
-            title: {
-              gl: "Módulos e tecnoloxías do ciclo",
-              es: "Módulos y tecnologías del ciclo",
-              en: "Course modules and technologies"
-            },
-            draft: true,
-            ask: {
-              gl: "Que módulos ou tecnoloxías do ciclo queres destacar?",
-              es: "¿Qué módulos o tecnologías del ciclo quieres destacar?",
-              en: "Which modules or technologies do you want to highlight?"
-            }
-          },
-          {
-            id: "learnings",
-            title: null,
-            draft: true,
-            ask: {
-              gl: "Que levas do ciclo?",
-              es: "¿Qué te llevas del ciclo? Dos o tres frases.",
-              en: "What did you take away from the course?"
-            }
           }
         ]
       }
     },
     {
       date: "2026",
-      title: {
-        gl: "Curso de Project Management (220 h)",
-        es: "Curso de Project Management (220 h)",
-        en: "Project Management course (220 h)"
-      },
+      title: { gl: "Curso de Project Management (220 h)", es: "Curso de Project Management (220 h)", en: "Project Management course (220 h)" },
       org: "Xunta de Galicia · Consultora Monte Alto"
     },
     {
@@ -1529,11 +979,7 @@ const CV = {
     },
     {
       date: "2017 – 2021",
-      title: {
-        gl: "Grao en Educación Social",
-        es: "Grado en Educación Social",
-        en: "Bachelor's Degree in Social Education"
-      },
+      title: { gl: "Grao en Educación Social", es: "Grado en Educación Social", en: "Bachelor's Degree in Social Education" },
       org: "Universidade da Coruña (UDC)"
     }
   ],
@@ -1543,7 +989,20 @@ const CV = {
     { group: "Frontend", items: ["React", "Angular", "SCSS", "Vite"] },
     {
       group: { gl: "Intelixencia Artificial", es: "Inteligencia Artificial", en: "Artificial Intelligence" },
-      items: [{ gl: "Fine-tuning de LLMs", es: "Fine-tuning de LLMs", en: "LLM fine-tuning" }, "Qwen 2.5", "Qwen 3.5", "Llama 3.2", "Ollama", "Cerebras", "SambaNova", "Gemini", "Mistral", "Cloudflare AI", "Groq"]
+      items: [
+        "Python",
+        { gl: "Fine-tuning de LLMs", es: "Fine-tuning de LLMs", en: "LLM fine-tuning" },
+        "Qwen 2.5",
+        "Qwen 3.5",
+        "Llama 3.2",
+        "Ollama",
+        "Cerebras",
+        "SambaNova",
+        "Gemini",
+        "Mistral",
+        "Cloudflare AI",
+        "Groq"
+      ]
     },
     { group: { gl: "Ferramentas", es: "Herramientas", en: "Tools" }, items: ["Git", "GitHub", "Docker", "JUnit", "Postman"] },
     {
@@ -1552,6 +1011,7 @@ const CV = {
         "Scrum",
         { gl: "Xestión de proxectos", es: "Gestión de proyectos", en: "Project management" },
         { gl: "Castelán (nativo)", es: "Español (nativo)", en: "Spanish (native)" },
+        { gl: "Galego (nativo)", es: "Gallego (nativo)", en: "Galician (native)" },
         { gl: "Inglés (B1/B2)", es: "Inglés (B1/B2)", en: "English (B1/B2)" }
       ]
     }
