@@ -10,7 +10,7 @@ const path = require("path");
 const root = path.join(__dirname, "..");
 const read = (f) => fs.readFileSync(path.join(root, f), "utf8");
 const CV = new Function(`${read("js/data.js")}; return CV;`)();
-const template = read("_plantilla.html");
+const template = read("herramientas/plantilla.html");
 const version = read("index.html").match(/\?v=([0-9a-z]+)/)[1];
 
 const LIGHTBOX = `

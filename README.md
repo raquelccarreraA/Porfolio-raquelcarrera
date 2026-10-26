@@ -81,7 +81,7 @@ Si la tecnología tiene logo en `js/tech-icons.js` (sacados de [Simple Icons](ht
    ```bash
    node herramientas/generar-paginas.js
    ```
-   Crea `proyectos/<slug>/` o `trayectoria/<slug>/` a partir de `_plantilla.html`.
+   Crea `proyectos/<slug>/` o `trayectoria/<slug>/` a partir de `herramientas/plantilla.html`.
 
 Las secciones de cada página se definen en `sections` y se muestran según lo que lleven: texto (`paragraphs`), lista (`list`), tarjetas con icono (`features`), pasos (`steps`), ficha técnica (`stack`), hitos (`milestones`) o prensa (`press`).
 
@@ -100,16 +100,13 @@ index.html            Portada
 proyectos/<slug>/     Página de cada proyecto            (se genera)
 trayectoria/<slug>/   Página de cada etapa                (se genera)
 presentacion/         Presentación completa              (se genera)
-_plantilla.html       Plantilla de esas páginas
-herramientas/         generar-paginas.js
+herramientas/         generar-paginas.js y la plantilla de esas páginas
 js/data.js            Todo el contenido
 js/main.js            Pinta las páginas a partir de data.js
 js/tech-icons.js      Logos de las tecnologías
 css/styles.css        Estilos
 assets/               Foto, capturas, logo de Galivelop y fuentes (licencia OFL)
 docs/                 Capturas de este README
-proyecto.html, trayectoria.html, presentacion.html
-                      Direcciones antiguas: redirigen a las nuevas
 ```
 
 ## Más detalles

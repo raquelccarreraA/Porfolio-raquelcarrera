@@ -86,7 +86,7 @@ const CV = {
     ]
   },
 
-  // Presentación completa (presentacion.html): se enlaza desde «Sobre mí».
+  // Presentación completa (presentacion/): se enlaza desde «Sobre mí».
   presentation: {
     intro: [
       {
@@ -144,7 +144,7 @@ const CV = {
   ],
 
   // Proyectos: la tarjeta de la portada usa name, kind, badge, summary, cover y tags;
-  // la página del proyecto (proyecto.html?p=slug) usa además figures, gallery y sections.
+  // la página del proyecto (proyectos/<slug>/) usa además figures, gallery y sections.
   // Una sección con draft: true y ask solo se ve con ?borrador=1 (hueco pendiente de completar).
   projects: [
     {
@@ -762,7 +762,7 @@ const CV = {
     }
   ],
 
-  // Experiencia y formación: las entradas con slug y detail tienen página propia (trayectoria.html?id=slug).
+  // Experiencia y formación: las entradas con slug y detail tienen página propia (trayectoria/<slug>/).
   experience: [
     {
       date: {

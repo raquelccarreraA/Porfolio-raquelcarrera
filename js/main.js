@@ -250,7 +250,7 @@
       (CV.presentation ? `<a class="letter__more" href="${presentationUrl()}">${esc(ui().presLink)} ${icon("arrow")}</a>` : "");
   }
 
-  // Página de presentación (presentacion.html): el texto completo, con aspecto de carta.
+  // Página de presentación (presentacion/): el texto completo, con aspecto de carta.
   function renderLetterPage() {
     const pr = CV.presentation;
     document.title = `${ui().presEyebrow} · ${CV.name}`;
