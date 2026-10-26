@@ -253,8 +253,6 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
 .lightbox__close { position: fixed; top: 16px; right: 16px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, .15); color: #fff; font-size: 18px; cursor: pointer; }
 
 /* ===== 8c. Trayectoria, borrador y contacto ===== */
-.tl-item__more { display: inline-flex; align-items: center; gap: 4px; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--accent); }
-.tl-item__more:hover .icon { transform: translate(2px, -2px); }
 .phead__grid--solo { grid-template-columns: 1fr; max-width: 760px; }
 .draft-note { margin: 0; padding: 12px 16px; border-radius: 12px; border: 1px dashed var(--accent-2); color: var(--accent-2); font-size: 14px; }
 .fold--draft { border-style: dashed; border-color: var(--accent-2); background: color-mix(in srgb, var(--accent-2) 5%, var(--surface)); }
@@ -288,33 +286,65 @@ button.btn--primary { color: var(--bg); }
 .letter__sign { margin: 28px 0 0 !important; font: 600 20px var(--serif); color: var(--ink) !important; }
 .letter__sign span { display: block; font: 400 14px var(--sans); color: var(--muted); }
 
-/* ===== 9. Timeline ===== */
-.timeline { display: grid; gap: 32px; border-left: 2px solid var(--line); padding-left: 32px; }
-.tl-item { position: relative; }
-.tl-item::before { content: ""; position: absolute; left: -41px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
-.tl-item__date { font: 12.5px var(--mono); color: var(--muted); margin: 0 0 4px; }
-.tl-item__date span { display: block; }
-.tl-item h3 { font-size: 20px; }
-.tl-item__org { color: var(--accent); margin: 2px 0 10px; font-weight: 500; }
-.tl-item ul { margin: 0; padding-left: 18px; color: var(--text); }
 
-.columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 56px; }
 
-/* ===== 10. Skills ===== */
-.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
-.skills__group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
-.skills__group h3 { font: 600 13px var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chip { font: 500 12.5px var(--mono); padding: 4px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
 
+/* ===== 9. Perfil: columna principal y lateral ===== */
+.profile { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 24px; align-items: start; padding-block: 88px; }
+.profile__main, .profile__side, .profile__stack { display: grid; gap: 24px; min-width: 0; }
+.pcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(22px, 3vw, 32px); scroll-margin-top: 90px; }
+.pcard__title { font-size: 24px; margin: 0 0 20px; }
+.pcard .letter { background: none; border: 0; box-shadow: none; padding: 0; max-width: none; }
+.pcard .letter .letter__lead { font-size: clamp(19px, 2.2vw, 23px); }
+@media (max-width: 1000px) { .profile { grid-template-columns: 1fr; padding-block: 64px; } }
+
+/* Trayectoria por etapas */
+.stages { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; }
+.stage { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 16px; }
+.stage:not(:last-child)::after { content: ""; position: absolute; left: 21px; top: 52px; bottom: -18px; width: 2px; background: var(--line); }
+.stage__mark { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); font: 700 13px var(--sans); letter-spacing: .02em; }
+.stage__body h3 { display: flex; align-items: center; min-height: 44px; font-size: 19px; line-height: 1.3; margin: 0 0 4px; }
+.stage__item { margin-top: 2px; }
+.stage__item + .stage__item { margin-top: 16px; }
+.stage__item--dot { position: relative; padding-left: 18px; }
+.stage__item--dot::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.stage__role { margin: 0; font-weight: 600; color: var(--ink); }
+.stage__date { margin: 2px 0 0; font-size: 13.5px; color: var(--muted); }
+.stage__date span { display: block; }
+.stage ul { margin: 10px 0 0; padding-left: 18px; color: var(--text); font-size: 15px; }
+.stage li + li { margin-top: 4px; }
+.stage__more { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--accent); }
+.stage__more:hover .icon { transform: translate(2px, -2px); }
+
+/* Habilidades con logo */
+.skills { display: grid; gap: 18px; }
+.skills__group h3 { font: 600 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+.techs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.tech { display: inline-flex; align-items: center; gap: 7px; padding: 5px 11px 5px 8px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font: 500 13px var(--sans); transition: border-color .2s, transform .2s; }
+.tech:hover { border-color: var(--accent); transform: translateY(-1px); }
+.tech__logo { width: 15px; height: 15px; flex: none; }
+.tech__logo--letter { display: grid; place-items: center; border-radius: 4px; background: var(--accent-soft); color: var(--accent); font: 700 9.5px var(--sans); }
+[data-theme="dark"] .tech__logo--dark path { fill: currentColor; }
+
+/* Idiomas */
+.langs { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--muted); font-size: 15px; }
+.langs strong { color: var(--ink); font-weight: 600; margin-right: 4px; }
+
+/* Colaboraciones */
+.collab { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 12px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); transition: border-color .2s; }
+.collab:hover { border-color: var(--accent); }
+.collab:hover .icon { transform: translate(2px, -2px); }
+.collab__logo { width: 44px; height: 44px; border-radius: 11px; }
+.collab__head strong { font-size: 16px; }
+.collab__tag { display: inline-block; margin-left: 4px; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font: 600 11.5px var(--sans); vertical-align: 1px; }
+.collab__kind { display: block; margin-top: 2px; color: var(--muted); font-size: 13px; }
+.collab .icon { width: 16px; height: 16px; color: var(--accent); transition: transform .2s; }
+.collab__text { margin: 12px 0 0; color: var(--text); font-size: 14.5px; }
+
 /* ===== 11. Contacto y footer ===== */
 .noscript { padding: 16px 0; color: var(--muted); }
-.collab { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; padding: 28px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
-.collab__logo { width: 72px; height: 72px; border-radius: 18px; }
-.collab .eyebrow { margin: 0 0 4px; }
-.collab h3 { font-size: 24px; margin: 0 0 8px; }
-.collab p:last-child { margin: 0; max-width: 62ch; }
-@media (max-width: 720px) { .collab { grid-template-columns: 1fr; gap: 16px; padding: 22px; } .collab .btn { justify-self: start; } }
 .phead__partner a { color: var(--accent); font-weight: 600; text-decoration: none; white-space: nowrap; }
 .phead__partner a:hover { text-decoration: underline; }
 .phead__partner svg { width: 14px; height: 14px; vertical-align: -2px; }

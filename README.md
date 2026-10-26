@@ -7,7 +7,7 @@ Web personal con mi CV: presentación, proyectos, experiencia, formación y habi
 ## Estructura
 
 ```
-index.html           Portada: presentación, proyectos, trayectoria, habilidades, colaboraciones y contacto
+index.html           Portada: presentación, proyectos, perfil (sobre mí, trayectoria, habilidades, idiomas, colaboraciones) y contacto
 proyectos/<slug>/    Página de cada proyecto (proyectos/toveriai/, proyectos/argaquest/)
 trayectoria/<slug>/  Detalle de experiencia y formación (trayectoria/seidor/, fp-daw/, ia-big-data/)
 presentacion/        Presentación completa (se enlaza desde «Sobre mí»)
@@ -17,6 +17,7 @@ proyecto.html, trayectoria.html, presentacion.html
                      Direcciones antiguas: redirigen a las nuevas para no romper enlaces
 css/styles.css       Estilos (tema claro y oscuro, diseño responsive)
 js/data.js           Todo el contenido del CV y de los proyectos
+js/tech-icons.js     Logos de las tecnologías de «Habilidades» (Simple Icons, CC0)
 js/main.js           Genera todas las páginas a partir de data.js
 assets/              Foto, capturas de los proyectos y logo de Galivelop
 assets/fonts/    Fuentes Fraunces, Inter y JetBrains Mono (licencia OFL)
@@ -44,7 +45,10 @@ El nombre, el rol y el resumen también aparecen en castellano en `index.html` (
 ## Trayectoria, colaboraciones y contacto
 
 Las entradas de `CV.experience` y `CV.education` que llevan `slug` y `detail` tienen página propia y un enlace «Ver más» en la portada. `detail` usa el mismo formato que los proyectos.
-La sección «Colaboraciones» de la portada se genera con `CV.collab` (Galivelop), y la página de toVeriAI muestra además la nota de `partner`.
+Debajo de los proyectos, la portada es un perfil en dos columnas: a la izquierda «Sobre mí» y la trayectoria; a la derecha, habilidades, idiomas y colaboraciones. En móvil va todo en una columna.
+Las entradas seguidas de la misma organización se agrupan bajo un mismo distintivo, que muestra sus iniciales (o las siglas entre paréntesis, como «UDC»).
+Las habilidades (`CV.skills`) se muestran por categoría; si el nombre está en `js/tech-icons.js` llevan su logo y, si no, su inicial. Los idiomas están en `CV.languages`.
+La tarjeta de colaboraciones se genera con `CV.collab` (Galivelop), y la página de toVeriAI muestra además la nota de `partner`. El botón «Ficha del proyecto» de toVeriAI lleva a `overview`, la página del proyecto en GitHub Pages.
 El contacto de la portada se genera con `CV.contactWays` (la tarjeta de contacto, que muestra el correo con un botón para copiarlo).
 
 ## Modo borrador

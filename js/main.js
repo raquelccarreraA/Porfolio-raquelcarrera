@@ -10,7 +10,7 @@
       nav: { proyectos: "Proxectos", "sobre-mi": "Sobre min", trayectoria: "Traxectoria", habilidades: "Habilidades", contacto: "Contacto" },
       projects: "Proxectos", allProjects: "Todos os proxectos", projectsIntro: "O que construín, en produción e premiado. Entra en cada un para ver como está feito.",
       about: "Sobre min", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Falamos?", collabTitle: "Colaboracións",
-      seeProjects: "Ver proxectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proxecto", visit: "Visitar a web", repo: "Repositorio",
+      seeProjects: "Ver proxectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proxecto", visit: "Visitar a web", overview: "Ficha do proxecto", languages: "Idiomas",
       back: "Volver a proxectos", onThisPage: "Nesta páxina", expandAll: "Despregar todo", collapseAll: "Pregar todo", gallery: "Capturas",
       next: "Seguinte proxecto", close: "Pechar", notFound: "Non atopo ese proxecto.",
       ctaTitle: "Encaixa o meu perfil no teu equipo?", ctaText: "Teño dispoñibilidade inmediata. Escríbeme e cóntoche máis sobre este proxecto.",
@@ -23,7 +23,7 @@
       nav: { proyectos: "Proyectos", "sobre-mi": "Sobre mí", trayectoria: "Trayectoria", habilidades: "Habilidades", contacto: "Contacto" },
       projects: "Proyectos", allProjects: "Todos los proyectos", projectsIntro: "Lo que he construido, en producción y premiado. Entra en cada uno para ver cómo está hecho.",
       about: "Sobre mí", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "¿Hablamos?", collabTitle: "Colaboraciones",
-      seeProjects: "Ver proyectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proyecto", visit: "Visitar la web", repo: "Repositorio",
+      seeProjects: "Ver proyectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proyecto", visit: "Visitar la web", overview: "Ficha del proyecto", languages: "Idiomas",
       back: "Volver a proyectos", onThisPage: "En esta página", expandAll: "Desplegar todo", collapseAll: "Plegar todo", gallery: "Capturas",
       next: "Siguiente proyecto", close: "Cerrar", notFound: "No encuentro ese proyecto.",
       ctaTitle: "¿Encaja mi perfil en tu equipo?", ctaText: "Tengo disponibilidad inmediata. Escríbeme y te cuento más sobre este proyecto.",
@@ -36,7 +36,7 @@
       nav: { proyectos: "Projects", "sobre-mi": "About", trayectoria: "Background", habilidades: "Skills", contacto: "Contact" },
       projects: "Projects", allProjects: "All projects", projectsIntro: "What I've built, live and award-winning. Open each one to see how it's made.",
       about: "About me", experience: "Experience", education: "Education", skills: "Skills", contact: "Let's talk", collabTitle: "Collaborations",
-      seeProjects: "See projects", downloadCv: "Download CV (PDF)", viewProject: "View project", visit: "Visit website", repo: "Repository",
+      seeProjects: "See projects", downloadCv: "Download CV (PDF)", viewProject: "View project", visit: "Visit website", overview: "Project overview", languages: "Languages",
       back: "Back to projects", onThisPage: "On this page", expandAll: "Expand all", collapseAll: "Collapse all", gallery: "Screenshots",
       next: "Next project", close: "Close", notFound: "I can't find that project.",
       ctaTitle: "Does my profile fit your team?", ctaText: "I'm available immediately. Write to me and I'll tell you more about this project.",
@@ -227,15 +227,13 @@
   function renderCollab() {
     const c = CV.collab;
     $("collab").innerHTML = `
-      <article class="collab reveal">
-        <img class="collab__logo" src="${c.logo}" alt="" width="72" height="72">
-        <div>
-          <p class="eyebrow">${esc(t(c.kind))}</p>
-          <h3>${esc(c.name)}</h3>
-          <p>${esc(t(c.text))}</p>
-        </div>
-        ${button(c.url, t(c.link))}
-      </article>`;
+      <a class="collab" href="${c.url}" target="_blank" rel="noopener">
+        <img class="collab__logo" src="${c.logo}" alt="" width="44" height="44">
+        <span class="collab__head"><strong>${esc(c.name)}</strong> <span class="collab__tag">${esc(t(c.tag))}</span>
+          <span class="collab__kind">${esc(t(c.kind))}</span></span>
+        ${icon("arrow")}
+      </a>
+      <p class="collab__text">${esc(t(c.text))}</p>`;
   }
 
   // Copia al portapapeles y confirma en la etiqueta del botón durante un momento.
@@ -307,23 +305,55 @@
       </article>`).join("");
   }
 
+  // Iniciales para el distintivo de cada etapa: las siglas entre paréntesis si las hay («UDC») o hasta dos iniciales.
+  function initials(org) {
+    const acronym = org.match(/\(([A-ZÁÉÍÓÚ]{2,4})\)/);
+    if (acronym) return acronym[1];
+    return org.split("·")[0].split(/[\s.]+/).filter((w) => /^\p{Lu}/u.test(w)).slice(0, 2).map((w) => w[0]).join("");
+  }
+
+  // Trayectoria por etapas: distintivo con iniciales, organización y, debajo, cada puesto o titulación.
+  // Las entradas seguidas de la misma organización se agrupan bajo un solo distintivo.
   function renderTimeline(target, entries) {
-    $(target).innerHTML = entries.map((i) => `
-      <div class="tl-item reveal">
-        <p class="tl-item__date">${t(i.date).split(" · ").map((d) => `<span>${esc(d)}</span>`).join("")}</p>
-        <h3>${esc(t(i.title))}</h3>
-        <p class="tl-item__org">${esc(t(i.org))}</p>
-        ${i.points ? list(i.points) : ""}
-        ${i.slug && i.detail ? `<a class="tl-item__more" href="${trailUrl(i.slug)}">${esc(ui().more)} ${icon("arrow")}</a>` : ""}
-      </div>`).join("");
+    const groups = [];
+    entries.forEach((e) => {
+      const last = groups[groups.length - 1];
+      if (last && last.org === t(e.org)) last.items.push(e);
+      else groups.push({ org: t(e.org), items: [e] });
+    });
+    $(target).innerHTML = groups.map((g) => `
+      <li class="stage">
+        <span class="stage__mark" aria-hidden="true">${esc(initials(g.org))}</span>
+        <div class="stage__body">
+          <h3>${esc(g.org)}</h3>
+          ${g.items.map((i) => `
+          <div class="stage__item${g.items.length > 1 ? " stage__item--dot" : ""}">
+            <p class="stage__role">${esc(t(i.title))}</p>
+            <p class="stage__date">${t(i.date).split(" · ").map((d) => `<span>${esc(d)}</span>`).join("")}</p>
+            ${i.points ? list(i.points) : ""}
+            ${i.slug && i.detail ? `<a class="stage__more" href="${trailUrl(i.slug)}">${esc(ui().more)} ${icon("arrow")}</a>` : ""}
+          </div>`).join("")}
+        </div>
+      </li>`).join("");
+  }
+
+  // Etiqueta de tecnología: logo de la marca (js/tech-icons.js) o, si no hay, su inicial.
+  function techChip(item) {
+    const name = t(item);
+    const logo = typeof TECH_ICONS !== "undefined" && TECH_ICONS[name];
+    const mark = logo
+      ? `<svg class="tech__logo${logo.dark ? " tech__logo--dark" : ""}" viewBox="0 0 24 24" aria-hidden="true"><path fill="${logo.c}" d="${logo.d}"/></svg>`
+      : `<span class="tech__logo tech__logo--letter" aria-hidden="true">${esc(name[0])}</span>`;
+    return `<li class="tech">${mark}${esc(name)}</li>`;
   }
 
   function renderSkills() {
     $("skills-grid").innerHTML = CV.skills.map((s) => `
-      <div class="skills__group reveal">
+      <div class="skills__group">
         <h3>${esc(t(s.group))}</h3>
-        ${chips(s.items)}
+        <ul class="techs">${s.items.map(techChip).join("")}</ul>
       </div>`).join("");
+    $("languages").innerHTML = CV.languages.map((l) => `<li><strong>${esc(t(l.name))}</strong> ${esc(t(l.level))}</li>`).join("");
   }
 
   // ===== Páginas de detalle (proyectos y trayectoria) =====
@@ -388,7 +418,7 @@
     const next = all[(all.findIndex((x) => x.slug === p.slug) + 1) % all.length];
     const actions =
       (p.url ? button(p.url, ui().visit, true) : "") +
-      (p.repo ? button(p.repo, ui().repo) : "") +
+      (p.overview ? button(p.overview, ui().overview) : "") +
       button(homeUrl("#contacto"), ui().writeMe, !p.url);
 
     root.style.cssText = accent(p);
@@ -555,7 +585,9 @@
     const spy = new IntersectionObserver((entries) => entries.forEach((e) => {
       if (e.isIntersecting) links.forEach((a) => a.classList.toggle("active", (a.dataset.nav || a.dataset.spy) === e.target.id));
     }), { rootMargin: "-40% 0px -55% 0px" });
-    document.querySelectorAll("main section[id]").forEach((s) => spy.observe(s));
+    // En escritorio la columna lateral va al lado de la principal: solo cuentan las secciones de la principal.
+    const wide = matchMedia("(min-width: 1001px)").matches;
+    document.querySelectorAll("main section[id]").forEach((s) => { if (!(wide && s.closest(".profile__side"))) spy.observe(s); });
   }
 
   $("year").textContent = new Date().getFullYear();

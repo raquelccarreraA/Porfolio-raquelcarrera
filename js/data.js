@@ -45,7 +45,7 @@ const CV = {
     }
   ],
 
-  // Colaboraciones: sección de la portada antes del contacto.
+  // Colaboraciones: tarjeta en la columna lateral de la portada.
   collab: {
     name: "Galivelop",
     logo: "assets/galivelop/logo.svg",
@@ -55,12 +55,12 @@ const CV = {
       es: "Taller independiente de software · Galicia",
       en: "Independent software workshop · Galicia"
     },
+    tag: { gl: "Colaboradora", es: "Colaboradora", en: "Collaborator" },
     text: {
-      gl: "Formo parte de Galivelop, un obradoiro independente de software nacido en Galicia onde se constrúen proxectos ambiciosos de forma colaborativa. Colaboro co equipo e alí tamén se presenta toVeriAI.",
-      es: "Formo parte de Galivelop, un taller independiente de software nacido en Galicia donde se construyen proyectos ambiciosos de forma colaborativa. Colaboro con el equipo y allí también se presenta toVeriAI.",
-      en: "I'm part of Galivelop, an independent software workshop from Galicia where ambitious projects are built collaboratively. I collaborate with the team, and toVeriAI is also featured there."
-    },
-    link: { gl: "Visitar Galivelop", es: "Visitar Galivelop", en: "Visit Galivelop" }
+      gl: "Formo parte deste obradoiro, onde se constrúen proxectos ambiciosos de forma colaborativa. Alí tamén se presenta toVeriAI.",
+      es: "Formo parte de este taller, donde se construyen proyectos ambiciosos de forma colaborativa. Allí también se presenta toVeriAI.",
+      en: "I'm part of this workshop, where ambitious projects are built collaboratively. toVeriAI is also featured there."
+    }
   },
 
   // Sobre mí: el primer párrafo se muestra destacado.
@@ -168,7 +168,8 @@ const CV = {
         alt: { gl: "Páxina de inicio de toVeriAI", es: "Página de inicio de toVeriAI", en: "toVeriAI home page" }
       },
       url: "https://www.toveriai.com",
-      repo: "https://github.com/raquelccarreraA/ToVeriAI",
+      // Página de presentación del proyecto (GitHub Pages del repo ToVeriAI); el código es privado.
+      overview: "https://raquelccarreraa.github.io/ToVeriAI/index.html",
       // Nota bajo los botones de la cabecera del proyecto.
       partner: {
         url: "https://zeldris.github.io/Portal-Galivelop/proyectos/toveriai/",
@@ -640,7 +641,6 @@ const CV = {
         alt: { gl: "Captura de ArgaQuest", es: "Captura de ArgaQuest", en: "Screenshot of ArgaQuest" }
       },
       url: "https://argaquest.fernandowirtz.com/",
-      repo: "",
       tags: ["React", "Spring Boot", "WebSockets", "Project Management"],
       figures: [
         {
@@ -1041,9 +1041,12 @@ const CV = {
     }
   ],
 
+  // Habilidades por categoría. Las que tienen logo en js/tech-icons.js lo muestran; el resto, su inicial.
   skills: [
-    { group: "Backend", items: ["Java", "Spring Boot", "Spring Security", "JWT", "RPG FREE", "SQL", "MySQL", "H2", "APIs REST"] },
+    { group: "Backend", items: ["Java", "Spring Boot", "Spring Security", "JWT", "APIs REST", "RPG FREE"] },
     { group: "Frontend", items: ["React", "Angular", "SCSS", "Vite"] },
+    { group: { gl: "Bases de datos", es: "Bases de datos", en: "Databases" }, items: ["SQL", "MySQL", "DB2", "H2"] },
+    { group: { gl: "Probas", es: "Pruebas", en: "Testing" }, items: ["JUnit", "Mockito"] },
     {
       group: { gl: "Intelixencia Artificial", es: "Inteligencia Artificial", en: "Artificial Intelligence" },
       items: [
@@ -1061,16 +1064,16 @@ const CV = {
         "Groq"
       ]
     },
-    { group: { gl: "Ferramentas", es: "Herramientas", en: "Tools" }, items: ["Git", "GitHub", "Docker", "JUnit", "Mockito", "Postman"] },
+    { group: { gl: "Ferramentas", es: "Herramientas", en: "Tools" }, items: ["Git", "GitHub", "Docker", "Postman"] },
     {
-      group: { gl: "Metodoloxía e idiomas", es: "Metodología e idiomas", en: "Methodology & languages" },
-      items: [
-        "Scrum",
-        { gl: "Xestión de proxectos", es: "Gestión de proyectos", en: "Project management" },
-        { gl: "Castelán (nativo)", es: "Español (nativo)", en: "Spanish (native)" },
-        { gl: "Galego (nativo)", es: "Gallego (nativo)", en: "Galician (native)" },
-        { gl: "Inglés (B1/B2)", es: "Inglés (B1/B2)", en: "English (B1/B2)" }
-      ]
+      group: { gl: "Metodoloxía", es: "Metodología", en: "Methodology" },
+      items: ["Scrum", { gl: "Xestión de proxectos", es: "Gestión de proyectos", en: "Project management" }]
     }
+  ],
+
+  languages: [
+    { name: { gl: "Castelán", es: "Español", en: "Spanish" }, level: { gl: "Nativo", es: "Nativo", en: "Native" } },
+    { name: { gl: "Galego", es: "Gallego", en: "Galician" }, level: { gl: "Nativo", es: "Nativo", en: "Native" } },
+    { name: { gl: "Inglés", es: "Inglés", en: "English" }, level: "B1/B2" }
   ]
 };

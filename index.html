@@ -24,7 +24,7 @@
   </script>
   <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css?v=20261026b">
+  <link rel="stylesheet" href="css/styles.css?v=20261026c">
 </head>
 <body data-page="home">
 
@@ -94,36 +94,39 @@
     </section>
 
     <!-- SOBRE MÍ -->
-    <section id="sobre-mi" class="section container">
-      <h2 class="section__title" data-i18n="about">Sobre mí</h2>
-      <article class="letter reveal" id="letter"></article>
-    </section>
-
-    <!-- TRAYECTORIA: experiencia y formación -->
-    <section id="trayectoria" class="section container">
-      <div class="columns">
-        <div>
-          <h2 class="section__title" data-i18n="experience">Experiencia</h2>
-          <div class="timeline" id="experience"></div>
-        </div>
-        <div>
-          <h2 class="section__title" data-i18n="education">Formación</h2>
-          <div class="timeline" id="education"></div>
-        </div>
+    <!-- PERFIL: a la izquierda «Sobre mí» y la trayectoria; a la derecha, lo que se consulta de un vistazo -->
+    <div class="profile container">
+      <div class="profile__main">
+        <section id="sobre-mi" class="pcard reveal">
+          <h2 class="pcard__title" data-i18n="about">Sobre mí</h2>
+          <div class="letter" id="letter"></div>
+        </section>
+        <section id="trayectoria" class="profile__stack">
+          <div class="pcard reveal">
+            <h2 class="pcard__title" data-i18n="experience">Experiencia</h2>
+            <ol class="stages" id="experience"></ol>
+          </div>
+          <div class="pcard reveal">
+            <h2 class="pcard__title" data-i18n="education">Formación</h2>
+            <ol class="stages" id="education"></ol>
+          </div>
+        </section>
       </div>
-    </section>
-
-    <!-- HABILIDADES -->
-    <section id="habilidades" class="section container">
-      <h2 class="section__title" data-i18n="skills">Habilidades</h2>
-      <div class="skills" id="skills-grid"></div>
-    </section>
-
-    <!-- COLABORACIONES -->
-    <section id="colaboraciones" class="section container">
-      <h2 class="section__title" data-i18n="collabTitle">Colaboraciones</h2>
-      <div id="collab"></div>
-    </section>
+      <aside class="profile__side">
+        <section id="habilidades" class="pcard reveal">
+          <h2 class="pcard__title" data-i18n="skills">Habilidades</h2>
+          <div class="skills" id="skills-grid"></div>
+        </section>
+        <section class="pcard reveal" aria-labelledby="languages-title">
+          <h2 class="pcard__title" id="languages-title" data-i18n="languages">Idiomas</h2>
+          <ul class="langs" id="languages"></ul>
+        </section>
+        <section id="colaboraciones" class="pcard reveal">
+          <h2 class="pcard__title" data-i18n="collabTitle">Colaboraciones</h2>
+          <div id="collab"></div>
+        </section>
+      </aside>
+    </div>
 
     <!-- CONTACTO -->
     <section id="contacto" class="section section--band contact">
@@ -139,7 +142,8 @@
 
   <footer class="footer container">© <span id="year"></span> Raquel Comesaña Carrera</footer>
 
-  <script src="js/data.js?v=20261026b"></script>
-  <script src="js/main.js?v=20261026b"></script>
+  <script src="js/tech-icons.js?v=20261026c"></script>
+  <script src="js/data.js?v=20261026c"></script>
+  <script src="js/main.js?v=20261026c"></script>
 </body>
 </html>
