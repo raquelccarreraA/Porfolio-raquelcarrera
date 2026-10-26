@@ -773,28 +773,31 @@ const CV = {
       title: { gl: "Desenvolvedora full stack", es: "Desarrolladora full stack", en: "Full stack developer" },
       slug: "seidor",
       org: "Seidor",
-      tags: ["Java", "React", "APIs REST", "n8n", "RPG FREE", "DB2"],
+      tags: ["React", "Java", "Spring Security", "APIs REST", "RPG FREE", "DB2", "n8n"],
       points: {
         gl: [
-          "Seguridade de usuarios con Java na migración dunha aplicación de xestión á web.",
-          "Nova interface en React que substitúe as pantallas de terminal, despregada en Vercel.",
-          "Servizos REST que devolven JSON a React, coa lóxica de negocio en RPG FREE e SQL embebido sobre DB2.",
-          "Automatización de procesos con n8n.",
-          "Traballo en equipo con Git/GitHub e Scrum."
+          "Modernización de pantallas green-screen a aplicacións web en React, con compoñentes e estilos reutilizables.",
+          "Servizos REST sobre IBM i que devolven JSON para consumilos desde React.",
+          "Seguridade con Java, Spring Boot e Spring Security.",
+          "RPG FREE con SQL embebido sobre DB2: funcións, vistas e cursores.",
+          "Avisos automáticos por correo con n8n, con logs e datos dos dashboards.",
+          "Git/GitHub para o código fonte de IBM i e traballo en Scrum."
         ],
         es: [
-          "Seguridad de usuarios con Java en la migración de una aplicación de gestión a la web.",
-          "Nueva interfaz en React que sustituye las pantallas de terminal, desplegada en Vercel.",
-          "Servicios REST que devuelven JSON a React, con la lógica de negocio en RPG FREE y SQL embebido sobre DB2.",
-          "Automatización de procesos con n8n.",
-          "Trabajo en equipo con Git/GitHub y Scrum."
+          "Modernización de pantallas green-screen a aplicaciones web en React, con componentes y estilos reutilizables.",
+          "Servicios REST sobre IBM i que devuelven JSON para consumirlos desde React.",
+          "Seguridad con Java, Spring Boot y Spring Security.",
+          "RPG FREE con SQL embebido sobre DB2: funciones, vistas y cursores.",
+          "Avisos automáticos por correo con n8n, con logs y datos de los dashboards.",
+          "Git/GitHub para el código fuente de IBM i y trabajo en Scrum."
         ],
         en: [
-          "User security in Java while migrating a business application to the web.",
-          "A new React interface replacing the terminal screens, deployed on Vercel.",
-          "REST services returning JSON to React, with business logic in RPG FREE and embedded SQL on DB2.",
-          "Process automation with n8n.",
-          "Teamwork with Git/GitHub and Scrum."
+          "Modernizing green-screen applications into React web apps, with reusable components and styles.",
+          "REST services on IBM i returning JSON to be consumed from React.",
+          "Security with Java, Spring Boot and Spring Security.",
+          "RPG FREE with embedded SQL on DB2: functions, views and cursors.",
+          "Automated email alerts with n8n, carrying logs and dashboard data.",
+          "Git/GitHub for IBM i source code and Scrum teamwork."
         ]
       },
       detail: {
@@ -802,28 +805,35 @@ const CV = {
         name: "Seidor",
         kind: { gl: "Experiencia · Desenvolvedora full stack", es: "Experiencia · Desarrolladora full stack", en: "Experience · Full stack developer" },
         tagline: {
-          gl: "Full stack na modernización de aplicacións de xestión: seguridade en Java, servizos REST, React e automatización con n8n.",
-          es: "Full stack en la modernización de aplicaciones de gestión: seguridad en Java, servicios REST, React y automatización con n8n.",
-          en: "Full stack on modernizing business applications: Java security, REST services, React and n8n automation."
+          gl: "Da pantalla verde a React: modernización de aplicacións de xestión IBM i, con servizos REST, Spring Security e automatización con n8n.",
+          es: "De la pantalla verde a React: modernización de aplicaciones de gestión IBM i, con servicios REST, Spring Security y automatización con n8n.",
+          en: "From green screen to React: modernizing IBM i business applications, with REST services, Spring Security and n8n automation."
         },
         figures: [
-          { value: "9", label: { gl: "meses en Seidor", es: "meses en Seidor", en: "months at Seidor" } },
+          { value: "9", label: { gl: "meses a xornada completa", es: "meses a jornada completa", en: "months full time" } },
           { value: "2", label: { gl: "períodos: 2025 e 2026", es: "periodos: 2025 y 2026", en: "periods: 2025 and 2026" } },
-          { value: "4", label: { gl: "capas: seguridade, servizos, interface e automatización", es: "capas: seguridad, servicios, interfaz y automatización", en: "layers: security, services, UI and automation" } }
+          {
+            value: "5",
+            label: {
+              gl: "capas: interface, servizos, datos, seguridade e automatización",
+              es: "capas: interfaz, servicios, datos, seguridad y automatización",
+              en: "layers: UI, services, data, security and automation"
+            }
+          }
         ],
         sections: [
           {
             id: "about",
             paragraphs: [
               {
-                gl: "Traballei en Seidor de abril a xullo de 2025 e de marzo a xullo de 2026, no equipo que moderniza aplicacións de xestión sobre IBM i para levalas á web.",
-                es: "Trabajé en Seidor de abril a julio de 2025 y de marzo a julio de 2026, en el equipo que moderniza aplicaciones de gestión sobre IBM i para llevarlas a la web.",
-                en: "I worked at Seidor from April to July 2025 and from March to July 2026, in the team that modernizes IBM i business applications and brings them to the web."
+                gl: "Integreime no equipo de desenvolvemento IBM i de Seidor para modernizar aplicacións de xestión herdadas e conectalas con tecnoloxías web actuais. Estiven de abril a xullo de 2025 e de marzo a xullo de 2026, a xornada completa.",
+                es: "Me integré en el equipo de desarrollo IBM i de Seidor para modernizar aplicaciones de gestión heredadas y conectarlas con tecnologías web actuales. Estuve de abril a julio de 2025 y de marzo a julio de 2026, a jornada completa.",
+                en: "I joined Seidor's IBM i development team to modernize legacy business applications and connect them to today's web technologies. I was there from April to July 2025 and from March to July 2026, full time."
               },
               {
-                gl: "Toquei todas as capas: a seguridade de usuarios en Java, os servizos REST, a interface en React e a automatización de procesos con n8n, ademais da lóxica de negocio en RPG FREE e DB2.",
-                es: "Toqué todas las capas: la seguridad de usuarios en Java, los servicios REST, la interfaz en React y la automatización de procesos con n8n, además de la lógica de negocio en RPG FREE y DB2.",
-                en: "I worked across every layer: user security in Java, the REST services, the React interface and process automation with n8n, as well as business logic in RPG FREE and DB2."
+                gl: "Traballei en todas as capas: as pantallas novas en React, os servizos REST que as alimentan, a lóxica e os datos en RPG FREE e DB2, a seguridade con Spring Security e os avisos automáticos con n8n.",
+                es: "Trabajé en todas las capas: las pantallas nuevas en React, los servicios REST que las alimentan, la lógica y los datos en RPG FREE y DB2, la seguridad con Spring Security y los avisos automáticos con n8n.",
+                en: "I worked across every layer: the new React screens, the REST services that feed them, logic and data in RPG FREE and DB2, security with Spring Security and automated alerts with n8n."
               }
             ]
           },
@@ -832,31 +842,45 @@ const CV = {
             title: { gl: "Que fixen", es: "Qué hice", en: "What I did" },
             list: [
               {
-                gl: "Seguridade de usuarios con Java na migración dunha aplicación de xestión á web.",
-                es: "Seguridad de usuarios con Java en la migración de una aplicación de gestión a la web.",
-                en: "User security in Java while migrating a business application to the web."
+                gl: "Modernizar interfaces green-screen (DDS) cara a aplicacións web en React, con arquitectura de compoñentes e estilos reutilizables con variables CSS.",
+                es: "Modernizar interfaces green-screen (DDS) hacia aplicaciones web en React, con arquitectura de componentes y estilos reutilizables con variables CSS.",
+                en: "Modernizing green-screen (DDS) interfaces into React web applications, with a component architecture and reusable styles built on CSS variables."
               },
               {
-                gl: "Nova interface en React que substitúe as pantallas de terminal, despregada en Vercel.",
-                es: "Nueva interfaz en React que sustituye las pantallas de terminal, desplegada en Vercel.",
-                en: "A new React interface replacing the terminal screens, deployed on Vercel."
+                gl: "Crear servizos REST sobre IBM i que devolven datos en JSON para consumilos desde React.",
+                es: "Crear servicios REST sobre IBM i que devuelven datos en JSON para consumirlos desde React.",
+                en: "Building REST services on IBM i that return JSON data for React to consume."
               },
               {
-                gl: "Servizos REST que devolven JSON a React, coa lóxica de negocio en RPG FREE e SQL embebido sobre DB2.",
-                es: "Servicios REST que devuelven JSON a React, con la lógica de negocio en RPG FREE y SQL embebido sobre DB2.",
-                en: "REST services returning JSON to React, with business logic in RPG FREE and embedded SQL on DB2."
+                gl: "Tarefas de seguridade con Java, Spring Boot e Spring Security.",
+                es: "Tareas de seguridad con Java, Spring Boot y Spring Security.",
+                en: "Security work with Java, Spring Boot and Spring Security."
               },
-              { gl: "Automatización de procesos con n8n.", es: "Automatización de procesos con n8n.", en: "Process automation with n8n." },
-              { gl: "Traballo en equipo con Git/GitHub e Scrum.", es: "Trabajo en equipo con Git/GitHub y Scrum.", en: "Teamwork with Git/GitHub and Scrum." }
+              {
+                gl: "Desenvolver programas en RPG FREE con SQL embebido sobre DB2: funcións escalares e de táboa, vistas e cursores integrados con pantallas de subficheiro.",
+                es: "Desarrollar programas en RPG FREE con SQL embebido sobre DB2: funciones escalares y de tabla, vistas y cursores integrados con pantallas de subfichero.",
+                en: "Developing RPG FREE programs with embedded SQL on DB2: scalar and table functions, views and cursors integrated with subfile screens."
+              },
+              {
+                gl: "Automatizar con n8n o envío de correos con logs e información dos dashboards.",
+                es: "Automatizar con n8n el envío de correos con logs e información de los dashboards.",
+                en: "Automating emails with logs and dashboard information using n8n."
+              },
+              {
+                gl: "Configurar Git/GitHub para o control de versións do código fonte de IBM i (IFS) e traballar con Scrum.",
+                es: "Configurar Git/GitHub para el control de versiones del código fuente de IBM i (IFS) y trabajar con Scrum.",
+                en: "Setting up Git/GitHub for version control of IBM i source code (IFS) and working in Scrum."
+              }
             ]
           },
           {
             id: "stack",
             stack: [
-              { layer: { gl: "Backend", es: "Backend", en: "Back end" }, items: ["Java (seguridad)", "Servicios web REST", "JSON"] },
-              { layer: { gl: "Interface", es: "Interfaz", en: "Front end" }, items: ["React", "Vercel"] },
+              { layer: { gl: "Interface", es: "Interfaz", en: "Front end" }, items: ["React", { gl: "Variables CSS", es: "Variables CSS", en: "CSS variables" }] },
+              { layer: { gl: "Servizos", es: "Servicios", en: "Services" }, items: ["APIs REST", "JSON"] },
+              { layer: { gl: "Seguridade", es: "Seguridad", en: "Security" }, items: ["Java", "Spring Boot", "Spring Security"] },
+              { layer: { gl: "Datos e IBM i", es: "Datos e IBM i", en: "Data and IBM i" }, items: ["RPG FREE", "SQL embebido", "DB2", "DDS"] },
               { layer: { gl: "Automatización", es: "Automatización", en: "Automation" }, items: ["n8n"] },
-              { layer: { gl: "Datos e IBM i", es: "Datos e IBM i", en: "Data and IBM i" }, items: ["RPG FREE", "DB2", "SQL embebido"] },
               { layer: { gl: "Equipo", es: "Equipo", en: "Teamwork" }, items: ["Git", "GitHub", "Scrum"] }
             ]
           },
@@ -865,20 +889,26 @@ const CV = {
             title: null,
             list: [
               {
-                gl: "Asegurar con Java unha aplicación nunha migración real.",
-                es: "Asegurar con Java una aplicación en una migración real.",
-                en: "Securing an application with Java in a real migration."
+                gl: "Levar unha aplicación de pantalla verde a unha interface web en React.",
+                es: "Llevar una aplicación de pantalla verde a una interfaz web en React.",
+                en: "Taking a green-screen application to a React web interface."
               },
               {
-                gl: "Conectar un sistema legacy cunha interface en React mediante servizos REST.",
-                es: "Conectar un sistema legacy con una interfaz en React mediante servicios REST.",
-                en: "Connecting a legacy system to a React interface through REST services."
+                gl: "Expor os datos dun sistema IBM i mediante servizos REST.",
+                es: "Exponer los datos de un sistema IBM i mediante servicios REST.",
+                en: "Exposing an IBM i system's data through REST services."
               },
-              { gl: "Automatizar procesos con n8n.", es: "Automatizar procesos con n8n.", en: "Automating processes with n8n." },
               {
-                gl: "Traballar con RPG FREE e DB2 sobre IBM i.",
-                es: "Trabajar con RPG FREE y DB2 sobre IBM i.",
-                en: "Working with RPG FREE and DB2 on IBM i."
+                gl: "SQL avanzado sobre DB2: funcións de táboa, vistas e cursores.",
+                es: "SQL avanzado sobre DB2: funciones de tabla, vistas y cursores.",
+                en: "Advanced SQL on DB2: table functions, views and cursors."
+              },
+              { gl: "Protexer unha aplicación con Spring Security.", es: "Proteger una aplicación con Spring Security.", en: "Securing an application with Spring Security." },
+              { gl: "Automatizar avisos con n8n.", es: "Automatizar avisos con n8n.", en: "Automating alerts with n8n." },
+              {
+                gl: "Control de versións con Git nun contorno IBM i (IFS).",
+                es: "Control de versiones con Git en un entorno IBM i (IFS).",
+                en: "Version control with Git in an IBM i environment (IFS)."
               }
             ]
           }
@@ -889,7 +919,7 @@ const CV = {
 
   education: [
     {
-      date: "2026 – 2027",
+      date: { gl: "2026 – 2027 · En curso", es: "2026 – 2027 · En curso", en: "2026 – 2027 · In progress" },
       title: {
         gl: "Especialización Dual en IA e Big Data",
         es: "Especialización Dual en IA y Big Data",
@@ -906,23 +936,54 @@ const CV = {
           en: "Education · IES Fernando Wirtz Suárez · 2026 – 2027"
         },
         tagline: {
-          gl: "A especialización que estou cursando agora para profundar en intelixencia artificial e datos.",
-          es: "La especialización que estoy cursando ahora para profundizar en inteligencia artificial y datos.",
-          en: "The specialization I'm taking now to go deeper into artificial intelligence and data."
+          gl: "Acabo de empezala e está en proceso. Mentres tanto, xa traballo con IA en produción en toVeriAI.",
+          es: "Acabo de empezarla y está en proceso. Mientras tanto, ya trabajo con IA en producción en toVeriAI.",
+          en: "I've just started it and it's in progress. Meanwhile, I already work with AI in production at toVeriAI."
         },
+        figures: [
+          { value: "2026–27", label: { gl: "curso en marcha", es: "curso en marcha", en: "course under way" } },
+          { value: "5", label: { gl: "LLMs xa en produción en toVeriAI", es: "LLMs ya en producción en toVeriAI", en: "LLMs already in production at toVeriAI" } },
+          { value: "v2", label: { gl: "de VeriAI, o meu modelo propio", es: "de VeriAI, mi modelo propio", en: "of VeriAI, my own model" } }
+        ],
         sections: [
           {
             id: "about",
             paragraphs: [
               {
-                gl: "Curso de especialización dual en Intelixencia Artificial e Big Data no IES Fernando Wirtz Suárez, que estou cursando en 2026-2027.",
-                es: "Curso de especialización dual en Inteligencia Artificial y Big Data en el IES Fernando Wirtz Suárez, que estoy cursando en 2026-2027.",
-                en: "Dual specialization course in Artificial Intelligence and Big Data at IES Fernando Wirtz Suárez, which I'm taking in 2026-2027."
+                gl: "Curso de especialización dual en Intelixencia Artificial e Big Data no IES Fernando Wirtz Suárez. Empecei no curso 2026-2027 e o programa está en marcha: irei completando esta páxina a medida que avance.",
+                es: "Curso de especialización dual en Inteligencia Artificial y Big Data en el IES Fernando Wirtz Suárez. Empecé en el curso 2026-2027 y el programa está en marcha: iré completando esta página a medida que avance.",
+                en: "Dual specialization course in Artificial Intelligence and Big Data at IES Fernando Wirtz Suárez. I started in the 2026-2027 academic year and the programme is under way: I'll keep this page updated as I progress."
               },
               {
-                gl: "Combínoo con VeriAI, o modelo propio de toVeriAI que adestro en local.",
-                es: "Lo combino con VeriAI, el modelo propio de toVeriAI que entreno en local.",
-                en: "I combine it with VeriAI, toVeriAI's own model, which I train locally."
+                gl: "Non parto de cero: en toVeriAI xa integro cinco LLMs en produción e adestro en local VeriAI, o meu propio modelo.",
+                es: "No parto de cero: en toVeriAI ya integro cinco LLMs en producción y entreno en local VeriAI, mi propio modelo.",
+                en: "I'm not starting from scratch: at toVeriAI I already run five LLMs in production and train VeriAI, my own model, locally."
+              }
+            ]
+          },
+          {
+            id: "doing",
+            title: { gl: "O que xa fago con IA", es: "Lo que ya hago con IA", en: "What I already do with AI" },
+            list: [
+              {
+                gl: "Orquestar cinco provedores de LLM (Cerebras, Gemini, Mistral, SambaNova e Cloudflare) con cambio automático se un falla.",
+                es: "Orquestar cinco proveedores de LLM (Cerebras, Gemini, Mistral, SambaNova y Cloudflare) con cambio automático si uno falla.",
+                en: "Orchestrating five LLM providers (Cerebras, Gemini, Mistral, SambaNova and Cloudflare) with automatic failover."
+              },
+              {
+                gl: "Fine-tuning en local de VeriAI: a v2 sobre Qwen 2.5 7B e unha variante sobre Qwen 3.5 7B.",
+                es: "Fine-tuning en local de VeriAI: la v2 sobre Qwen 2.5 7B y una variante sobre Qwen 3.5 7B.",
+                en: "Local fine-tuning of VeriAI: v2 on Qwen 2.5 7B and a variant on Qwen 3.5 7B."
+              },
+              {
+                gl: "Xerar datasets de adestramento a partir das análises reais da plataforma.",
+                es: "Generar datasets de entrenamiento a partir de los análisis reales de la plataforma.",
+                en: "Building training datasets from the platform's real analyses."
+              },
+              {
+                gl: "Enxeñaría de prompts e modelos locais con Ollama.",
+                es: "Ingeniería de prompts y modelos locales con Ollama.",
+                en: "Prompt engineering and local models with Ollama."
               }
             ]
           },
@@ -940,24 +1001,6 @@ const CV = {
                   en: "VeriAI: fine-tuning an in-house model on the platform's dataset."
                 }
               }
-            ]
-          },
-          {
-            id: "modules",
-            title: { gl: "Que estou aprendendo", es: "Qué estoy aprendiendo", en: "What I'm learning" },
-            list: [
-              {
-                gl: "Python para intelixencia artificial e datos.",
-                es: "Python para inteligencia artificial y datos.",
-                en: "Python for artificial intelligence and data."
-              },
-              { gl: "Contorna Linux con WSL.", es: "Entorno Linux con WSL.", en: "Linux environment with WSL." },
-              {
-                gl: "Bases de datos non relacionais (NoSQL) para Big Data.",
-                es: "Bases de datos no relacionales (NoSQL) para Big Data.",
-                en: "Non-relational (NoSQL) databases for Big Data."
-              },
-              { gl: "Máis adiante: creación de axentes de IA.", es: "Más adelante: creación de agentes de IA.", en: "Coming up: building AI agents." }
             ]
           }
         ]
