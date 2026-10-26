@@ -45,6 +45,18 @@ const CV = {
     }
   ],
 
+  // Colaboración: línea discreta al final de la portada, antes del pie.
+  collab: {
+    name: "Galivelop",
+    url: "https://zeldris.github.io/Portal-Galivelop/",
+    text: {
+      gl: "Colaboro con Galivelop, un obradoiro independente de software nacido en Galicia que dá forma a proxectos ambiciosos. toVeriAI tamén se presenta no seu portal.",
+      es: "Colaboro con Galivelop, un taller independiente de software nacido en Galicia que da forma a proyectos ambiciosos. toVeriAI también se presenta en su portal.",
+      en: "I collaborate with Galivelop, an independent software workshop from Galicia that brings ambitious projects to life. toVeriAI is also featured on its portal."
+    },
+    link: { gl: "Ver Galivelop", es: "Ver Galivelop", en: "Visit Galivelop" }
+  },
+
   // Sobre mí: el primer párrafo se muestra destacado.
   about: {
     gl: [
@@ -151,6 +163,16 @@ const CV = {
       },
       url: "https://www.toveriai.com",
       repo: "https://github.com/raquelccarreraA/ToVeriAI",
+      // Nota bajo los botones de la cabecera del proyecto.
+      partner: {
+        url: "https://zeldris.github.io/Portal-Galivelop/proyectos/toveriai/",
+        text: {
+          gl: "toVeriAI tamén se presenta en Galivelop, o obradoiro independente de software co que colaboro.",
+          es: "toVeriAI también se presenta en Galivelop, el taller independiente de software con el que colaboro.",
+          en: "toVeriAI is also featured on Galivelop, the independent software workshop I collaborate with."
+        },
+        link: { gl: "Velo en Galivelop", es: "Verlo en Galivelop", en: "See it on Galivelop" }
+      },
       tags: ["React", "Spring Boot", "Java", "MySQL", "LLMs", "Ollama"],
       figures: [
         { value: "0–100", label: { gl: "índice IMI", es: "índice IMI", en: "IMI score" } },

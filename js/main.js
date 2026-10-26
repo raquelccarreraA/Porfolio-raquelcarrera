@@ -208,6 +208,10 @@
     $("contact-actions").innerHTML = cvButton() + button(CV.links.linkedin, "LinkedIn") + button(CV.links.github, "GitHub");
     document.querySelectorAll(".copy-email").forEach((btn) =>
       btn.addEventListener("click", (e) => copyText(CV.links.email, e.currentTarget.querySelector("span"))));
+    const collab = $("collab");
+    if (collab && CV.collab) {
+      collab.innerHTML = `<p>${esc(t(CV.collab.text))} <a href="${CV.collab.url}" target="_blank" rel="noopener">${esc(t(CV.collab.link))} ${icon("arrow")}</a></p>`;
+    }
   }
 
   // Copia al portapapeles y confirma en la etiqueta del botón durante un momento.
@@ -376,6 +380,7 @@
             <p class="phead__tagline">${esc(t(p.tagline))}</p>
             ${p.badge || p.phase || p.date ? `<p class="phead__meta">${p.badge ? `<span class="badge">${esc(t(p.badge))}</span>` : ""}${p.phase ? `<span>${esc(t(p.phase))}</span>` : ""}</p>` : ""}
             <div class="hero__actions">${actions}</div>
+            ${p.partner ? `<p class="phead__partner">${esc(t(p.partner.text))} <a href="${p.partner.url}" target="_blank" rel="noopener">${esc(t(p.partner.link))} ${icon("arrow")}</a></p>` : ""}
           </div>
           ${p.cover ? `<figure class="window" aria-hidden="true">
             <span class="window__bar"><i></i><i></i><i></i></span>
