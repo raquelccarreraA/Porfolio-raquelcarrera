@@ -309,11 +309,15 @@ button.btn--primary { color: var(--bg); }
 
 /* ===== 11. Contacto y footer ===== */
 .noscript { padding: 16px 0; color: var(--muted); }
-.collab { padding: 28px 0 8px; text-align: center; }
-.collab p { max-width: 640px; margin: 0 auto; color: var(--muted); font-size: 14px; line-height: 1.6; }
-.collab a, .phead__partner a { color: var(--accent); font-weight: 600; text-decoration: none; white-space: nowrap; }
-.collab a:hover, .phead__partner a:hover { text-decoration: underline; }
-.collab svg, .phead__partner svg { width: 14px; height: 14px; vertical-align: -2px; }
+.collab { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; padding: 28px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+.collab__logo { width: 72px; height: 72px; border-radius: 18px; }
+.collab .eyebrow { margin: 0 0 4px; }
+.collab h3 { font-size: 24px; margin: 0 0 8px; }
+.collab p:last-child { margin: 0; max-width: 62ch; }
+@media (max-width: 720px) { .collab { grid-template-columns: 1fr; gap: 16px; padding: 22px; } .collab .btn { justify-self: start; } }
+.phead__partner a { color: var(--accent); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.phead__partner a:hover { text-decoration: underline; }
+.phead__partner svg { width: 14px; height: 14px; vertical-align: -2px; }
 .phead__partner { margin: 18px 0 0; max-width: 520px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; text-align: center; border-top: 1px solid var(--line); }
 

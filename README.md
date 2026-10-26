@@ -7,14 +7,18 @@ Web personal con mi CV: presentación, proyectos, experiencia, formación y habi
 ## Estructura
 
 ```
-index.html       Portada: presentación, proyectos, trayectoria, habilidades y contacto
-proyecto.html    Página de cada proyecto (proyecto.html?p=toveriai, ?p=argaquest)
-trayectoria.html Página de detalle de experiencia y formación (trayectoria.html?id=seidor, fp-daw, ia-big-data)
-presentacion.html Presentación completa (se enlaza desde «Sobre mí»)
-css/styles.css   Estilos (tema claro y oscuro, diseño responsive)
-js/data.js       Todo el contenido del CV y de los proyectos
-js/main.js       Genera las dos páginas a partir de data.js
-assets/          Foto y capturas de los proyectos
+index.html           Portada: presentación, proyectos, trayectoria, habilidades, colaboraciones y contacto
+proyectos/<slug>/    Página de cada proyecto (proyectos/toveriai/, proyectos/argaquest/)
+trayectoria/<slug>/  Detalle de experiencia y formación (trayectoria/seidor/, fp-daw/, ia-big-data/)
+presentacion/        Presentación completa (se enlaza desde «Sobre mí»)
+_plantilla.html      Plantilla de las páginas anteriores (Jekyll no la publica por empezar por «_»)
+herramientas/        generar-paginas.js: crea esas carpetas a partir de la plantilla y de data.js
+proyecto.html, trayectoria.html, presentacion.html
+                     Direcciones antiguas: redirigen a las nuevas para no romper enlaces
+css/styles.css       Estilos (tema claro y oscuro, diseño responsive)
+js/data.js           Todo el contenido del CV y de los proyectos
+js/main.js           Genera todas las páginas a partir de data.js
+assets/              Foto, capturas de los proyectos y logo de Galivelop
 assets/fonts/    Fuentes Fraunces, Inter y JetBrains Mono (licencia OFL)
 ```
 
@@ -23,19 +27,29 @@ assets/fonts/    Fuentes Fraunces, Inter y JetBrains Mono (licencia OFL)
 Cada proyecto de `CV.projects` tiene una tarjeta en la portada (nombre, tipo, resumen, captura y tecnologías) y su propia página con cifras, capturas y secciones desplegables.
 Las secciones se definen en `sections`; según los datos que lleven se muestran como texto (`paragraphs`), lista (`list`), tarjetas con icono (`features`), pasos (`steps`), pesos (`items`), ficha técnica (`stack`), hitos (`milestones`) o prensa (`press`).
 
+## Direcciones
+
+Las páginas interiores son carpetas con su `index.html`, para que la dirección se lea bien (`…/proyectos/toveriai/`). Llevan `<base>` a la raíz, así que los enlaces y recursos se escriben igual que en la portada.
+Si añades o quitas un proyecto o una entrada de trayectoria con página, o cambias la versión `?v=` de `index.html`, ejecuta:
+
+```
+node herramientas/generar-paginas.js
+```
+
 ## Editar el contenido
 
 Todo el texto está en `js/data.js`. Cambia ese archivo y la web se actualiza sola; no hace falta tocar el HTML.
 El nombre, el rol y el resumen también aparecen en castellano en `index.html` (para buscadores y vistas previas al compartir el enlace), así que si los cambias, cámbialos en los dos sitios.
 
-## Trayectoria y contacto
+## Trayectoria, colaboraciones y contacto
 
 Las entradas de `CV.experience` y `CV.education` que llevan `slug` y `detail` tienen página propia y un enlace «Ver más» en la portada. `detail` usa el mismo formato que los proyectos.
+La sección «Colaboraciones» de la portada se genera con `CV.collab` (Galivelop), y la página de toVeriAI muestra además la nota de `partner`.
 El contacto de la portada se genera con `CV.contactWays` (la tarjeta de contacto, que muestra el correo con un botón para copiarlo).
 
 ## Modo borrador
 
-Las secciones con `draft: true` (y los puntos de «Lo que busco» con `draft: true`) son huecos pendientes de completar: llevan la pregunta en `ask` y **solo se ven añadiendo `borrador=1` a la URL**, por ejemplo `…/trayectoria.html?id=seidor&borrador=1`. Quien visite la web normal no las ve. Para completar una, cambia `draft`/`ask` por el contenido (`paragraphs`, `list`…).
+Las secciones con `draft: true` son huecos pendientes de completar: llevan la pregunta en `ask` y **solo se ven añadiendo `borrador=1` a la URL**, por ejemplo `…/trayectoria/seidor/?borrador=1`. Quien visite la web normal no las ve. Para completar una, cambia `draft`/`ask` por el contenido (`paragraphs`, `list`…).
 
 ## Idiomas
 
@@ -48,15 +62,15 @@ role: { gl: "Desenvolvedora Full Stack", es: "Desarrolladora Full Stack", en: "F
 Los textos de la interfaz (menú, títulos, botones) están en `UI`, al principio de `js/main.js`.
 
 El idioma se elige así: `?lang=gl|es|en` en la URL, después el último elegido con el selector y después el del navegador. Si el navegador está en otro idioma, se muestra en inglés.
-Para mandar la web en un idioma concreto, comparte el enlace con `?lang=`, por ejemplo `…/Porfolio-raquelcarrera/?lang=en`.
+El idioma no aparece en la dirección al navegar: se recuerda en el navegador. Para mandar la web en un idioma concreto, comparte el enlace con `?lang=`, por ejemplo `…/Porfolio-raquelcarrera/?lang=en`; al abrirlo se guarda ese idioma y `?lang=` desaparece de la dirección.
 
 ## Caché del navegador
 
-`index.html`, `proyecto.html`, `trayectoria.html` y `presentacion.html` cargan `styles.css`, `data.js` y `main.js` con `?v=…` al final. Si cambias alguno de esos archivos, cambia ese número en los cuatro HTML: así los navegadores descargan la versión nueva en vez de usar la que tienen guardada.
+Las páginas cargan `styles.css`, `data.js` y `main.js` con `?v=…` al final. Si cambias alguno de esos archivos, cambia ese número en `index.html` y ejecuta `node herramientas/generar-paginas.js`, que lo copia al resto: así los navegadores descargan la versión nueva en vez de usar la que tienen guardada.
 
 ## Ver en local
 
-Abre `index.html` en el navegador. No necesita instalación ni dependencias.
+Sirve la carpeta con un servidor local (por ejemplo `python3 -m http.server`) y abre `http://localhost:8000/`. No necesita instalación ni dependencias; abrir `index.html` directamente funciona para la portada, pero las páginas interiores necesitan el servidor.
 
 ## Publicación
 

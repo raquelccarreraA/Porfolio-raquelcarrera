@@ -1,5 +1,5 @@
 // Renderiza la web a partir de CV (js/data.js) en gallego, castellano o inglés. Sin dependencias.
-// La portada (index.html) y la página de cada proyecto (proyecto.html?p=slug) comparten este archivo.
+// Todas las páginas comparten este archivo: la portada, proyectos/<slug>/, trayectoria/<slug>/ y presentacion/.
 (function () {
   const LANGS = ["gl", "es", "en"];
 
@@ -9,7 +9,7 @@
       title: "Raquel Comesaña Carrera · Desenvolvedora Full Stack",
       nav: { proyectos: "Proxectos", "sobre-mi": "Sobre min", trayectoria: "Traxectoria", habilidades: "Habilidades", contacto: "Contacto" },
       projects: "Proxectos", allProjects: "Todos os proxectos", projectsIntro: "O que construín, en produción e premiado. Entra en cada un para ver como está feito.",
-      about: "Sobre min", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Falamos?",
+      about: "Sobre min", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Falamos?", collabTitle: "Colaboracións",
       seeProjects: "Ver proxectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proxecto", visit: "Visitar a web", repo: "Repositorio",
       back: "Volver a proxectos", onThisPage: "Nesta páxina", expandAll: "Despregar todo", collapseAll: "Pregar todo", gallery: "Capturas",
       next: "Seguinte proxecto", close: "Pechar", notFound: "Non atopo ese proxecto.",
@@ -22,7 +22,7 @@
       title: "Raquel Comesaña Carrera · Desarrolladora Full Stack",
       nav: { proyectos: "Proyectos", "sobre-mi": "Sobre mí", trayectoria: "Trayectoria", habilidades: "Habilidades", contacto: "Contacto" },
       projects: "Proyectos", allProjects: "Todos los proyectos", projectsIntro: "Lo que he construido, en producción y premiado. Entra en cada uno para ver cómo está hecho.",
-      about: "Sobre mí", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "¿Hablamos?",
+      about: "Sobre mí", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "¿Hablamos?", collabTitle: "Colaboraciones",
       seeProjects: "Ver proyectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proyecto", visit: "Visitar la web", repo: "Repositorio",
       back: "Volver a proyectos", onThisPage: "En esta página", expandAll: "Desplegar todo", collapseAll: "Plegar todo", gallery: "Capturas",
       next: "Siguiente proyecto", close: "Cerrar", notFound: "No encuentro ese proyecto.",
@@ -35,7 +35,7 @@
       title: "Raquel Comesaña Carrera · Full Stack Developer",
       nav: { proyectos: "Projects", "sobre-mi": "About", trayectoria: "Background", habilidades: "Skills", contacto: "Contact" },
       projects: "Projects", allProjects: "All projects", projectsIntro: "What I've built, live and award-winning. Open each one to see how it's made.",
-      about: "About me", experience: "Experience", education: "Education", skills: "Skills", contact: "Let's talk",
+      about: "About me", experience: "Experience", education: "Education", skills: "Skills", contact: "Let's talk", collabTitle: "Collaborations",
       seeProjects: "See projects", downloadCv: "Download CV (PDF)", viewProject: "View project", visit: "Visit website", repo: "Repository",
       back: "Back to projects", onThisPage: "On this page", expandAll: "Expand all", collapseAll: "Collapse all", gallery: "Screenshots",
       next: "Next project", close: "Close", notFound: "I can't find that project.",
@@ -107,11 +107,13 @@
   const cvButton = () => (CV.links.cv ? button(CV.links.cv, ui().downloadCv, false, " download") : "");
   // ?borrador=1 muestra las secciones pendientes de completar (draft) y se mantiene al navegar.
   const draftMode = new URLSearchParams(location.search).has("borrador");
-  const query = () => `lang=${lang}${draftMode ? "&borrador=1" : ""}`;
-  const projectUrl = (slug) => `proyecto.html?p=${slug}&${query()}`;
-  const trailUrl = (slug) => `trayectoria.html?id=${slug}&${query()}`;
-  const presentationUrl = () => `presentacion.html?${query()}`;
-  const homeUrl = (hash = "") => (page === "home" ? hash : `index.html?${query()}${hash}`);
+  // Direcciones legibles. Las páginas interiores llevan <base> a la raíz, así que todas son relativas a ella.
+  const query = () => (draftMode ? "?borrador=1" : "");
+  const projectUrl = (slug) => `proyectos/${slug}/${query()}`;
+  const trailUrl = (slug) => `trayectoria/${slug}/${query()}`;
+  const presentationUrl = () => `presentacion/${query()}`;
+  const homeUrl = (hash = "") => (page === "home" ? hash : `./${query()}${hash}`);
+  const slug = document.body.dataset.slug;
   const accent = (p) => `--c1:${p.colors[0]};--c2:${p.colors[1]}`;
 
   function detectLang() {
@@ -126,6 +128,18 @@
       if (LANGS.includes(code)) return code;
     }
     return "en";
+  }
+
+  // ?lang= sirve para compartir la web en un idioma: se guarda y se quita de la dirección, igual que «index.html».
+  function cleanAddress() {
+    if (!location.protocol.startsWith("http")) return;
+    const url = new URL(location.href);
+    if (url.searchParams.has("lang")) {
+      try { localStorage.setItem("lang", lang); } catch (e) {}
+      url.searchParams.delete("lang");
+    }
+    url.pathname = url.pathname.replace(/index\.html$/, "");
+    if (url.href !== location.href) history.replaceState(null, "", url);
   }
 
   function renderStatic() {
@@ -145,7 +159,7 @@
 
   // Submenú «Proyectos» de la cabecera: una entrada con miniatura por proyecto.
   function renderSubmenu() {
-    const current = page === "project" ? new URLSearchParams(location.search).get("p") : null;
+    const current = page === "project" ? slug : null;
     $("submenu-list").innerHTML = CV.projects.map((p) => `
       <li><a class="submenu__item" href="${projectUrl(p.slug)}" style="${accent(p)}"${p.slug === current ? ' aria-current="page"' : ""}>
         <img src="${p.cover.mini}" alt="">
@@ -208,10 +222,20 @@
     $("contact-actions").innerHTML = cvButton() + button(CV.links.linkedin, "LinkedIn") + button(CV.links.github, "GitHub");
     document.querySelectorAll(".copy-email").forEach((btn) =>
       btn.addEventListener("click", (e) => copyText(CV.links.email, e.currentTarget.querySelector("span"))));
-    const collab = $("collab");
-    if (collab && CV.collab) {
-      collab.innerHTML = `<p>${esc(t(CV.collab.text))} <a href="${CV.collab.url}" target="_blank" rel="noopener">${esc(t(CV.collab.link))} ${icon("arrow")}</a></p>`;
-    }
+  }
+
+  function renderCollab() {
+    const c = CV.collab;
+    $("collab").innerHTML = `
+      <article class="collab reveal">
+        <img class="collab__logo" src="${c.logo}" alt="" width="72" height="72">
+        <div>
+          <p class="eyebrow">${esc(t(c.kind))}</p>
+          <h3>${esc(c.name)}</h3>
+          <p>${esc(t(c.text))}</p>
+        </div>
+        ${button(c.url, t(c.link))}
+      </article>`;
   }
 
   // Copia al portapapeles y confirma en la etiqueta del botón durante un momento.
@@ -339,14 +363,13 @@
     return n ? `<span class="fold__count">${n}</span>` : "";
   }
 
-  // Busca qué mostrar: un proyecto (proyecto.html?p=) o una entrada de trayectoria (trayectoria.html?id=).
+  // Busca qué mostrar: un proyecto (proyectos/<slug>/) o una entrada de trayectoria (trayectoria/<slug>/).
   function currentDetail() {
-    const params = new URLSearchParams(location.search);
     if (page === "project") {
-      const p = CV.projects.find((x) => x.slug === params.get("p"));
+      const p = CV.projects.find((x) => x.slug === slug);
       return { item: p, list: CV.projects, url: (x) => projectUrl(x.slug), back: [homeUrl("#proyectos"), ui().back] };
     }
-    const e = trail().find((x) => x.slug === params.get("id"));
+    const e = trail().find((x) => x.slug === slug);
     // Una entrada de trayectoria toma su nombre de title y su detalle de detail.
     const asItem = (x) => x && { name: x.detail.name || x.title, ...x.detail, slug: x.slug };
     return { item: asItem(e), list: trail().map(asItem), url: (x) => trailUrl(x.slug), back: [homeUrl("#trayectoria"), ui().backTrail] };
@@ -400,7 +423,7 @@
         </section>` : ""}
 
         <nav class="toc" aria-label="${esc(ui().onThisPage)}">
-          ${sections.map((s) => `<a href="#${s.id}" data-open="${s.id}"${s.draft ? ' class="toc__draft"' : ""}>${esc(sectionTitle(s))}</a>`).join("")}
+          ${sections.map((s) => `<a href="${location.pathname}${location.search}#${s.id}" data-open="${s.id}"${s.draft ? ' class="toc__draft"' : ""}>${esc(sectionTitle(s))}</a>`).join("")}
           <button type="button" class="toc__all" id="toggle-all"></button>
         </nav>
 
@@ -464,6 +487,7 @@
       renderTimeline("experience", CV.experience);
       renderTimeline("education", CV.education);
       renderSkills();
+      renderCollab();
       renderContact();
     } else if (page === "letter") {
       renderLetterPage();
@@ -483,9 +507,6 @@
       if (!b || b.dataset.lang === lang) return;
       lang = b.dataset.lang;
       try { localStorage.setItem("lang", lang); } catch (e) {}
-      const url = new URL(location.href);
-      url.searchParams.set("lang", lang);
-      history.replaceState(null, "", url);
       render();
     });
   }
@@ -538,6 +559,7 @@
   }
 
   $("year").textContent = new Date().getFullYear();
+  cleanAddress();
   render();
   setupLang();
   setupTheme();

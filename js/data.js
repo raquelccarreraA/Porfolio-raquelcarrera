@@ -45,16 +45,22 @@ const CV = {
     }
   ],
 
-  // Colaboración: línea discreta al final de la portada, antes del pie.
+  // Colaboraciones: sección de la portada antes del contacto.
   collab: {
     name: "Galivelop",
+    logo: "assets/galivelop/logo.svg",
     url: "https://zeldris.github.io/Portal-Galivelop/",
-    text: {
-      gl: "Colaboro con Galivelop, un obradoiro independente de software nacido en Galicia que dá forma a proxectos ambiciosos. toVeriAI tamén se presenta no seu portal.",
-      es: "Colaboro con Galivelop, un taller independiente de software nacido en Galicia que da forma a proyectos ambiciosos. toVeriAI también se presenta en su portal.",
-      en: "I collaborate with Galivelop, an independent software workshop from Galicia that brings ambitious projects to life. toVeriAI is also featured on its portal."
+    kind: {
+      gl: "Obradoiro independente de software · Galicia",
+      es: "Taller independiente de software · Galicia",
+      en: "Independent software workshop · Galicia"
     },
-    link: { gl: "Ver Galivelop", es: "Ver Galivelop", en: "Visit Galivelop" }
+    text: {
+      gl: "Formo parte de Galivelop, un obradoiro independente de software nacido en Galicia onde se constrúen proxectos ambiciosos de forma colaborativa. Colaboro co equipo e alí tamén se presenta toVeriAI.",
+      es: "Formo parte de Galivelop, un taller independiente de software nacido en Galicia donde se construyen proyectos ambiciosos de forma colaborativa. Colaboro con el equipo y allí también se presenta toVeriAI.",
+      en: "I'm part of Galivelop, an independent software workshop from Galicia where ambitious projects are built collaboratively. I collaborate with the team, and toVeriAI is also featured there."
+    },
+    link: { gl: "Visitar Galivelop", es: "Visitar Galivelop", en: "Visit Galivelop" }
   },
 
   // Sobre mí: el primer párrafo se muestra destacado.
