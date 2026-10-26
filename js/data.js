@@ -13,9 +13,16 @@ const CV = {
   location: { gl: "A Coruña, Galicia", es: "A Coruña, Galicia", en: "A Coruña, Galicia, Spain" },
 
   summary: {
-    gl: "Modernizo sistemas legacy e constrúo aplicacións web completas, do backend á interface. Creadora de toVeriAI, unha aplicación en produción. Agora especialízome en IA e Big Data.",
-    es: "Modernizo sistemas legacy y construyo aplicaciones web completas, del backend a la interfaz. Creadora de toVeriAI, una aplicación en producción. Ahora me especializo en IA y Big Data.",
-    en: "I modernize legacy systems and build complete web applications, from backend to UI. Creator of toVeriAI, an app in production. Currently specializing in AI and Big Data."
+    gl: "Constrúo aplicacións web completas con Java e Spring Boot no backend e React na interface. Creadora de toVeriAI, un produto con IA en produción. Agora especialízome en IA e Big Data.",
+    es: "Construyo aplicaciones web completas con Java y Spring Boot en el backend y React en la interfaz. Creadora de toVeriAI, un producto con IA en producción. Ahora me especializo en IA y Big Data.",
+    en: "I build complete web applications with Java and Spring Boot on the back end and React on the front end. Creator of toVeriAI, an AI product in production. Currently specializing in AI and Big Data."
+  },
+
+  // Etiqueta de disponibilidad del hero.
+  availability: {
+    gl: "Dispoñible · Incorporación inmediata",
+    es: "Disponible · Incorporación inmediata",
+    en: "Available · Can start immediately"
   },
 
   links: {
@@ -66,19 +73,16 @@ const CV = {
   // Sobre mí: el primer párrafo se muestra destacado.
   about: {
     gl: [
-      "Son desenvolvedora full stack con base en Java: constrúo backends con Spring Boot e Spring Security e conécteos con interfaces en React. Modernicei sistemas IBM i en Seidor e levei un produto propio con IA, toVeriAI, desde a idea ata a produción.",
-      "En Seidor traballei na migración dunha aplicación IBM i á web: a lóxica en RPG FREE e os datos en DB2, expostos mediante servizos web, coa seguridade de usuarios en Java e unha interface nova en React. Nos meus proxectos estiven en todas as fases: toVeriAI desenvolvino de principio a fin, cunha API en Java e Spring Boot, e en ArgaQuest, primeiro premio de Innovación Educativa da Xunta, fun Project Manager e desenvolvedora frontend.",
-      "Agora especialízome en Intelixencia Artificial e Big Data. Antes de programar formeime en Educación Social, e iso nótase en como me comunico, resolvo conflitos e traballo en equipo."
+      "Son desenvolvedora full stack con base en Java: constrúo backends con Spring Boot e Spring Security e conécteos con interfaces en React. En Seidor traballei en todas as capas dunha migración á web, e levei un produto propio con IA, toVeriAI, desde a idea ata a produción.",
+      "En ArgaQuest, primeiro premio de Innovación Educativa da Xunta, fun Project Manager e desenvolvedora frontend. Agora especialízome en IA e Big Data, e da miña formación en Educación Social vénme coidar a comunicación co equipo."
     ],
     es: [
-      "Soy desarrolladora full stack con base en Java: construyo backends con Spring Boot y Spring Security y los conecto con interfaces en React. He modernizado sistemas IBM i en Seidor y he llevado un producto propio con IA, toVeriAI, desde la idea hasta producción.",
-      "En Seidor trabajé en la migración de una aplicación IBM i a la web: la lógica en RPG FREE y los datos en DB2, expuestos mediante servicios web, con la seguridad de usuarios en Java y una interfaz nueva en React. En mis proyectos he estado en todas las fases: toVeriAI lo desarrollé de principio a fin, con una API en Java y Spring Boot, y en ArgaQuest, primer premio de Innovación Educativa de la Xunta, fui Project Manager y desarrolladora frontend.",
-      "Ahora me especializo en Inteligencia Artificial y Big Data. Antes de programar me formé en Educación Social, y eso se nota en cómo me comunico, resuelvo conflictos y trabajo en equipo."
+      "Soy desarrolladora full stack con base en Java: construyo backends con Spring Boot y Spring Security y los conecto con interfaces en React. En Seidor trabajé en todas las capas de una migración a la web, y he llevado un producto propio con IA, toVeriAI, desde la idea hasta producción.",
+      "En ArgaQuest, primer premio de Innovación Educativa de la Xunta, fui Project Manager y desarrolladora frontend. Ahora me especializo en IA y Big Data, y de mi formación en Educación Social me viene cuidar la comunicación con el equipo."
     ],
     en: [
-      "I'm a full stack developer with a Java foundation: I build back ends with Spring Boot and Spring Security and connect them to React interfaces. I've modernized IBM i systems at Seidor and taken my own AI product, toVeriAI, from idea to production.",
-      "At Seidor I worked on migrating an IBM i application to the web: RPG FREE logic and DB2 data exposed through web services, with user security in Java and a new React interface. In my projects I've been involved in every stage: I built toVeriAI end to end, with a Java and Spring Boot API, and in ArgaQuest, winner of the Xunta de Galicia's first prize for Educational Innovation, I was Project Manager and front-end developer.",
-      "I'm currently specializing in Artificial Intelligence and Big Data. Before programming I trained in Social Education, and it shows in how I communicate, resolve conflicts and work in a team."
+      "I'm a full stack developer with a Java foundation: I build back ends with Spring Boot and Spring Security and connect them to React interfaces. At Seidor I worked across every layer of a migration to the web, and I took my own AI product, toVeriAI, from idea to production.",
+      "On ArgaQuest, winner of the Xunta de Galicia's first prize for Educational Innovation, I was Project Manager and front-end developer. I'm now specializing in AI and Big Data, and my background in Social Education is where my care for team communication comes from."
     ]
   },
 
@@ -131,12 +135,12 @@ const CV = {
 
   // Cifras destacadas bajo el saludo de la portada.
   highlights: [
-    { value: "1", label: { gl: "app propia en produción", es: "app propia en producción", en: "own app in production" } },
-    { value: "1.º", label: { gl: "premio de Innovación Educativa", es: "premio de Innovación Educativa", en: "prize for Educational Innovation" } },
     {
       value: "9",
-      label: { gl: "meses como desenvolvedora en Seidor", es: "meses como desarrolladora en Seidor", en: "months as a developer at Seidor" }
-    }
+      label: { gl: "meses como full stack en Seidor", es: "meses como full stack en Seidor", en: "months as a full stack developer at Seidor" }
+    },
+    { value: "5", label: { gl: "LLMs orquestados en toVeriAI", es: "LLMs orquestados en toVeriAI", en: "LLMs orchestrated in toVeriAI" } },
+    { value: "1.º", label: { gl: "premio de Innovación Educativa", es: "premio de Innovación Educativa", en: "prize for Educational Innovation" } }
   ],
 
   // Proyectos: la tarjeta de la portada usa name, kind, badge, summary, cover y tags;
@@ -163,10 +167,16 @@ const CV = {
         en: "A web platform that analyses news, links and screenshots with AI and returns the IMI, a 0–100 credibility score that shows what is wrong and where."
       },
       cover: {
-        src: "assets/projects/toveriai/portada.webp",
-        mini: "assets/projects/toveriai/portada-mini.webp",
-        alt: { gl: "Páxina de inicio de toVeriAI", es: "Página de inicio de toVeriAI", en: "toVeriAI home page" }
+        src: "assets/projects/toveriai/resultado.webp",
+        mini: "assets/projects/toveriai/resultado-mini.webp",
+        alt: {
+          gl: "Resultado dunha análise en toVeriAI: índice IMI e fragmentos marcados no texto",
+          es: "Resultado de un análisis en toVeriAI: índice IMI y fragmentos marcados en el texto",
+          en: "A toVeriAI analysis result: IMI score and highlighted fragments in the text"
+        }
       },
+      // Mi papel, en una línea: se muestra en la tarjeta de la portada.
+      myRole: { gl: "Full stack, da idea á produción", es: "Full stack, de la idea a producción", en: "Full stack, from idea to production" },
       url: "https://www.toveriai.com",
       // Página de presentación del proyecto (GitHub Pages del repo ToVeriAI); el código es privado.
       overview: "https://raquelccarreraa.github.io/ToVeriAI/index.html",
@@ -180,7 +190,7 @@ const CV = {
         },
         link: { gl: "Velo en Galivelop", es: "Verlo en Galivelop", en: "See it on Galivelop" }
       },
-      tags: ["React", "Spring Boot", "Java", "MySQL", "LLMs", "Ollama"],
+      tags: ["Java", "Spring Boot", "React", "MySQL", "LLMs", "Ollama"],
       figures: [
         { value: "0–100", label: { gl: "índice IMI", es: "índice IMI", en: "IMI score" } },
         { value: "9", label: { gl: "dimensións de análise", es: "dimensiones de análisis", en: "analysis dimensions" } },
@@ -641,6 +651,7 @@ const CV = {
         alt: { gl: "Captura de ArgaQuest", es: "Captura de ArgaQuest", en: "Screenshot of ArgaQuest" }
       },
       url: "https://argaquest.fernandowirtz.com/",
+      myRole: { gl: "Project Manager e frontend", es: "Project Manager y frontend", en: "Project Manager and front end" },
       tags: ["React", "Spring Boot", "WebSockets", "Project Management"],
       figures: [
         {
@@ -755,58 +766,64 @@ const CV = {
   experience: [
     {
       date: {
-        gl: "Abril – Xullo 2025 (4 meses) · Marzo – Xullo 2026 (5 meses)",
-        es: "Abril – Julio 2025 (4 meses) · Marzo – Julio 2026 (5 meses)",
-        en: "Apr – Jul 2025 (4 months) · Mar – Jul 2026 (5 months)"
+        gl: "Mar. – xul. 2026 · Abr. – xul. 2025",
+        es: "Mar. – jul. 2026 · Abr. – jul. 2025",
+        en: "Mar – Jul 2026 · Apr – Jul 2025"
       },
-      title: { gl: "Desenvolvedora", es: "Desarrolladora", en: "Developer" },
+      title: { gl: "Desenvolvedora full stack", es: "Desarrolladora full stack", en: "Full stack developer" },
       slug: "seidor",
       org: "Seidor",
+      tags: ["Java", "React", "APIs REST", "n8n", "RPG FREE", "DB2"],
       points: {
         gl: [
-          "Migración dunha aplicación IBM i a web: a lóxica en RPG FREE e os datos en DB2 exponse mediante servizos web.",
-          "Substitución da pantalla verde por unha interface en React, despregada en Vercel.",
-          "Consultas a DB2 con SQL embebido e seguridade de usuarios con Java.",
+          "Seguridade de usuarios con Java na migración dunha aplicación de xestión á web.",
+          "Nova interface en React que substitúe as pantallas de terminal, despregada en Vercel.",
+          "Servizos REST que devolven JSON a React, coa lóxica de negocio en RPG FREE e SQL embebido sobre DB2.",
+          "Automatización de procesos con n8n.",
           "Traballo en equipo con Git/GitHub e Scrum."
         ],
         es: [
-          "Migración de una aplicación IBM i a web: la lógica en RPG FREE y los datos en DB2 se exponen mediante servicios web.",
-          "Sustitución de la pantalla verde por una interfaz en React, desplegada en Vercel.",
-          "Consultas a DB2 con SQL embebido y seguridad de usuarios con Java.",
+          "Seguridad de usuarios con Java en la migración de una aplicación de gestión a la web.",
+          "Nueva interfaz en React que sustituye las pantallas de terminal, desplegada en Vercel.",
+          "Servicios REST que devuelven JSON a React, con la lógica de negocio en RPG FREE y SQL embebido sobre DB2.",
+          "Automatización de procesos con n8n.",
           "Trabajo en equipo con Git/GitHub y Scrum."
         ],
         en: [
-          "Migrating an IBM i application to the web: RPG FREE logic and DB2 data exposed through web services.",
-          "Replacing the green screen with a React interface, deployed on Vercel.",
-          "DB2 queries with embedded SQL and user security with Java.",
+          "User security in Java while migrating a business application to the web.",
+          "A new React interface replacing the terminal screens, deployed on Vercel.",
+          "REST services returning JSON to React, with business logic in RPG FREE and embedded SQL on DB2.",
+          "Process automation with n8n.",
           "Teamwork with Git/GitHub and Scrum."
         ]
       },
       detail: {
         colors: ["#2c4a78", "#5b7fb8"],
         name: "Seidor",
-        kind: { gl: "Experiencia · Desenvolvedora", es: "Experiencia · Desarrolladora", en: "Experience · Developer" },
+        kind: { gl: "Experiencia · Desenvolvedora full stack", es: "Experiencia · Desarrolladora full stack", en: "Experience · Full stack developer" },
         tagline: {
-          gl: "Modernización de aplicacións IBM i: da pantalla verde a React.",
-          es: "Modernización de aplicaciones IBM i: de la pantalla verde a React.",
-          en: "Modernizing IBM i applications: from green screen to React."
+          gl: "Full stack na modernización de aplicacións de xestión: seguridade en Java, servizos REST, React e automatización con n8n.",
+          es: "Full stack en la modernización de aplicaciones de gestión: seguridad en Java, servicios REST, React y automatización con n8n.",
+          en: "Full stack on modernizing business applications: Java security, REST services, React and n8n automation."
         },
         figures: [
           { value: "9", label: { gl: "meses en Seidor", es: "meses en Seidor", en: "months at Seidor" } },
           { value: "2", label: { gl: "períodos: 2025 e 2026", es: "periodos: 2025 y 2026", en: "periods: 2025 and 2026" } },
-          {
-            value: "IBM i",
-            label: { gl: "sistemas AS/400 modernizados a web", es: "sistemas AS/400 modernizados a web", en: "AS/400 systems modernized for the web" }
-          }
+          { value: "4", label: { gl: "capas: seguridade, servizos, interface e automatización", es: "capas: seguridad, servicios, interfaz y automatización", en: "layers: security, services, UI and automation" } }
         ],
         sections: [
           {
             id: "about",
             paragraphs: [
               {
-                gl: "Traballei en Seidor de abril a xullo de 2025 e de marzo a xullo de 2026, na modernización dunha aplicación IBM i para levala á web.",
-                es: "Trabajé en Seidor de abril a julio de 2025 y de marzo a julio de 2026, en la modernización de una aplicación IBM i para llevarla a la web.",
-                en: "I worked at Seidor from April to July 2025 and from March to July 2026, modernizing an IBM i application to bring it to the web."
+                gl: "Traballei en Seidor de abril a xullo de 2025 e de marzo a xullo de 2026, no equipo que moderniza aplicacións de xestión sobre IBM i para levalas á web.",
+                es: "Trabajé en Seidor de abril a julio de 2025 y de marzo a julio de 2026, en el equipo que moderniza aplicaciones de gestión sobre IBM i para llevarlas a la web.",
+                en: "I worked at Seidor from April to July 2025 and from March to July 2026, in the team that modernizes IBM i business applications and brings them to the web."
+              },
+              {
+                gl: "Toquei todas as capas: a seguridade de usuarios en Java, os servizos REST, a interface en React e a automatización de procesos con n8n, ademais da lóxica de negocio en RPG FREE e DB2.",
+                es: "Toqué todas las capas: la seguridad de usuarios en Java, los servicios REST, la interfaz en React y la automatización de procesos con n8n, además de la lógica de negocio en RPG FREE y DB2.",
+                en: "I worked across every layer: user security in Java, the REST services, the React interface and process automation with n8n, as well as business logic in RPG FREE and DB2."
               }
             ]
           },
@@ -815,33 +832,31 @@ const CV = {
             title: { gl: "Que fixen", es: "Qué hice", en: "What I did" },
             list: [
               {
-                gl: "Migración dunha aplicación IBM i a web: a lóxica en RPG FREE e os datos en DB2 exponse mediante servizos web.",
-                es: "Migración de una aplicación IBM i a web: la lógica en RPG FREE y los datos en DB2 se exponen mediante servicios web.",
-                en: "Migrating an IBM i application to the web: RPG FREE logic and DB2 data exposed through web services."
+                gl: "Seguridade de usuarios con Java na migración dunha aplicación de xestión á web.",
+                es: "Seguridad de usuarios con Java en la migración de una aplicación de gestión a la web.",
+                en: "User security in Java while migrating a business application to the web."
               },
               {
-                gl: "Substitución da pantalla verde por unha interface en React, despregada en Vercel.",
-                es: "Sustitución de la pantalla verde por una interfaz en React, desplegada en Vercel.",
-                en: "Replacing the green screen with a React interface, deployed on Vercel."
+                gl: "Nova interface en React que substitúe as pantallas de terminal, despregada en Vercel.",
+                es: "Nueva interfaz en React que sustituye las pantallas de terminal, desplegada en Vercel.",
+                en: "A new React interface replacing the terminal screens, deployed on Vercel."
               },
               {
-                gl: "Consultas a DB2 con SQL embebido e seguridade de usuarios con Java.",
-                es: "Consultas a DB2 con SQL embebido y seguridad de usuarios con Java.",
-                en: "DB2 queries with embedded SQL and user security with Java."
+                gl: "Servizos REST que devolven JSON a React, coa lóxica de negocio en RPG FREE e SQL embebido sobre DB2.",
+                es: "Servicios REST que devuelven JSON a React, con la lógica de negocio en RPG FREE y SQL embebido sobre DB2.",
+                en: "REST services returning JSON to React, with business logic in RPG FREE and embedded SQL on DB2."
               },
-              {
-                gl: "Traballo en equipo con Git/GitHub e Scrum.",
-                es: "Trabajo en equipo con Git/GitHub y Scrum.",
-                en: "Teamwork with Git/GitHub and Scrum."
-              }
+              { gl: "Automatización de procesos con n8n.", es: "Automatización de procesos con n8n.", en: "Process automation with n8n." },
+              { gl: "Traballo en equipo con Git/GitHub e Scrum.", es: "Trabajo en equipo con Git/GitHub y Scrum.", en: "Teamwork with Git/GitHub and Scrum." }
             ]
           },
           {
             id: "stack",
             stack: [
-              { layer: { gl: "IBM i", es: "IBM i", en: "IBM i" }, items: ["AS/400", "RPG", "RPG FREE", "DB2", "SQL embebido"] },
-              { layer: { gl: "Servizos", es: "Servicios", en: "Services" }, items: ["Servicios web REST", "JSON", "Java (seguridad)"] },
+              { layer: { gl: "Backend", es: "Backend", en: "Back end" }, items: ["Java (seguridad)", "Servicios web REST", "JSON"] },
               { layer: { gl: "Interface", es: "Interfaz", en: "Front end" }, items: ["React", "Vercel"] },
+              { layer: { gl: "Automatización", es: "Automatización", en: "Automation" }, items: ["n8n"] },
+              { layer: { gl: "Datos e IBM i", es: "Datos e IBM i", en: "Data and IBM i" }, items: ["RPG FREE", "DB2", "SQL embebido"] },
               { layer: { gl: "Equipo", es: "Equipo", en: "Teamwork" }, items: ["Git", "GitHub", "Scrum"] }
             ]
           },
@@ -850,15 +865,20 @@ const CV = {
             title: null,
             list: [
               {
-                gl: "Programar en RPG e RPG FREE sobre IBM i.",
-                es: "Programar en RPG y RPG FREE sobre IBM i.",
-                en: "Programming in RPG and RPG FREE on IBM i."
+                gl: "Asegurar con Java unha aplicación nunha migración real.",
+                es: "Asegurar con Java una aplicación en una migración real.",
+                en: "Securing an application with Java in a real migration."
               },
-              { gl: "Traballar con DB2 mediante SQL.", es: "Trabajar con DB2 mediante SQL.", en: "Working with DB2 through SQL." },
               {
-                gl: "Conectar un sistema legacy cunha interface web moderna a través de servizos web.",
-                es: "Conectar un sistema legacy con una interfaz web moderna a través de servicios web.",
-                en: "Connecting a legacy system to a modern web interface through web services."
+                gl: "Conectar un sistema legacy cunha interface en React mediante servizos REST.",
+                es: "Conectar un sistema legacy con una interfaz en React mediante servicios REST.",
+                en: "Connecting a legacy system to a React interface through REST services."
+              },
+              { gl: "Automatizar procesos con n8n.", es: "Automatizar procesos con n8n.", en: "Automating processes with n8n." },
+              {
+                gl: "Traballar con RPG FREE e DB2 sobre IBM i.",
+                es: "Trabajar con RPG FREE y DB2 sobre IBM i.",
+                en: "Working with RPG FREE and DB2 on IBM i."
               }
             ]
           }
@@ -1013,7 +1033,7 @@ const CV = {
                 kind: "trail",
                 slug: "seidor",
                 name: "Seidor",
-                text: { gl: "Desenvolvemento en IBM i e React.", es: "Desarrollo en IBM i y React.", en: "Development on IBM i and React." }
+                text: { gl: "Full stack: seguridade en Java, servizos REST, React e n8n.", es: "Full stack: seguridad en Java, servicios REST, React y n8n.", en: "Full stack: Java security, REST services, React and n8n." }
               }
             ]
           }
@@ -1041,30 +1061,26 @@ const CV = {
     }
   ],
 
-  // Habilidades por categoría. Las que tienen logo en js/tech-icons.js lo muestran; el resto, su inicial.
+  // Habilidades: «core» va arriba y más grande; después, por categoría.
+  // Las que tienen logo en js/tech-icons.js lo muestran; el resto, solo el nombre.
+  core: ["Java", "Spring Boot", "Spring Security", "React", "SQL"],
   skills: [
-    { group: "Backend", items: ["Java", "Spring Boot", "Spring Security", "JWT", "APIs REST", "RPG FREE"] },
-    { group: "Frontend", items: ["React", "Angular", "SCSS", "Vite"] },
-    { group: { gl: "Bases de datos", es: "Bases de datos", en: "Databases" }, items: ["SQL", "MySQL", "DB2", "H2"] },
-    { group: { gl: "Probas", es: "Pruebas", en: "Testing" }, items: ["JUnit", "Mockito"] },
+    { group: "Backend", items: ["JWT", "APIs REST", "JPA/Hibernate", "WebSockets", "RPG FREE (IBM i)"] },
+    { group: "Frontend", items: ["Angular", "SCSS", "Vite"] },
+    { group: { gl: "Bases de datos", es: "Bases de datos", en: "Databases" }, items: ["MySQL", "DB2", "H2"] },
+    { group: { gl: "Probas", es: "Pruebas", en: "Testing" }, items: ["JUnit", "Mockito", "Postman"] },
     {
       group: { gl: "Intelixencia Artificial", es: "Inteligencia Artificial", en: "Artificial Intelligence" },
       items: [
         "Python",
         { gl: "Fine-tuning de LLMs", es: "Fine-tuning de LLMs", en: "LLM fine-tuning" },
-        "Qwen 2.5",
-        "Qwen 3.5",
-        "Llama 3.2",
         "Ollama",
-        "Cerebras",
-        "SambaNova",
-        "Gemini",
-        "Mistral",
-        "Cloudflare AI",
-        "Groq"
+        "Qwen",
+        "Llama",
+        { gl: "APIs de LLM (Gemini, Mistral…)", es: "APIs de LLM (Gemini, Mistral…)", en: "LLM APIs (Gemini, Mistral…)" }
       ]
     },
-    { group: { gl: "Ferramentas", es: "Herramientas", en: "Tools" }, items: ["Git", "GitHub", "Docker", "Postman"] },
+    { group: { gl: "Automatización e despregamento", es: "Automatización y despliegue", en: "Automation & deployment" }, items: ["n8n", "Docker", "Vercel", "Git", "GitHub"] },
     {
       group: { gl: "Metodoloxía", es: "Metodología", en: "Methodology" },
       items: ["Scrum", { gl: "Xestión de proxectos", es: "Gestión de proyectos", en: "Project management" }]

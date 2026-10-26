@@ -8,8 +8,8 @@
     gl: {
       title: "Raquel Comesaña Carrera · Desenvolvedora Full Stack",
       nav: { proyectos: "Proxectos", "sobre-mi": "Sobre min", trayectoria: "Traxectoria", habilidades: "Habilidades", contacto: "Contacto" },
-      projects: "Proxectos", allProjects: "Todos os proxectos", projectsIntro: "O que construín, en produción e premiado. Entra en cada un para ver como está feito.",
-      about: "Sobre min", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Falamos?", collabTitle: "Colaboracións",
+      projects: "Proxectos", allProjects: "Todos os proxectos",
+      about: "Sobre min", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Falamos?", collabTitle: "Colaboracións", otherEducation: "Outra formación",
       seeProjects: "Ver proxectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proxecto", visit: "Visitar a web", overview: "Ficha do proxecto", languages: "Idiomas",
       back: "Volver a proxectos", onThisPage: "Nesta páxina", expandAll: "Despregar todo", collapseAll: "Pregar todo", gallery: "Capturas",
       next: "Seguinte proxecto", close: "Pechar", notFound: "Non atopo ese proxecto.",
@@ -21,8 +21,8 @@
     es: {
       title: "Raquel Comesaña Carrera · Desarrolladora Full Stack",
       nav: { proyectos: "Proyectos", "sobre-mi": "Sobre mí", trayectoria: "Trayectoria", habilidades: "Habilidades", contacto: "Contacto" },
-      projects: "Proyectos", allProjects: "Todos los proyectos", projectsIntro: "Lo que he construido, en producción y premiado. Entra en cada uno para ver cómo está hecho.",
-      about: "Sobre mí", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "¿Hablamos?", collabTitle: "Colaboraciones",
+      projects: "Proyectos", allProjects: "Todos los proyectos",
+      about: "Sobre mí", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "¿Hablamos?", collabTitle: "Colaboraciones", otherEducation: "Otra formación",
       seeProjects: "Ver proyectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proyecto", visit: "Visitar la web", overview: "Ficha del proyecto", languages: "Idiomas",
       back: "Volver a proyectos", onThisPage: "En esta página", expandAll: "Desplegar todo", collapseAll: "Plegar todo", gallery: "Capturas",
       next: "Siguiente proyecto", close: "Cerrar", notFound: "No encuentro ese proyecto.",
@@ -34,8 +34,8 @@
     en: {
       title: "Raquel Comesaña Carrera · Full Stack Developer",
       nav: { proyectos: "Projects", "sobre-mi": "About", trayectoria: "Background", habilidades: "Skills", contacto: "Contact" },
-      projects: "Projects", allProjects: "All projects", projectsIntro: "What I've built, live and award-winning. Open each one to see how it's made.",
-      about: "About me", experience: "Experience", education: "Education", skills: "Skills", contact: "Let's talk", collabTitle: "Collaborations",
+      projects: "Projects", allProjects: "All projects",
+      about: "About me", experience: "Experience", education: "Education", skills: "Skills", contact: "Let's talk", collabTitle: "Collaborations", otherEducation: "Other training",
       seeProjects: "See projects", downloadCv: "Download CV (PDF)", viewProject: "View project", visit: "Visit website", overview: "Project overview", languages: "Languages",
       back: "Back to projects", onThisPage: "On this page", expandAll: "Expand all", collapseAll: "Collapse all", gallery: "Screenshots",
       next: "Next project", close: "Close", notFound: "I can't find that project.",
@@ -99,7 +99,6 @@
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const items = (v) => (Array.isArray(v) ? v.map(t) : t(v));
   const list = (v) => `<ul>${items(v).map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
-  const chips = (v) => `<div class="chips">${v.map((i) => `<span class="chip">${esc(t(i))}</span>`).join("")}</div>`;
   const button = (href, label, primary, extra = "") => {
     const external = /^https?:/.test(href) ? ' target="_blank" rel="noopener"' : "";
     return `<a class="btn${primary ? " btn--primary" : ""}" href="${href}"${external}${extra}>${esc(label)}</a>`;
@@ -187,6 +186,7 @@
 
   function renderHero() {
     $("hero-location").textContent = t(CV.location);
+    $("hero-status").textContent = t(CV.availability);
     const [first, ...rest] = CV.name.split(" ");
     $("hero-name").innerHTML = `${esc(first)} <span class="hl">${esc(rest.join(" "))}</span>`;
     $("hero-role").textContent = t(CV.role);
@@ -199,11 +199,6 @@
     $("hero-stats").innerHTML = CV.highlights
       .map((h) => `<div><dt>${esc(t(h.label))}</dt><dd>${esc(h.value)}</dd></div>`)
       .join("");
-    $("hero-collage").innerHTML = CV.projects.slice(0, 2).map((p, i) => `
-      <a class="collage__piece collage__piece--${i}" href="${projectUrl(p.slug)}" style="${accent(p)}" tabindex="-1" aria-hidden="true">
-        <img src="${p.cover.mini}" alt="" loading="lazy">
-        <span>${esc(p.name)}</span>
-      </a>`).join("");
   }
 
   function renderContact() {
@@ -211,15 +206,17 @@
     // Cada vía muestra el correo como texto (sin enlace) con un botón para copiarlo.
     $("contact-ways").innerHTML = CV.contactWays.map((w) => `
       <li><div class="way reveal">
-        <span class="features__icon">${icon(w.icon)}</span>
-        <h3>${esc(t(w.title))}</h3>
-        <p>${esc(t(w.text))}</p>
+        <div>
+          <h3>${esc(t(w.title))}</h3>
+          <p>${esc(t(w.text))}</p>
+        </div>
         <div class="way__email">
           <span>${esc(CV.links.email)}</span>
           <button type="button" class="btn btn--primary copy-email">${icon("copy")} <span>${esc(ui().copyEmail)}</span></button>
+          ${cvButton()}${button(CV.links.linkedin, "LinkedIn")}${button(CV.links.github, "GitHub")}
         </div>
       </div></li>`).join("");
-    $("contact-actions").innerHTML = cvButton() + button(CV.links.linkedin, "LinkedIn") + button(CV.links.github, "GitHub");
+    $("contact-actions").innerHTML = "";
     document.querySelectorAll(".copy-email").forEach((btn) =>
       btn.addEventListener("click", (e) => copyText(CV.links.email, e.currentTarget.querySelector("span"))));
   }
@@ -285,7 +282,6 @@
   }
 
   function renderProjects() {
-    $("projects-intro").textContent = ui().projectsIntro;
     $("projects").innerHTML = CV.projects.map((p) => `
       <article class="card reveal" style="${accent(p)}">
         <div class="card__media">
@@ -296,9 +292,9 @@
           <p class="card__kind">${esc(t(p.kind))}</p>
           <h3><a class="card__link" href="${projectUrl(p.slug)}">${p.icon ? `<img src="${p.icon}" alt="" class="card__icon">` : ""}${esc(p.name)}</a></h3>
           <p class="card__summary">${esc(t(p.summary))}</p>
-          ${chips(p.tags)}
+          ${techList(p.tags)}
           <div class="card__foot">
-            <span class="card__phase">${esc(t(p.phase))}</span>
+            <span class="card__role">${esc(t(p.myRole))}</span>
             <span class="card__more">${esc(ui().viewProject)} ${icon("arrow")}</span>
           </div>
         </div>
@@ -330,6 +326,7 @@
           <div class="stage__item${g.items.length > 1 ? " stage__item--dot" : ""}">
             <p class="stage__role">${esc(t(i.title))}</p>
             <p class="stage__date">${t(i.date).split(" · ").map((d) => `<span>${esc(d)}</span>`).join("")}</p>
+            ${i.tags ? techList(i.tags, "techs--small") : ""}
             ${i.points ? list(i.points) : ""}
             ${i.slug && i.detail ? `<a class="stage__more" href="${trailUrl(i.slug)}">${esc(ui().more)} ${icon("arrow")}</a>` : ""}
           </div>`).join("")}
@@ -337,28 +334,37 @@
       </li>`).join("");
   }
 
-  // Etiqueta de tecnología: logo de la marca (js/tech-icons.js) o, si no hay, su inicial.
+  // Formación sin página propia: una línea por entrada, para que no pese más que la experiencia.
+  function renderOtherEducation() {
+    const rest = CV.education.filter((e) => !e.detail);
+    $("education-other").innerHTML = rest.length ? `
+      <h3>${esc(ui().otherEducation)}</h3>
+      <ul>${rest.map((e) => `<li><strong>${esc(t(e.title))}</strong><span>${esc(t(e.org))} · ${esc(t(e.date))}</span></li>`).join("")}</ul>` : "";
+  }
+
+  // Etiqueta de tecnología: con el logo de la marca si está en js/tech-icons.js; si no, solo el nombre.
   function techChip(item) {
     const name = t(item);
     const logo = typeof TECH_ICONS !== "undefined" && TECH_ICONS[name];
     const mark = logo
       ? `<svg class="tech__logo${logo.dark ? " tech__logo--dark" : ""}" viewBox="0 0 24 24" aria-hidden="true"><path fill="${logo.c}" d="${logo.d}"/></svg>`
-      : `<span class="tech__logo tech__logo--letter" aria-hidden="true">${esc(name[0])}</span>`;
-    return `<li class="tech">${mark}${esc(name)}</li>`;
+      : "";
+    return `<li class="tech${logo ? "" : " tech--plain"}">${mark}${esc(name)}</li>`;
   }
+  const techList = (items, extra = "") => `<ul class="techs ${extra}">${items.map(techChip).join("")}</ul>`;
 
   function renderSkills() {
-    $("skills-grid").innerHTML = CV.skills.map((s) => `
+    $("skills-grid").innerHTML = techList(CV.core, "techs--core") + CV.skills.map((s) => `
       <div class="skills__group">
         <h3>${esc(t(s.group))}</h3>
-        <ul class="techs">${s.items.map(techChip).join("")}</ul>
+        ${techList(s.items)}
       </div>`).join("");
     $("languages").innerHTML = CV.languages.map((l) => `<li><strong>${esc(t(l.name))}</strong> ${esc(t(l.level))}</li>`).join("");
   }
 
   // ===== Páginas de detalle (proyectos y trayectoria) =====
 
-  const open = new Set(["about", "role", "features", "related"]); // secciones desplegadas al entrar
+  const open = new Set(["about", "role", "decisions", "features", "related"]); // secciones desplegadas al entrar
   const trail = () => [...CV.experience, ...CV.education].filter((e) => e.slug && e.detail);
 
   function sectionTitle(s) {
@@ -375,7 +381,7 @@
     if (s.steps) return `<ol class="steps">${s.steps.map((x) => `<li><h3>${esc(t(x.title))}</h3><p>${esc(t(x.text))}</p></li>`).join("")}</ol>`;
     if (s.items) return `${s.intro ? `<p class="fold__intro">${esc(t(s.intro))}</p>` : ""}<ul class="weights">${s.items.map((x) => `
       <li><div class="weights__head"><h3>${esc(t(x.name))}</h3><span>${esc(x.value)}</span></div><p>${esc(t(x.text))}</p></li>`).join("")}</ul>`;
-    if (s.stack) return `<dl class="stack">${s.stack.map((x) => `<div><dt>${esc(t(x.layer))}</dt><dd>${chips(x.items)}</dd></div>`).join("")}</dl>`;
+    if (s.stack) return `<dl class="stack">${s.stack.map((x) => `<div><dt>${esc(t(x.layer))}</dt><dd>${techList(x.items)}</dd></div>`).join("")}</dl>`;
     if (s.milestones) return `<ol class="milestones">${s.milestones.map((m) => `
       <li class="milestone milestone--${m.state}">
         <span class="milestone__mark">${icon(m.state === "done" ? "check" : m.state)}</span>
@@ -515,7 +521,8 @@
       renderAbout();
       renderProjects();
       renderTimeline("experience", CV.experience);
-      renderTimeline("education", CV.education);
+      renderTimeline("education", CV.education.filter((e) => e.detail));
+      renderOtherEducation();
       renderSkills();
       renderCollab();
       renderContact();
