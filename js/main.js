@@ -7,40 +7,37 @@
   const UI = {
     gl: {
       title: "Raquel Comesaña Carrera · Desenvolvedora Full Stack",
-      nav: { proyectos: "Proxectos", "sobre-mi": "Sobre min", trayectoria: "Traxectoria", habilidades: "Habilidades", contacto: "Contacto" },
       projects: "Proxectos", allProjects: "Todos os proxectos",
       about: "Sobre min", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "Falamos?", collabTitle: "Colaboracións", otherEducation: "Outra formación",
       seeProjects: "Ver proxectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proxecto", visit: "Visitar a web", overview: "Ficha do proxecto", languages: "Idiomas",
       back: "Volver a proxectos", onThisPage: "Nesta páxina", expandAll: "Despregar todo", collapseAll: "Pregar todo", gallery: "Capturas",
       next: "Seguinte proxecto", close: "Pechar", notFound: "Non atopo ese proxecto.",
       ctaTitle: "Encaixa o meu perfil no teu equipo?", ctaText: "Teño dispoñibilidade inmediata. Escríbeme e cóntoche máis sobre este proxecto.",
-      sec: { about: "Que é", role: "O meu papel", features: "Características", steps: "Como funciona", decisions: "Decisións técnicas", stack: "Ficha técnica", milestones: "Fitos", learnings: "Que aprendín", press: "Na prensa" },
+      core: "Stack principal", sec: { about: "Que é", role: "O meu papel", features: "Características", steps: "Como funciona", decisions: "Decisións técnicas", stack: "Ficha técnica", milestones: "Fitos", learnings: "Que aprendín", press: "Na prensa" },
       state: { done: "Feito", progress: "En curso", todo: "Pendente" },
       openMenu: "Abrir menú", closeMenu: "Pechar menú", toDark: "Cambiar a tema escuro", toLight: "Cambiar a tema claro", language: "Idioma"
     },
     es: {
       title: "Raquel Comesaña Carrera · Desarrolladora Full Stack",
-      nav: { proyectos: "Proyectos", "sobre-mi": "Sobre mí", trayectoria: "Trayectoria", habilidades: "Habilidades", contacto: "Contacto" },
       projects: "Proyectos", allProjects: "Todos los proyectos",
       about: "Sobre mí", experience: "Experiencia", education: "Formación", skills: "Habilidades", contact: "¿Hablamos?", collabTitle: "Colaboraciones", otherEducation: "Otra formación",
       seeProjects: "Ver proyectos", downloadCv: "Descargar CV (PDF)", viewProject: "Ver proyecto", visit: "Visitar la web", overview: "Ficha del proyecto", languages: "Idiomas",
       back: "Volver a proyectos", onThisPage: "En esta página", expandAll: "Desplegar todo", collapseAll: "Plegar todo", gallery: "Capturas",
       next: "Siguiente proyecto", close: "Cerrar", notFound: "No encuentro ese proyecto.",
       ctaTitle: "¿Encaja mi perfil en tu equipo?", ctaText: "Tengo disponibilidad inmediata. Escríbeme y te cuento más sobre este proyecto.",
-      sec: { about: "Qué es", role: "Mi papel", features: "Características", steps: "Cómo funciona", decisions: "Decisiones técnicas", stack: "Ficha técnica", milestones: "Hitos", learnings: "Qué he aprendido", press: "En prensa" },
+      core: "Stack principal", sec: { about: "Qué es", role: "Mi papel", features: "Características", steps: "Cómo funciona", decisions: "Decisiones técnicas", stack: "Ficha técnica", milestones: "Hitos", learnings: "Qué he aprendido", press: "En prensa" },
       state: { done: "Hecho", progress: "En curso", todo: "Pendiente" },
       openMenu: "Abrir menú", closeMenu: "Cerrar menú", toDark: "Cambiar a tema oscuro", toLight: "Cambiar a tema claro", language: "Idioma"
     },
     en: {
       title: "Raquel Comesaña Carrera · Full Stack Developer",
-      nav: { proyectos: "Projects", "sobre-mi": "About", trayectoria: "Background", habilidades: "Skills", contacto: "Contact" },
       projects: "Projects", allProjects: "All projects",
       about: "About me", experience: "Experience", education: "Education", skills: "Skills", contact: "Let's talk", collabTitle: "Collaborations", otherEducation: "Other training",
       seeProjects: "See projects", downloadCv: "Download CV (PDF)", viewProject: "View project", visit: "Visit website", overview: "Project overview", languages: "Languages",
       back: "Back to projects", onThisPage: "On this page", expandAll: "Expand all", collapseAll: "Collapse all", gallery: "Screenshots",
       next: "Next project", close: "Close", notFound: "I can't find that project.",
       ctaTitle: "Does my profile fit your team?", ctaText: "I'm available immediately. Write to me and I'll tell you more about this project.",
-      sec: { about: "What it is", role: "My role", features: "Features", steps: "How it works", decisions: "Technical decisions", stack: "Tech stack", milestones: "Milestones", learnings: "What I learned", press: "In the press" },
+      core: "Core stack", sec: { about: "What it is", role: "My role", features: "Features", steps: "How it works", decisions: "Technical decisions", stack: "Tech stack", milestones: "Milestones", learnings: "What I learned", press: "In the press" },
       state: { done: "Done", progress: "In progress", todo: "To do" },
       openMenu: "Open menu", closeMenu: "Close menu", toDark: "Switch to dark theme", toLight: "Switch to light theme", language: "Language"
     }
@@ -89,6 +86,9 @@
     send: '<path d="M14.5 21.7a.5.5 0 0 0 .9-.1l6.5-19a.5.5 0 0 0-.6-.6l-19 6.5a.5.5 0 0 0-.1.9l7.9 3.2a2 2 0 0 1 1.1 1.1z"/><path d="m21.9 2.1-10.9 10.9"/>'
   };
   const icon = (name) => `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] || ICONS.lightbulb}</svg>`;
+
+  // Menú de la cabecera: cada enlace lleva el título de su sección, para que coincidan.
+  const NAV = { "sobre-mi": "about", experiencia: "experience", formacion: "education", habilidades: "skills", contacto: "contact" };
 
   let lang = detectLang();
   const $ = (id) => document.getElementById(id);
@@ -145,7 +145,7 @@
     document.documentElement.lang = lang;
     document.title = ui().title;
     document.querySelectorAll("[data-nav]").forEach((a) => {
-      a.textContent = ui().nav[a.dataset.nav];
+      a.textContent = ui()[NAV[a.dataset.nav]];
       a.setAttribute("href", homeUrl(`#${a.dataset.nav}`));
     });
     document.querySelectorAll(".nav__logo").forEach((a) => a.setAttribute("href", homeUrl("#inicio")));
@@ -353,12 +353,26 @@
   }
   const techList = (items, extra = "") => `<ul class="techs ${extra}">${items.map(techChip).join("")}</ul>`;
 
+  // Habilidades: fichas del mismo tamaño en cuadrícula. Sin logo, las iniciales ocupan su sitio para que todo alinee.
+  function skillTile(item) {
+    const name = t(item);
+    const logo = typeof TECH_ICONS !== "undefined" && TECH_ICONS[name];
+    const words = name.replace(/\(.*\)/, "").split(/[\s-]+/).filter(Boolean);
+    const mono = (words.length > 1 ? words[0][0] + words[1][0] : name.slice(0, 2)).toUpperCase();
+    const mark = logo
+      ? `<svg class="tile__logo${logo.dark ? " tech__logo--dark" : ""}" viewBox="0 0 24 24" aria-hidden="true"><path fill="${logo.c}" d="${logo.d}"/></svg>`
+      : `<span class="tile__logo tile__mono" aria-hidden="true">${esc(mono)}</span>`;
+    return `<li class="tile">${mark}<span>${esc(name)}</span></li>`;
+  }
+  const skillGroup = (title, items, extra = "") => `
+      <div class="skills__group${extra}">
+        <h3>${esc(title)}<span>${items.length}</span></h3>
+        <ul class="tiles">${items.map(skillTile).join("")}</ul>
+      </div>`;
+
   function renderSkills() {
-    $("skills-grid").innerHTML = techList(CV.core, "techs--core") + CV.skills.map((s) => `
-      <div class="skills__group">
-        <h3>${esc(t(s.group))}</h3>
-        ${techList(s.items)}
-      </div>`).join("");
+    $("skills-grid").innerHTML = skillGroup(ui().core, CV.core, " skills__group--core") +
+      CV.skills.map((s) => skillGroup(t(s.group), s.items)).join("");
     $("languages").innerHTML = CV.languages.map((l) => `<li><strong>${esc(t(l.name))}</strong> ${esc(t(l.level))}</li>`).join("");
   }
 
