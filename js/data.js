@@ -776,7 +776,7 @@ const CV = {
       tags: ["React", "Java", "Spring Security", "APIs REST", "RPG FREE", "DB2", "n8n"],
       points: {
         gl: [
-          "Modernización de pantallas green-screen a aplicacións web en React, con compoñentes e estilos reutilizables.",
+          "Migración dun sistema legacy: de pantallas green-screen a aplicacións web en React, con compoñentes e estilos reutilizables.",
           "Servizos REST sobre IBM i que devolven JSON para consumilos desde React.",
           "Seguridade con Java, Spring Boot e Spring Security.",
           "RPG FREE con SQL embebido sobre DB2: funcións, vistas e cursores.",
@@ -784,7 +784,7 @@ const CV = {
           "Git/GitHub para o código fonte de IBM i e traballo en Scrum."
         ],
         es: [
-          "Modernización de pantallas green-screen a aplicaciones web en React, con componentes y estilos reutilizables.",
+          "Migración de un sistema legacy: de pantallas green-screen a aplicaciones web en React, con componentes y estilos reutilizables.",
           "Servicios REST sobre IBM i que devuelven JSON para consumirlos desde React.",
           "Seguridad con Java, Spring Boot y Spring Security.",
           "RPG FREE con SQL embebido sobre DB2: funciones, vistas y cursores.",
@@ -792,7 +792,7 @@ const CV = {
           "Git/GitHub para el código fuente de IBM i y trabajo en Scrum."
         ],
         en: [
-          "Modernizing green-screen applications into React web apps, with reusable components and styles.",
+          "Legacy system migration: from green-screen applications to React web apps, with reusable components and styles.",
           "REST services on IBM i returning JSON to be consumed from React.",
           "Security with Java, Spring Boot and Spring Security.",
           "RPG FREE with embedded SQL on DB2: functions, views and cursors.",
@@ -805,9 +805,9 @@ const CV = {
         name: "Seidor",
         kind: { gl: "Experiencia · Desenvolvedora full stack", es: "Experiencia · Desarrolladora full stack", en: "Experience · Full stack developer" },
         tagline: {
-          gl: "Da pantalla verde a React: modernización de aplicacións de xestión IBM i, con servizos REST, Spring Security e automatización con n8n.",
-          es: "De la pantalla verde a React: modernización de aplicaciones de gestión IBM i, con servicios REST, Spring Security y automatización con n8n.",
-          en: "From green screen to React: modernizing IBM i business applications, with REST services, Spring Security and n8n automation."
+          gl: "Da pantalla verde a React: migración dun sistema legacy IBM i, con servizos REST, Spring Security e automatización con n8n.",
+          es: "De la pantalla verde a React: migración de un sistema legacy IBM i, con servicios REST, Spring Security y automatización con n8n.",
+          en: "From green screen to React: migrating a legacy IBM i system, with REST services, Spring Security and n8n automation."
         },
         figures: [
           { value: "9", label: { gl: "meses a xornada completa", es: "meses a jornada completa", en: "months full time" } },
@@ -826,9 +826,9 @@ const CV = {
             id: "about",
             paragraphs: [
               {
-                gl: "Integreime no equipo de desenvolvemento IBM i de Seidor para modernizar aplicacións de xestión herdadas e conectalas con tecnoloxías web actuais. Estiven de abril a xullo de 2025 e de marzo a xullo de 2026, a xornada completa.",
-                es: "Me integré en el equipo de desarrollo IBM i de Seidor para modernizar aplicaciones de gestión heredadas y conectarlas con tecnologías web actuales. Estuve de abril a julio de 2025 y de marzo a julio de 2026, a jornada completa.",
-                en: "I joined Seidor's IBM i development team to modernize legacy business applications and connect them to today's web technologies. I was there from April to July 2025 and from March to July 2026, full time."
+                gl: "Integreime no equipo de desenvolvemento IBM i de Seidor para migrar un sistema legacy de xestión e conectalo con tecnoloxías web actuais. Estiven de abril a xullo de 2025 e de marzo a xullo de 2026, a xornada completa.",
+                es: "Me integré en el equipo de desarrollo IBM i de Seidor para migrar un sistema legacy de gestión y conectarlo con tecnologías web actuales. Estuve de abril a julio de 2025 y de marzo a julio de 2026, a jornada completa.",
+                en: "I joined Seidor's IBM i development team to migrate a legacy business system and connect it to today's web technologies. I was there from April to July 2025 and from March to July 2026, full time."
               },
               {
                 gl: "Traballei en todas as capas: as pantallas novas en React, os servizos REST que as alimentan, a lóxica e os datos en RPG FREE e DB2, a seguridade con Spring Security e os avisos automáticos con n8n.",
@@ -842,9 +842,9 @@ const CV = {
             title: { gl: "Que fixen", es: "Qué hice", en: "What I did" },
             list: [
               {
-                gl: "Modernizar interfaces green-screen (DDS) cara a aplicacións web en React, con arquitectura de compoñentes e estilos reutilizables con variables CSS.",
-                es: "Modernizar interfaces green-screen (DDS) hacia aplicaciones web en React, con arquitectura de componentes y estilos reutilizables con variables CSS.",
-                en: "Modernizing green-screen (DDS) interfaces into React web applications, with a component architecture and reusable styles built on CSS variables."
+                gl: "Migrar interfaces green-screen (DDS) a aplicacións web en React, con arquitectura de compoñentes e estilos reutilizables con variables CSS.",
+                es: "Migrar interfaces green-screen (DDS) a aplicaciones web en React, con arquitectura de componentes y estilos reutilizables con variables CSS.",
+                en: "Migrating green-screen (DDS) interfaces to React web applications, with a component architecture and reusable styles built on CSS variables."
               },
               {
                 gl: "Crear servizos REST sobre IBM i que devolven datos en JSON para consumilos desde React.",

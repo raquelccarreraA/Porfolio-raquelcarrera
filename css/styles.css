@@ -413,3 +413,7 @@ button.btn--primary { color: var(--bg); }
 }
 .stage ul.techs { padding-left: 0; }
 .others li { flex-direction: column; }
+.way__address { display: inline-flex; align-items: center; gap: 9px; }
+.way__address .icon { width: 19px; height: 19px; color: var(--accent); flex: none; }
+.btn--icon { display: inline-flex; align-items: center; gap: 8px; }
+.btn--icon .icon { width: 17px; height: 17px; }
