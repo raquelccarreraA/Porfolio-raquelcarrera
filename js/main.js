@@ -190,8 +190,11 @@
     $("hero-location").textContent = t(CV.location);
     $("hero-status").textContent = t(CV.availability);
     const [first, ...rest] = CV.name.split(" ");
-    $("hero-name").innerHTML = `${esc(first)} <span class="hl">${esc(rest.join(" "))}</span>`;
-    $("hero-role").textContent = t(CV.role);
+    // El apellido lleva debajo un trazo a mano que se dibuja al cargar.
+    $("hero-name").innerHTML = `${esc(first)} <span class="hl">${esc(rest.join(" "))}<svg class="scribble" viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8C40 2 80 11 120 6s80-3 120 1 45-2 58-1"/></svg></span>`;
+    // El puesto en texto y sus tecnologías como etiquetas con logo.
+    const [title, ...stack] = t(CV.role).split(" · ");
+    $("hero-role").innerHTML = `<p>${esc(title)}</p>${techList(stack, "techs--hero")}`;
     $("hero-summary").textContent = t(CV.summary);
     $("hero-actions").innerHTML =
       button("#proyectos", ui().seeProjects, true) +
@@ -199,8 +202,29 @@
       button(CV.links.linkedin, "LinkedIn") +
       button(CV.links.github, "GitHub");
     $("hero-stats").innerHTML = CV.highlights
-      .map((h) => `<div><dt>${esc(t(h.label))}</dt><dd>${esc(h.value)}</dd></div>`)
+      .map((h) => `<div><dt>${esc(t(h.label))}</dt><dd${/^\d+$/.test(h.value) ? ` data-count="${h.value}"` : ""}>${esc(h.value)}</dd></div>`)
       .join("");
+    countUp();
+  }
+
+  // Las cifras enteras de la portada cuentan desde cero al cargar.
+  function countUp() {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    document.querySelectorAll("[data-count]").forEach((el) => {
+      const end = Number(el.dataset.count), start = performance.now();
+      const tick = (now) => {
+        const k = Math.min(1, (now - start) / 900);
+        el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3)));
+        if (k < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }
+
+  // Cinta de tecnologías bajo la portada: la lista va dos veces para que el bucle no tenga corte.
+  function renderMarquee() {
+    const items = [...CV.core, ...CV.skills.flatMap((g) => g.items)].map(techChip).join("");
+    $("marquee").innerHTML = `<ul class="marquee__track">${items}${items}</ul>`;
   }
 
   // Botón de enlace externo con icono delante del texto.
@@ -349,13 +373,20 @@
   }
 
   // Etiqueta de tecnología: con el logo de la marca si está en js/tech-icons.js; si no, solo el nombre.
+  // Icono de línea para lo que no tiene logo de marca (LINE_ICONS, por su nombre en castellano).
+  function lineIcon(item, cls) {
+    const key = typeof item === "string" ? item : item.es;
+    const d = typeof LINE_ICONS !== "undefined" && LINE_ICONS[key];
+    return d ? `<svg class="${cls} line-icon" viewBox="0 0 24 24" aria-hidden="true">${d}</svg>` : "";
+  }
+
   function techChip(item) {
     const name = t(item);
     const logo = typeof TECH_ICONS !== "undefined" && TECH_ICONS[name];
     const mark = logo
       ? `<svg class="tech__logo${logo.dark ? " tech__logo--dark" : ""}" viewBox="0 0 24 24" aria-hidden="true"><path fill="${logo.c}" d="${logo.d}"/></svg>`
-      : "";
-    return `<li class="tech${logo ? "" : " tech--plain"}">${mark}${esc(name)}</li>`;
+      : lineIcon(item, "tech__logo");
+    return `<li class="tech">${mark}${esc(name)}</li>`;
   }
   const techList = (items, extra = "") => `<ul class="techs ${extra}">${items.map(techChip).join("")}</ul>`;
 
@@ -363,11 +394,9 @@
   function skillTile(item) {
     const name = t(item);
     const logo = typeof TECH_ICONS !== "undefined" && TECH_ICONS[name];
-    const words = name.replace(/\(.*\)/, "").split(/[\s-]+/).filter(Boolean);
-    const mono = (words.length > 1 ? words[0][0] + words[1][0] : name.slice(0, 2)).toUpperCase();
     const mark = logo
       ? `<svg class="tile__logo${logo.dark ? " tech__logo--dark" : ""}" viewBox="0 0 24 24" aria-hidden="true"><path fill="${logo.c}" d="${logo.d}"/></svg>`
-      : `<span class="tile__logo tile__mono" aria-hidden="true">${esc(mono)}</span>`;
+      : lineIcon(item, "tile__logo");
     return `<li class="tile">${mark}<span>${esc(name)}</span></li>`;
   }
   const skillGroup = (title, items, extra = "") => `
@@ -538,6 +567,7 @@
     renderStatic();
     if (page === "home") {
       renderHero();
+      renderMarquee();
       renderAbout();
       renderProjects();
       renderTimeline("experience", CV.experience);
@@ -603,7 +633,22 @@
     if (e.isIntersecting) { e.target.classList.add("in"); reveal.unobserve(e.target); }
   }), { threshold: 0.12 });
   function observeReveal() {
+    // Las tarjetas hermanas entran escalonadas (--i retrasa cada una).
+    document.querySelectorAll(".projects .card").forEach((el, i) => el.style.setProperty("--i", i));
     document.querySelectorAll(".reveal:not(.in)").forEach((el) => reveal.observe(el));
+  }
+
+  // Barra de progreso de lectura y sombra del menú al bajar.
+  function setupScroll() {
+    const bar = $("progress"), nav = document.querySelector(".nav");
+    const update = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      if (bar) bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+      nav.classList.toggle("scrolled", scrollY > 8);
+    };
+    addEventListener("scroll", update, { passive: true });
+    addEventListener("resize", update);
+    update();
   }
 
   function setupScrollSpy() {
@@ -626,4 +671,5 @@
   setupSubmenu();
   setupScrollSpy();
   setupLightbox();
+  setupScroll();
 })();

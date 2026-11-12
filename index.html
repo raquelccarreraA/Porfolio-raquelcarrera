@@ -22,11 +22,12 @@
       if (t) document.documentElement.dataset.theme = t;
     })();
   </script>
-  <link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css?v=20261111b">
+  <link rel="preload" href="assets/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css?v=20261112c">
 </head>
 <body data-page="home">
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="nav">
     <div class="container nav__inner">
@@ -65,9 +66,9 @@
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__grid">
         <div class="hero__text">
-          <p class="hero__meta"><span class="status" id="hero-status">Disponible · Incorporación inmediata</span><span id="hero-location">A Coruña, Galicia</span></p>
+          <p class="hero__meta"><span class="status" id="hero-status">Disponible · Incorporación inmediata</span></p>
           <h1 id="hero-name">Raquel <span class="hl">Comesaña Carrera</span></h1>
-          <p class="hero__role" id="hero-role">Desarrolladora Full Stack · Java · Spring Boot · React</p>
+          <div class="hero__role" id="hero-role">Desarrolladora Full Stack · Java · Spring Boot · React</div>
           <p class="hero__summary" id="hero-summary">Construyo aplicaciones web completas con Java y Spring Boot en el backend y React en la interfaz. Creadora de toVeriAI, un producto con IA en producción. Ahora me especializo en IA y Big Data.</p>
           <div class="hero__actions" id="hero-actions"></div>
           <dl class="hero__stats" id="hero-stats"></dl>
@@ -78,9 +79,13 @@
             <img src="assets/RCC.jpg" alt="Raquel Comesaña Carrera" onerror="this.remove()">
             <span class="hero__initials">RC</span>
           </figure>
+          <p class="hero__place"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 9h4l1.5 12h-7z"/><path d="M9.5 9V6.5h5V9"/><path d="M12 6.5V4"/><path d="M9.2 14h5.6"/><path d="M5 5.5 2.5 4.5M5 8l-2.5.8M19 5.5l2.5-1M19 8l2.5.8"/></svg><span id="hero-location">A Coruña, Galicia</span></p>
         </div>
       </div>
     </section>
+
+    <!-- Cinta con las tecnologías: se rellena desde main.js -->
+    <div class="marquee" id="marquee" aria-hidden="true"></div>
 
     <!-- PROYECTOS -->
     <section id="proyectos" class="section section--band">
@@ -127,7 +132,8 @@
     </div>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="section section--band contact">
+    <section id="contacto" class="section contact contact--night">
+      <svg class="contact__wave" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0h1200v10c-50 8-100 8-150 0s-100-8-150 0-100 8-150 0-100-8-150 0-100 8-150 0-100-8-150 0-100 8-150 0-100-8-150 0z"/></svg>
       <div class="container">
         <h2 class="section__title" data-i18n="contact">¿Hablamos?</h2>
         <p class="contact__text" id="contact-text">Busco oportunidades para trabajar como programadora. Disponibilidad inmediata: escríbeme y te respondo pronto.</p>
@@ -138,10 +144,10 @@
 
   </main>
 
-  <footer class="footer container">© <span id="year"></span> Raquel Comesaña Carrera</footer>
+  <footer class="footer"><div class="container footer__inner"><span>© <span id="year"></span> Raquel Comesaña Carrera</span><span class="footer__place"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 9h4l1.5 12h-7z"/><path d="M9.5 9V6.5h5V9"/><path d="M12 6.5V4"/><path d="M9.2 14h5.6"/><path d="M5 5.5 2.5 4.5M5 8l-2.5.8M19 5.5l2.5-1M19 8l2.5.8"/></svg>A Coruña, Galicia</span></div></footer>
 
-  <script src="js/tech-icons.js?v=20261111b"></script>
-  <script src="js/data.js?v=20261111b"></script>
-  <script src="js/main.js?v=20261111b"></script>
+  <script src="js/tech-icons.js?v=20261112c"></script>
+  <script src="js/data.js?v=20261112c"></script>
+  <script src="js/main.js?v=20261112c"></script>
 </body>
 </html>
