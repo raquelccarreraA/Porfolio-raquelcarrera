@@ -662,3 +662,10 @@ strong, b { font-weight: 600; }
   .hero__actions { gap: 8px; }
   .hero__actions .btn { padding: 10px 15px; font-size: 14.5px; }
 }
+
+/* La ola bajo los títulos de sección ocupa el ancho de la palabra */
+.section__title { width: fit-content; }
+.section__title::after { width: 100%; -webkit-mask-size: 64px 9px; mask-size: 64px 9px; -webkit-mask-repeat: repeat-x; mask-repeat: repeat-x; -webkit-mask-position: left center; mask-position: left center; }
+
+/* Frase destacada: la serif condensada se apelmaza en párrafos largos; va en sans, más suelta */
+.letter .letter__lead, .pcard .letter .letter__lead, .phead__tagline { font: 500 clamp(19px, 2.2vw, 22px)/1.55 var(--sans); letter-spacing: -.005em; color: var(--title); }

@@ -33,9 +33,9 @@ const CV = {
   },
 
   contact: {
-    gl: "Busco oportunidades para traballar como programadora. Dispoñibilidade inmediata: escríbeme e respóndoche axiña.",
-    es: "Busco oportunidades para trabajar como programadora. Disponibilidad inmediata: escríbeme y te respondo pronto.",
-    en: "I'm looking for opportunities to work as a developer. Available immediately: write to me and I'll get back to you soon."
+    gl: "Se cres que o meu perfil encaixa no teu equipo, encantarame coñecerte. Escríbeme e falámolo.",
+    es: "Si crees que mi perfil encaja en tu equipo, me encantará conocerte. Escríbeme y lo hablamos.",
+    en: "If you think my profile fits your team, I'd love to meet you. Drop me a line and let's talk."
   },
 
   // Contacto: la tarjeta muestra el correo con un botón para copiarlo.
